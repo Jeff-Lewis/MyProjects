@@ -1,0 +1,7 @@
+# Description    : step definitions for steps related to generate patient list page
+# Author         : Gomathi
+
+When /^a patient list is generated$/ do
+  on(EHR::MasterPage).select_menu_item(GENERATE_PATIENT_LIST)
+  on(EHR::GeneratePatientList).generate_patient_list("exam date")
+end

@@ -1,0 +1,74 @@
+# Description   : step definitions for steps related to Eligible Professional
+# Author        : Gomathi
+
+# Given a "stage1 ep" is created with "last year" as "stage1 start year"
+Given /^a "([^"]*)" is created with "([^"]*)" as "([^"]*)"$/ do |str_ep_stage, str_value, str_filter|
+  # since the EP creation page has changed in Client side
+  if @browser.current_url.include? "vm-ehr-aspire-aio"
+    on(EHR::MasterPage).select_menu_item(ELIGIBLE_PROFESSIONAL)
+  else
+    on(EHR::MasterPage).select_menu_item("Set Up/Eligible Professional")
+  end
+  if str_ep_stage.downcase == "stage1 ep"
+    on(EHR::CreateEP).create_ep(str_filter, str_value, "ep_creation_data_for_stage1")
+    STAGE1_EP_NAME = $new_stage1_ep_name
+    STAGE1_EP_FIRST_NAME = $new_stage1_ep_first_name
+    STAGE1_EP_LAST_NAME = $new_stage1_ep_last_name
+    STAGE1_EP_NPI = $new_stage1_ep_npi
+    $str_ep_name = $new_stage1_ep_name
+
+  elsif str_ep_stage.downcase == "stage2 ep"
+    on(EHR::CreateEP).create_ep(str_filter, str_value, "ep_creation_data_for_stage2")
+    STAGE2_EP_NAME = $new_stage2_ep_name
+    STAGE2_EP_FIRST_NAME = $new_stage2_ep_first_name
+    STAGE2_EP_LAST_NAME = $new_stage2_ep_last_name
+    STAGE2_EP_NPI = $new_stage2_ep_npi
+
+  else
+    raise "Invalid ep stage : #{str_ep_stage}"
+  end
+end
+
+# Then set "stage2 ep" as current EP
+Then /^set "([^"]*)" as current EP$/ do |str_doctor_stage|
+  if str_doctor_stage.downcase == "stage1 ep"
+    STAGE1_EP_NAME = $obj_yml.get_value($stage1_ep_name_ypath)
+    STAGE1_EP_FIRST_NAME = $obj_yml.get_value($stage1_ep_first_name_ypath)
+    STAGE1_EP_LAST_NAME = $obj_yml.get_value($stage1_ep_last_name_ypath)
+    STAGE1_EP_NPI = $obj_yml.get_value($stage1_ep_npi_ypath)
+    $str_ep_name = STAGE1_EP_NAME
+
+  elsif str_doctor_stage.downcase == "stage2 ep"
+    STAGE2_EP_NAME = $obj_yml.get_value($stage2_ep_name_ypath)
+    STAGE2_EP_FIRST_NAME = $obj_yml.get_value($stage2_ep_first_name_ypath)
+    STAGE2_EP_LAST_NAME = $obj_yml.get_value($stage2_ep_last_name_ypath)
+    STAGE2_EP_NPI = $obj_yml.get_value($stage1_ep_npi_ypath)
+    $str_ep_name = STAGE2_EP_NAME
+  else
+    raise "Invalid stage doctor : #{str_doctor_stage}"
+  end
+  $str_ep = str_doctor_stage
+  $log.success("Current EP is set to #{$str_ep_name}")
+end
+
+# And set EP as "stage1 ep"
+And /^set EP as "([^"]*)"$/ do |str_ep_stage|
+  #$str_ep_name = ""
+  #$str_ep_name = set_ep(str_ep_stage)
+  step %{set "#{str_ep_stage}" as current EP}
+  $str_from_date, $report_generation_time = set_report_range("within report range")
+  $str_report_range = "within report range"
+  #$str_ep = str_ep_stage
+  SITE_NAME1 = $obj_yml.get_value($site_name1_ypath)
+  $arr_patient_id = []
+end
+
+# And "stage1 ep" is "inactivated"
+And /^"([^"]*)" is "([^"]*)"$/ do |str_ep_stage, str_action|
+  if @browser.current_url.include? "vm-ehr-aspire-aio"
+    on(EHR::MasterPage).select_menu_item(ELIGIBLE_PROFESSIONAL)
+  else
+    on(EHR::MasterPage).select_menu_item("Set Up/Eligible Professional")
+  end
+  on(EHR::CreateEP).edit_ep(str_ep_stage, str_action)
+end

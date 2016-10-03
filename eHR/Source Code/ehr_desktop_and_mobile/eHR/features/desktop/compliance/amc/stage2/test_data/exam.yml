@@ -1,0 +1,5 @@
+exam_data:
+  check_count_mu: "true"
+  select_cpt_code: "99441"
+  select_modality_code: "AN - Anesthesiology"
+  textfield_procedure:

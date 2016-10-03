@@ -1,0 +1,118 @@
+=begin
+  *Name             : LabResults
+  *Description      : module to create lab results under Order Entry tab
+  *Author           : Gomathi
+  *Creation Date    : 10/11/2014
+  *Modification Date:
+=end
+
+module EHR
+  module OrderEntryTab
+    module LabResults
+      include PageObject
+      include PageUtils
+      include Pagination
+
+      # Page Object details for create lab result
+      div(:div_lab_result_content,          :id    => "divTestResult")
+      text_field(:textfield_lab_name,       :id    => "ResultLabId_TextBox")
+      div(:div_ajax_lab_name,               :xpath => "//div[@id='ResultLabId_container']/div")
+      text_field(:textfield_report_date,    :id    => "felix-widget-calendar-TestReportedDatestr-input")
+      text_field(:textfield_test_performed, :id    => "LabTestId_TextBox")
+      div(:div_ajax_test_performed,         :xpath => "//div[@id='LabTestId_container']/div")
+      select_list(:select_EP,               :id    => "PhysicianId")
+      select_list(:select_specimen_source,  :id    => "SpecimenSourceCode")
+      text_field(:textfield_test_result,    :id    => "TestResultCode_TextBox")
+      div(:div_test_result_ajax,            :xpath => "//div[@id='TestResultCode_container']/div")
+      text_field(:textfield_test_units,     :id    => "TestUnits")
+
+      button(:button_save_add_more_result,  :id    => "lnkCreateLabResultMain-button")
+      button(:button_save_and_close_result, :xpath => "//div[@id='divTestResult']//button[@id='ActionButton1-button']")  #xpath => "//div[@id='divTestResult']//div[@class='btn_container']//div[2]/span"
+      span(:span_invalid_lab,               :id    => "ErrorLab")
+      span(:span_invalid_test_performed,    :id    => "ErrorTestPerformed")
+      button(:button_save_result,           :id    => "lnkCreateAddResult-button")
+
+      # description  : Function will get invoked when object for page class is created
+      # Author       : Gomathi
+      #
+      def initialize_page
+        wait_for_loading
+        wait_for_object(div_lab_result_content_element, "Failure in finding iframe for create lab result")
+      end
+
+      # Description           : creates a lab result
+      # Author                : Gomathi
+      # Arguments             :
+      #   str_lab_result_node : root node of lab result test data
+      #   str_report_date     : string that denotes lab result report date
+      #   str_affirmation     : string that denotes type of result affirmation
+      #
+      def create_lab_result(str_affirmation, str_report_date, str_lab_result_node = "lab_results_data")
+        begin
+          hash_lab_result = set_scenario_based_datafile(LAB_RESULTS)
+
+          str_lab_name = hash_lab_result[str_lab_result_node]["textfield_lab_name"]
+          str_test_performed = hash_lab_result[str_lab_result_node]["textfield_test_performed"]
+          str_specimen_source = hash_lab_result[str_lab_result_node]["select_specimen_source"]
+          str_positive_test_result = hash_lab_result[str_lab_result_node]["positive_test_result"]
+          str_negative_test_result = hash_lab_result[str_lab_result_node]["negative_test_result"]
+          str_numeric_test_result = hash_lab_result[str_lab_result_node]["numeric_test_result"]
+          str_not_numeric_test_result = hash_lab_result[str_lab_result_node]["not_numeric_test_result"]
+          str_not_positive_test_result = hash_lab_result[str_lab_result_node]["not_positive_test_result"]
+          str_not_negative_test_result = hash_lab_result[str_lab_result_node]["not_negative_test_result"]
+          str_uncoded_test_result = hash_lab_result[str_lab_result_node]["uncoded_test_result"]
+          str_test_units = hash_lab_result[str_lab_result_node]["textfield_test_units"]
+
+          if textfield_lab_name == ""
+            self.textfield_lab_name = str_lab_name
+            wait_for_object(div_ajax_lab_name_element)
+            textfield_lab_name_element.send_keys(:tab)
+
+            self.textfield_test_performed = str_test_performed
+            wait_for_object(div_ajax_test_performed_element)
+            textfield_test_performed_element.send_keys(:tab)
+
+            select_EP_element.when_visible.select($str_ep_name)
+            select_specimen_source_element.select(str_specimen_source)
+          end
+
+          #num_date = str_report_date.to_i
+          #self.textfield_report_date = num_date
+          self.textfield_report_date = str_report_date
+
+          case str_affirmation.downcase
+            when "positive affirmation"
+              self.textfield_test_result = str_positive_test_result
+            when "negative affirmation"
+              self.textfield_test_result = str_negative_test_result
+            when "numeric affirmation"
+              self.textfield_test_result = str_numeric_test_result
+              self.textfield_test_units = str_test_units
+            when "not numeric affirmation"
+              self.textfield_test_result = str_not_numeric_test_result
+            when "not positive affirmation"
+              self.textfield_test_result = str_not_positive_test_result
+            when "not negative affirmation"
+              self.textfield_test_result = str_not_negative_test_result
+            when "uncoded"
+              self.textfield_test_result = str_uncoded_test_result
+              self.textfield_test_units = str_test_units
+            else
+              raise "Invalid input for str_affirmation : #{str_affirmation}"
+          end
+
+          if str_affirmation.downcase != "uncoded" && str_affirmation.downcase != "numeric affirmation"
+            wait_for_object(div_test_result_ajax_element)
+            textfield_test_result_element.send_keys(:tab)
+          end
+          $world.puts("Test data : #{hash_lab_result[str_lab_result_node].to_s}, select_EP => #{$str_ep_name}, textfield_report_date => #{str_report_date}")
+          $log.success("Data population for create Lab Result done successfully")
+        rescue Exception => ex
+          $log.error("Error while creating a Lab result : #{ex}")
+          exit
+        end
+      end
+
+    end
+  end
+end

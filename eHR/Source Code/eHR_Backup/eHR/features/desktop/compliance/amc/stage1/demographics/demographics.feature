@@ -1,0 +1,123 @@
+#Name             : Demographics
+#Description      : covers scenarios under Demographics feature for stage1
+#Author           : Gomathi
+
+@all @s1_demographics @stage1 @milestone4
+Feature: AMC - Verification of Numerator and Denominator changes - Demographics - Stage 1
+
+  Background:
+    Given login as "non EP"
+    
+  @tc_3554
+  Scenario: Verification of Help text and Requirement for Stage 1 Demographics measure
+    When get "requirement" details of "demographics" under "core set" for "stage1 ep" as "within report range"
+    Then the "requirement" of "demographics" under "core set" should be "equal" to "50"
+    When get help text of "demographics" under "core set" from tooltip
+    Then help text for "demographics" should be equal to the text
+    """
+    More than 50% of all unique patients seen by the EP or admitted to the eligible hospital or CAH's inpatient or emergency department (POS 21 or 23) have demographics recorded as structured data.
+    """
+
+  @tc_4470
+  Scenario: Verification of Positive Scenarios in Demographics Stage 1 AMC measure
+    Then get "all" details of "demographics" under "core set" for "stage1 ep" as "outside report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+
+    When get "all" details of "demographics" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "2" exams are created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "1 day" "after" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "MU unchecked" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "inpatient" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "inactive" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+
+  @tc_4476
+  Scenario: Verification of Negative Scenarios in Demographics Stage 1 AMC measure
+    Then get "all" details of "demographics" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "0 and 1"
+    When patient "sex" is updated in demographics tab
+    Then the "numerator" of "demographics" under "core set" should be "increased" by "0"
+    When patient "ethnicity" is updated in demographics tab
+    Then the "numerator" of "demographics" under "core set" should be "increased" by "0"
+    When patient "preferred language" is updated in demographics tab
+    Then the "numerator" of "demographics" under "core set" should be "increased" by "0"
+    When patient "race" is updated in demographics tab
+    Then the "numerator" of "demographics" under "core set" should be "increased" by "1"
+    Then "a record" should be in "demographics" numerator report under "core set"
+
+  @tc_4251
+  Scenario: Verification of Demographics Stage 1 AMC measure does not account visits outside reporting period
+    Then get "all" details of "demographics" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "1 day" "after" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "0"
+    Then "invalid record" should not be in "demographics" numerator report under "core set"
+
+  @tc_4252
+  Scenario: Verification of Demographics Stage 1 AMC measure does not account Inpatient
+    Then get "all" details of "demographics" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+    When the exam is updated as "inpatient"
+    Then the "numerator and denominator" of "demographics" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "demographics" numerator report under "core set"
+
+  @tc_4253
+  Scenario: Verification of Demographics Stage 1 AMC measure does not account non Face-to-Face patients
+    Then get "all" details of "demographics" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    Then "a record" should be in "demographics" numerator report under "core set"
+    When the exam is updated as "MU unchecked"
+    Then the "numerator and denominator" of "demographics" under "core set" should be "decreased" by "1"
+    Then "invalid record" should not be in "demographics" numerator report under "core set"
+
+  @tc_4254
+  Scenario: Verification of Demographics Stage 1 AMC measure does not account patients with Inactive Exams
+    Then get "all" details of "demographics" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "demographics" under "core set" should be "increased" by "1"
+    And "a record" should be in "demographics" numerator report under "core set"
+    When the exam is updated as "inactive"
+    Then the "numerator and denominator" of "demographics" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "demographics" numerator report under "core set"

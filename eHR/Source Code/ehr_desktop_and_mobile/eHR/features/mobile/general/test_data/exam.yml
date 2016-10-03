@@ -1,0 +1,7 @@
+exam_info:
+  checkbox_count_for_mu: "true"
+  select_modality: "AN - Anesthesiology"
+  select_cpt_code:
+  select_ep:
+  textarea_visit_notes: "test visit note"
+  checkbox_add_visit_notes_to_clinical_summary: "true"

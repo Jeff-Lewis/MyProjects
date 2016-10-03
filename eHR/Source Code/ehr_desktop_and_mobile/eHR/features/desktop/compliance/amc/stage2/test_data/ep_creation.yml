@@ -1,0 +1,12 @@
+ep_creation_data_for_stage1:
+  textfield_last_name: "ep1"
+  textfield_first_name: "name"
+  select_status: "Active"
+  select_stage1_start_year: "2014"
+
+ep_creation_data_for_stage2:
+  textfield_last_name: "ep2"
+  textfield_first_name: "name"
+  select_status: "Active"
+  select_stage1_start_year: "2012"
+

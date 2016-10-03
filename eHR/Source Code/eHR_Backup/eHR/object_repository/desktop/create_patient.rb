@@ -1,0 +1,250 @@
+=begin
+  *Name               : CreatePatient
+  *Description        : class to create patient
+  *Author             : Gomathi
+  *Creation Date      : 25/08/2014
+  *Modification Date  :
+=end
+
+module EHR
+  class CreatePatient
+
+    include PageObject
+    include DataMagic
+    include PageUtils
+    include FileLibrary
+    include DateTimeLibrary
+    include Demographics
+
+    div(:div_create_patient,                      :id    => "create_patient")
+    link(:link_close_create_patient,              :class => "container-close")
+    div(:div_patient_create_content,              :id    =>  "CreatePtDiv")
+
+    #Patient Information
+    text_field(:textfield_last_name,              :id    =>  "LastName")
+    text_field(:textfield_first_name,             :id    =>  "FirstName")
+    text_field(:textfield_middle_name,            :id    =>  "MiddleOrInitail")
+    text_field(:textfield_suffix,                 :id    =>  "Suffix")
+    text_field(:textfield_dob,                    :name  =>  "DateOfBirth")
+    text_field(:textfield_age,                    :id    =>  "Age")
+    text_field(:textfield_patient_id,             :id    =>  "PatientId")
+    text_field(:textfield_secondary_patient,      :id    =>  "SecondaryPId")
+    text_field(:textfield_userpin,                :id    =>  "UserPin")
+    select_list(:select_sex,                      :id    =>  "Gender")
+    select_list(:select_ethnicity,                :id    =>  "Ethinicity")
+    select_list(:select_language,                 :id    =>  "Language")
+    text_field(:textfield_ssn,                    :id    =>  "SSN")
+    paragraph(:paragraph_race,                    :id    =>  "p_Race")
+    text_field(:textfield_age, 					          :id    =>  "Age")
+
+    #Address
+    text_field(:textfield_address_line1,          :id    =>  "Address1Street1")
+    text_field(:textfield_address_line2,          :id    =>  "Address1Street2")
+    text_field(:textfield_city,                   :id    =>  "Address1City")
+    select_list(:select_state,                    :id    =>  "address1state")
+    select_list(:select_country,                  :id    =>  "Address1County")
+    text_field(:textfield_zip1,                   :id    =>  "Address1Zip")
+    text_field(:textfield_zip2,                   :id    =>  "Address1Zip1")
+
+    #Contact Information
+    text_field(:textfield_home_phone,             :id    =>  "PhoneHome")
+    text_field(:textfield_emergency_phone,        :id    =>  "PhoneEmergency")
+    text_field(:textfield_preferred_phone,        :id    =>  "PhonePreferred")
+    text_field(:textfield_cell_phone,             :id    =>  "Mobile")
+    text_field(:textfield_email,                  :id    =>  "Email")
+    select_list(:select_preferred_method,         :id    =>  "PreferredContactType")
+    checkbox(:check_reminder,                     :id    =>  "DoNotSendReminders")
+
+    #Next of kin
+    select_list(:select_kin_relationship,         :id    =>  "Relationship")
+    text_field(:textfield_kin_last_name,          :id    =>  "KinLastName")
+    text_field(:textfield_kin_first_name,         :id    =>  "KinFirstName")
+    text_field(:textfield_kin_address,            :id    =>  "KinAddress")
+    text_field(:textfield_kin_city,               :id    =>  "KinCity")
+    text_field(:textfield_kin_phone,              :id    =>  "KinPhone")
+    select_list(:select_kin_state,                :id    =>  "KinState")
+    select_list(:select_kin_county,               :id    =>  "KinCounty")
+    text_field(:textfield_kin_zip1,               :id    =>  "KinZip1")
+    text_field(:textfield_kin_zip2,               :id    =>  "KinZip2")
+
+    #Immunization Recall/Reminder Policy
+    select_list(:select_publicity,                :id    =>  "Publicity")
+    text_field(:textfield_recall_effective_date,  :name  =>  "RecalReminderStatusEffectiveDate")
+    select_list(:select_registry_status,          :id    =>  "RegistryStatus")
+    text_field(:textfield_register_effective_date,:name  =>  "RegistryStatusEffectiveDate")
+    select_list(:select_protection,               :id    =>  "Protection")
+    text_field(:textfield_protect_effective_date, :name  =>  "ProtectionEffectiveDate")
+
+    #Button details
+    button(:button_save_add_more,                 :id    =>  "tlnkCreatePatient-button")
+    button(:button_save_close,                    :id    =>  "lnkCreateClosePatient-button")
+    button(:button_cancel,                        :id    =>  "lnkCloseCreatePatient-button")
+
+    # description  : Function will get invoked when object for page class is created
+    # Author       : Gomathi
+    #
+    def initialize_page
+      wait_for_page_load       # waits until page title is visible
+      wait_for_loading
+    end
+
+    # description               : function to populate data for create patient
+    # Author                    : Gomathi
+    # Arguments                 :
+    #   str_mu                  : describes whether MU fields are needed or not
+    #   str_communication_type  : string that denotes the communication type
+    #   str_patient_node        : root node for test data for Patient
+    # Return value              : patient id of the patient created
+    #
+    def create_patient(str_mu, str_communication_type, str_patient_node = "patient_data")
+      begin
+        wait_for_object(div_patient_create_content_element, "Failure in finding div for create patient")
+        object_date_time = pacific_time_calculation
+        hash_patient_yml = set_scenario_based_datafile(PATIENT)
+
+        str_first_name = hash_patient_yml[str_patient_node]["textfield_first_name"]
+        str_last_name = hash_patient_yml[str_patient_node]["textfield_last_name"]
+        num_dob = hash_patient_yml[str_patient_node]["textfield_dob"]
+        str_email_id = hash_patient_yml[str_patient_node]["textfield_email"]
+
+        if str_mu.include? "capitalized name"    # convert into upper case letters
+          # str_first_name = str_first_name.upcase
+          str_last_name = str_last_name.upcase
+        end
+
+        self.textfield_last_name = str_last_name
+        self.textfield_first_name = object_date_time.strftime("%H%M%S") # add timestamp to first name field
+
+        if str_mu.downcase.include?("age")
+          str_new_dob = dob_calculation(str_mu)
+          self.textfield_dob = str_new_dob.strftime(DATE_FORMAT)
+
+          textfield_dob_element.send_keys(:tab)
+          str_patient_age = textfield_age
+          str_required_age = str_mu.downcase.gsub(/[a-z]/,"").strip
+          arr_patient_age = str_patient_age.downcase.gsub(/[a-z]/,"").strip.split(' ')
+
+          if str_mu.downcase.include?("greater")
+            raise "Patient age is not as per requirement('age greater than #{str_required_age}') : Patient DOB => #{textfield_dob} and age => #{textfield_age}" if !(arr_patient_age[0].to_i > str_required_age.to_i)
+          elsif str_mu.downcase.include?("less")
+            raise "Patient age is not as per requirement('age less than #{str_required_age}') : Patient DOB => #{textfield_dob} and age => #{textfield_age}" if !(arr_patient_age[0].to_i < str_required_age.to_i)
+          else
+            raise "Patient age is not as per requirement('age #{str_required_age}') : Patient DOB => #{textfield_dob} and age => #{textfield_age}" if !(arr_patient_age[0].to_i == str_required_age.to_i)
+          end
+        else
+          self.textfield_dob = num_dob
+        end
+
+        if str_mu.downcase.include?("with mu")
+          select_sex_element.select(hash_patient_yml[str_patient_node]["select_sex"])
+          select_ethnicity_element.select(hash_patient_yml[str_patient_node]["select_ethnicity"])
+          select_language_element.select(hash_patient_yml[str_patient_node]["select_language"])
+          if str_mu.downcase.include?("all race")
+            select_race("all race")
+          elsif str_mu.downcase.include?("race")
+            select_race(str_mu.split("race").last.strip)
+          else
+            select_race(hash_patient_yml[str_patient_node]["paragraph_race"])
+          end
+        end
+
+        self.textfield_email = str_email_id     # sets mail id for patient
+        select_preferred_method_element.select(str_communication_type) if str_communication_type != ""
+
+        if str_mu.downcase.include?("unchecked reminders")
+          uncheck_check_reminder
+        elsif str_mu.downcase.include?("checked reminders")
+          check_check_reminder
+        end
+
+        $world.puts("Test data : #{hash_patient_yml[str_patient_node].to_s}, Test data (change) : textfield_first_name => #{textfield_first_name}")
+        $world.puts("Test data (change) : textfield_last_name => #{str_last_name}") if str_mu.include? "capitalized name"
+        $world.puts("Test data (change) : textfield_dob => #{textfield_dob}") if str_mu.downcase.include?("age")
+        $world.puts("Test data (change) : paragraph_race => #{paragraph_race_element.text}") if str_mu.downcase.include?("race")
+        $world.puts("Test data : Preferred method of confidential communication => #{select_preferred_method}") if str_communication_type != ""
+        $log.success("Data population for create patient done successfully")
+        $str_patient_name = "#{textfield_first_name} #{textfield_last_name}"
+        return textfield_patient_id
+      rescue Exception => ex
+        $log.error("Error while populating data for create a patient : #{ex}")
+        exit
+      end
+    end
+
+    # description               : function to create a patient
+    # Author                    : Gomathi
+    # Arguments                 :
+    #   str_mu                  : describes whether MU fields are needed or not
+    #   str_communication_type  : string that denotes the communication type
+    # Return value              : patient id of the patient created
+    #
+    def save_close_for_create_patient(str_mu, str_communication_type)
+      begin
+        patient_id = create_patient(str_mu, str_communication_type)
+        button_save_close_element.when_visible.focus
+        str_message = confirm(true) do      # clicks 'Ok' button on the confirm message box
+          button_save_close_element.click
+        end
+        return patient_id
+      rescue Exception => ex
+        $log.error("Error while creating a patient : #{ex}")
+        exit #return false
+      end
+    end
+
+    # description               : function to create more patients
+    # Author                    : Gomathi
+    # Arguments                 :
+    #   str_mu                  : describes whether MU fields are needed or not
+    #   str_communication_type  : string that denotes the communication type
+    # Return value              : patient id of the patient created
+    #
+    def save_add_more_for_create_patient(str_mu, str_communication_type)
+      begin
+        patient_id = create_patient(str_mu, str_communication_type)
+        str_message = confirm(true) do      # clicks 'Ok' button on the confirm message box
+          button_save_add_more_element.click
+        end
+        return patient_id
+      rescue Exception => ex
+        $log.error("Error while creating the patients : #{ex}")
+        exit
+      end
+    end
+
+    # description       : function for calculating Date of Birth of a patient
+    # Author            : Gomathi
+    # Arguments         :
+    #   str_mu          : describes whether MU fields are needed or not
+    # Return value
+    #   str_new_dob     : Date of Birth for the patient
+    #
+    def dob_calculation(str_mu)
+      begin
+        str_required_age = str_mu.downcase.gsub(/[a-z]/,"").strip
+        object_date_time = pacific_time_calculation
+
+        if str_mu.downcase.include?("greater") && !str_required_age.nil?
+          str_new_dob = object_date_time - (str_required_age.to_i + 1).years
+        elsif str_mu.downcase.include?("less") && !str_required_age.nil?
+          str_new_dob = object_date_time - (str_required_age.to_i - 1).years
+        elsif !str_required_age.nil?
+          if str_mu.downcase.include?("on current date")
+            str_new_dob = object_date_time - str_required_age.to_i.years
+          else
+            str_new_dob = object_date_time - str_required_age.to_i.years
+            str_new_dob = str_new_dob - 1.days
+          end
+
+        else
+          raise "Required age can not be nil : #{str_required_age}"
+        end
+        return str_new_dob
+      rescue Exception => ex
+        $log.error("Error while calculating age based on current date : #{ex}")
+        exit
+      end
+    end
+
+  end
+end

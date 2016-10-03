@@ -1,0 +1,12 @@
+lab_results_data:
+  textfield_lab_name: "San Diego Lab"
+  textfield_test_performed: "718-7 - Hemoglobin"  #"718-7 - Hemoglobin [Mass/volume] in Blood"    #"6460-0 - Bacteria Spt Cult"
+  select_specimen_source: "Blood"
+  positive_test_result: "Positive (qualifier value)"
+  negative_test_result: "Negative (qualifier value)"
+  numeric_test_result: "1"
+  uncoded_test_result: "result"
+  not_numeric_test_result: "Inconclusive (qualifier value)"
+  not_positive_test_result: "Indeterminate (qualifier value)"
+  not_negative_test_result: "Equivocal (qualifier value)"
+  textfield_test_units: "5"

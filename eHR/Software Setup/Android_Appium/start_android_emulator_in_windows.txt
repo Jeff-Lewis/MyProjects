@@ -1,0 +1,55 @@
+emulator -avd Android_442_nexus4_arm
+emulator -avd Andriod_403_nexus4_arm
+
+command : 
+C:\Users\chandrasekar.raja\AppData\Local\Android\android-studio\sdk\tools>emulator -avd Andriod_403_nexus4_arm
+C:\Users\chandrasekar.raja\AppData\Local\Android\android-studio\sdk\tools>adb devices
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+List of devices attached
+emulator-5554   device
+
+adb kill-server
+adb start-server
+
+adb version
+Android Debug Bridge version 1.0.32
+
+http://appium.wikia.com/wiki/Mobile_Commands
+https://discuss.appium.io/t/launching-and-stopping-appium-server-programmtically/700
+http://www.browserstack.com/automate/ruby
+http://www.browserstack.com/automate/ruby#cucumber-capybara
+
+
+for ios automation : -
+http://shashikantjagtap.net/ios-automated-testing-in-the-bdd-with-appium-cucumber-on-mac-osx/
+http://www.slideshare.net/Shashikant86/ios-developers-conferenceios-automation-with-cucumber-appium-and-saucelabs
+https://developer.apple.com/xcode/ide/
+http://blog.getspool.com/79/download-install-xcode-windows-7-8-pc/
+
+
+
+https://developer.chrome.com/devtools/docs/remote-debugging
+http://www.hmtweb.com/marketing-blog/android-remote-debugging-with-chrome/
+
+https://github.com/appium/ruby_lib
+https://bitbucket.org/appium/appium.app/downloads/
+https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/mobile-web.md
+
+http://appium.io/slate/en/v1.0.0/?ruby#appium-server-capabilities    ---------for capabilities
+
+
+http://architects.dzone.com/articles/cross-platform-test-automation
+http://blog.appthwack.com/
+http://www.quora.com/Where-can-I-find-online-help-for-Appium-Android
+http://stackoverflow.com/questions/tagged/appium
+
+http://www.raweng.com/blog/category/mobile/                ------ useful
+
+                                :platform => "ANDROID",
+								
+http://learni.st/users/370276/boards/91120-the-oldest-animals-that-ever-lived
+
+IOS links : -
+http://shashikantjagtap.net/ios-automated-testing-in-the-bdd-with-appium-cucumber-on-mac-osx/
+A14122141893

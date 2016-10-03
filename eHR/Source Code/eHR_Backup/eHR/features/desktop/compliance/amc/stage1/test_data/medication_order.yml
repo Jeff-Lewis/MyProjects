@@ -1,0 +1,36 @@
+medication_order_data1:
+  select_priority: "Routine"
+  select_pharmacy: "Pharmacy 1 - 619-858-6600"
+  textarea_medication_notes: "test medication notes"
+  textfield_medication: "Aspirin/Codeine (Oral Pill)"
+  select_potency_units: "CAPSULE"
+  textfield_no_of_refills: 1
+  select_frequency_and_timing: "pc - after meals"
+  textfield_dispense_amount: 30
+  textfield_dispense_units: "x"
+  textfield_master_medication: "Afatinib (Oral Pill) 40 mg"
+
+medication_order_data2:
+  select_priority: "Routine"
+  select_pharmacy: "Pharmacy 1 - 619-858-6600"
+  textarea_medication_notes: "test medication notes"
+  textfield_medication: "AVAR LS (Topical)"
+  select_potency_units: "CAPSULE"
+  textfield_no_of_refills: 1
+  select_frequency_and_timing: "pc - after meals"
+  textfield_dispense_amount: 30
+  textfield_dispense_units: "x"
+  textfield_master_medication: "Afatinib (Oral Pill) 40 mg"
+
+medication_order_controlled:
+  select_priority: "Routine"
+  select_pharmacy: "Pharmacy 1 - 619-858-6600"
+  textarea_medication_notes: "test medication notes"
+  textfield_medication: "Acyclovir (Buccal)"
+  select_potency_units: "CAPSULE"
+  textfield_no_of_refills: 1
+  select_frequency_and_timing: "pc - after meals"
+  textfield_dispense_amount: 30
+  textfield_dispense_units: "x"
+  textfield_master_medication: "Afatinib (Oral Pill) 40 mg"
+

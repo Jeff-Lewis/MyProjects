@@ -1,0 +1,6 @@
+smoking_status_data1:
+  select_smoking_status: "3 Ex-smoker (finding)"
+smoking_status_data2:
+  select_smoking_status: "4 Never smoked tobacco (finding)"
+smoking_status_data3:
+  select_smoking_status: "1 Smokes tobacco daily (finding)"

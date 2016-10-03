@@ -1,0 +1,89 @@
+=begin
+  *Name             : OrderEntryRadiology
+  *Description      : module that contains all objects and methods in Radiology under Order Entry tab
+  *Author           : Gomathi
+  *Creation Date    : 09/10/2014
+  *Modification Date:
+=end
+
+module EHR
+  module OrderEntryTab
+    module OrderEntryRadiology
+      include PageObject
+      include PageUtils
+      include Pagination
+
+      # radiology order details
+      text_field(:textfield_site,                :id        => "ClinicId_TextBox")
+      select_list(:select_radiology_ordered_by,  :id        => "PhysicianId")
+      text_field(:textfield_date,                :id        => "felix-widget-calendar-OrderEnteredDatestr-input")
+      checkbox(:check_radiology_exclude_from_eoe,:id        => "ExcludeRadiologyFromEOE")
+      text_area(:textarea_radiology_notes,       :id        => "NotesRadiology")
+      div(:div_site_ajax,                        :xpath     => "//div[@id='ClinicId_container']/div")
+      span(:span_invalid_site,                   :id        => "errorsitenm")
+
+      select_list(:select_modality,              :id        => "ModalityCode")
+      text_field(:textfield_radiology_exam,      :xpath     => "//div[@id='divremoveRadioList']//div[2]/input")
+      div(:div_radiology_exam_ajax,              :xpath     => "//div[@id='divremoveRadioList']/div//div[@class='yui-ac-content']")
+
+      button(:button_place_radiology_order,      :id        => "lnkPlaceRadiologyOrder-button")
+      button(:button_cancel_radiology,           :id        => "ActionButton2-button")  #xpath => "//div[@id='divRadiologyTestAdd']//div[@class='btn_container']//div[2]/span"
+
+      # previous orders of patients
+      div(:div_radiology_order,                  :id        => "Radiology_Order_details")
+      table(:table_radiology_order,              :xpath     => "//div[@id='Radiology_Order_details']/table")
+      link(:link_print_TOC_send_direct,          :link_text => "Print TOC / Send Direct")
+
+      # Description                : creates a radiology order
+      # Author                     : Gomathi
+      # Arguments                  :
+      #   str_radiology_order_node : root node of test data
+      #
+      def create_radiology_order(str_radiology_order_node = "radiology_order_data")
+        begin
+          wait_for_loading
+
+          hash_radiology_order = set_scenario_based_datafile("radiology_order.yml")
+
+          str_site = hash_radiology_order[str_radiology_order_node]["textfield_site"]
+          str_priority = hash_radiology_order[str_radiology_order_node]["select_priority"]
+          str_modality = hash_radiology_order[str_radiology_order_node]["select_modality"]
+          str_radiology_exam = hash_radiology_order[str_radiology_order_node]["textfield_radiology_exam"]
+
+		      object_date_time = pacific_time_calculation
+          str_order_date = object_date_time.strftime(DATE_FORMAT)
+
+          self.textfield_site = str_site
+          wait_for_object(div_site_ajax_element)
+          textfield_site_element.focus
+          textfield_site_element.send_keys(:tab)
+
+          select_priority_element.when_visible.select(str_priority)
+          select_radiology_ordered_by_element.when_visible.select($str_ep_name)
+          textfield_date_element.focus
+          self.textfield_date = str_order_date
+          select_modality_element.when_visible.select(str_modality)
+
+          self.textfield_radiology_exam = str_radiology_exam
+          wait_for_object(div_radiology_exam_ajax_element)
+          textfield_radiology_exam_element.focus
+          textfield_radiology_exam_element.send_keys(:tab)
+
+          3.times { button_place_radiology_order_element.send_keys(:arrow_down) } rescue Exception
+          click_on(button_place_radiology_order_element)
+          raise "Validation error : #{span_invalid_site_element.text}" if span_invalid_site_element.visible?
+
+          raise "Could not find 'Radiology Order created successfully' message" if !is_text_present(self, "Radiology order created successfully")
+          $log.success("Radiology order created successfully")
+          $world.puts("Test data : #{hash_radiology_order[str_radiology_order_node].to_s}, select_radiology_ordered_by => #{$str_ep_name}, textfield_date => #{str_order_date}")
+        rescue Exception => ex
+          $log.error("Error while creating radiology order : #{ex}")
+          exit
+        end
+      end
+
+    end
+  end
+end
+
+

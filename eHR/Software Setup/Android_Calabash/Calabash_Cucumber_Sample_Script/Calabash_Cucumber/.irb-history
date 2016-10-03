@@ -1,0 +1,35 @@
+reinstall_apps
+start_test_server_in_background
+query("Button")
+exit
+reinstall_apps
+query("Button")
+query("TextView tex
+query("TextView text:'Enter your GitHub credentials'")
+query("*")
+system("adb shell input text sos")
+exit
+reinstall_apps
+start_test_server_in_background
+start_test_server_in_background
+reinstall_apps
+start_test_server_in_background
+start_test_server_in_background
+exit
+reinstall_apps
+exit
+reinstall_apps
+start_test_server_in_background
+exit
+reinstall_apps
+start_test_server_in_background
+query("Button")
+query("TextView")
+query("TextView").size
+query("*")
+query("EditText id:'githubEmail'", {:setText => 'rcsekar90@gmail.com'})
+query("EditText id:'githubPassword'", {:setText => '12345'})
+touch("view marked:'Login'")
+touch("* id:'button'")
+query("Button")
+exit

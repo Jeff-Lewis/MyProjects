@@ -1,0 +1,126 @@
+#Name             : Preventive Care
+#Description      : covers scenarios under Preventive Care feature for stage2
+#Author           : Chandra sekaran
+
+@all @s2_preventive_care @stage2 @milestone2
+Feature: AMC - Verification of Numerator and Denominator changes - Preventive Care - Stage 2
+
+  Background:
+    Given login as "non EP"
+
+  @tc_666 @tc_help_text
+  Scenario: Verify Help text and Requirement column value for Preventive Care stage2 AMC
+    When get "requirement" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    Then the "requirement" of "Preventive Care" under "core set" should be "equal" to "10"
+    When get help text of "Preventive Care" under "core set" from tooltip
+    Then help text for "Preventive Care" should be equal to the text
+    """
+    More than 10 percent of all unique patients who have had 2 or more office visits with the EP within the 24 months before the beginning of the EHR reporting period were sent a reminder, per patient preference when available.
+    """
+
+  @tc_6627
+  Scenario: Preventive Care does take into account patients seen outside reporting period
+    When a "stage2 ep" is created with "two years before" as "stage1 start year"
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and unchecked reminders"
+    # Since the exam start date is 24 months prior to start of reporting period, mentioning as 36 months
+    And "2" exams are created for the patient as "3 years" "before" the reporting period
+    Then the patient record "should not" exists in "Send Patient Reminder" report page
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Preventive Care" numerator report under "core set"
+
+    When a patient is created "with MU and unchecked reminders"
+    And "1" exam is created for the patient as "active" and "2 years" "before" the reporting period
+    And "1" exam is created for the patient as "3 years" "before" the reporting period
+    Then the patient record "should not" exists in "Send Patient Reminder" report page
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Preventive Care" numerator report under "core set"
+
+  @tc_6629
+  Scenario: Preventive Care does not account Inpatients visits seen within reporting period
+    Then send all pending reminders
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and unchecked reminders"
+    And "1" exam is created for the patient as "outpatient" and "2 years" "before" the reporting period
+    And "1" exam is created for the patient as "inpatient" and "2 years" "before" the reporting period
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0"
+    And Send button "should not" be displayed for "Preventive Care"
+
+  @tc_6632
+  Scenario: Preventive Care does not account patients with only 1 visits within 24 months prior to RP
+    Then send all pending reminders
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and unchecked reminders"
+    And "1" exam is created for the patient as "active" and "2 years" "before" the reporting period
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0"
+    And Send button "should not" be displayed for "Preventive Care"
+
+  @tc_6628
+  Scenario: Preventive Care does not take into account for non face-to-face patients
+    Then send all pending reminders
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and unchecked reminders"
+    And "1" exam is created for the patient as "MU checked" and "2 years" "before" the reporting period
+    And "1" exam is created for the patient as "MU unchecked" and "2 years" "before" the reporting period
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0"
+    And Send button "should not" be displayed for "Preventive Care"
+
+  @tc_6630
+  Scenario: Preventive Care does not take into account for patients with inactive visit
+    Then send all pending reminders
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and unchecked reminders"
+    And "1" exam is created for the patient as "active" and "2 years" "before" the reporting period
+    And "1" exam is created for the patient as "inactive" and "2 years" "before" the reporting period
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0"
+    And Send button "should not" be displayed for "Preventive Care"
+
+  @tc_668
+  Scenario: Numerator value for Preventive Care stage 2 AMC measure
+    Then send all pending reminders
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and unchecked reminders"
+    And "2" exams are created for the patient as "active" and "2 years" "before" the reporting period
+    And the reminder is sent for the patient from "Send Patient Reminders" page
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "1"
+    And "a record" should be in "Preventive Care" numerator report under "core set"
+
+    When a patient is created "with MU and unchecked reminders"
+    And "2" exams are created for the patient as "active" and "2 years" "before" the reporting period
+    Then the "denominator" of "Preventive Care" under "core set" should be "increased" by "1"
+    And Send button "should" be displayed for "Preventive Care"
+    Then the reminder is sent for the patient from "AMC Report" page
+    Then the "numerator" of "Preventive Care" under "core set" should be "increased" by "1"
+    And "a record" should be in "Preventive Care" numerator report under "core set"
+
+  @tc_3229
+  Scenario: Send button "should not" be displayed when current date is not within reporting period
+    Then send all pending reminders
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and unchecked reminders"
+    And "2" exams are created for the patient as "active" and "2 years" "before" the reporting period
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0 and 1"
+    Then the reminder is sent for the patient from "AMC Report" page
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "1 and 0"
+
+    When a patient is created "with MU and unchecked reminders"
+    And "2" exams are created for the patient as "active" and "2 years" "before" the reporting period
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0 and 1"
+    Then the reminder is sent for the patient from "AMC Report" page
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "1 and 0"
+
+    When get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "outside report range"
+    Then Send button "should not" be displayed for "Preventive Care"
+    #And the "numerator" of "Preventive Care" under "core set" should be "decreased" by "2"
+
+  @tc_6631
+  Scenario: Preventive Care does not account for patients who do not want to receive reminders
+    Then send all pending reminders
+    Then get "all" details of "Preventive Care" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and checked reminders"
+    And "2" exams are created for the patient as "active" and "2 years" "before" the reporting period
+    Then the "numerator and denominator" of "Preventive Care" under "core set" should be "increased" by "0 and 1"
+    And Send button "should" be displayed for "Preventive Care"
+    Then the reminder is sent for the patient from "AMC Report" page
+    And "invalid record" should not be in "Preventive Care" numerator report under "core set"
+    Then set "stage2 ep" as current EP

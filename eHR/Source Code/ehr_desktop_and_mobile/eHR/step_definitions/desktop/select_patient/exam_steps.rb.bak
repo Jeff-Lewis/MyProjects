@@ -1,0 +1,323 @@
+# Description   : step definitions for steps related to Patient Exam
+# Author        : Gomathi
+
+# And "2" exams are created for the patient as "active" and "3 years" "before" the reporting period
+And /^"([^"]*)" (?:exam is|exams are) created for the patient as(?:| "([^"]*)" and)? "([^"]*)" "([^"]*)" the reporting period$/ do |str_exam_count, str_exam_attribute, str_date_attribute, str_report_range|
+  str_exam_attribute ||= ""
+  object_date_time = pacific_time_calculation
+  str_current_year = object_date_time.strftime("%Y")
+  str_exam_time = exam_date_time_calculation(str_date_attribute, str_report_range)
+  str_exam_creation_year = str_exam_time.strftime("%Y")
+
+  if str_current_year != str_exam_creation_year && !str_date_attribute.downcase.include?("year")
+    $log.success("The Exam creation date(#{str_exam_time.strftime(DATE_FORMAT_WITH_SLASH)}) not comes under Current Year(#{str_current_year})")
+    pending
+  end
+
+  on(EHR::MasterPage).select_menu_item(HOME)
+  wait_for_loading
+  click_on(on(EHR::SearchPatient).span_create_exam_visit_element)
+
+  num_additional_exam_count = str_exam_count.to_i - 1
+  num_additional_exam_count.times do
+    @str_exam_id = on(EHR::CreateExam).save_add_more_for_create_exam_visit(str_exam_attribute, str_exam_time)
+    raise "Exam for the patient #{@str_patient_id} is not created successfully" if !is_text_present(on(EHR::CreateExam), "Exam/Visit created successfully", 15)
+    $arr_all_exam_id << @str_exam_id
+  end
+
+  @str_exam_id = on(EHR::CreateExam).save_close_for_create_exam_visit(str_exam_attribute, str_exam_time)
+  $arr_all_exam_id << @str_exam_id
+  if str_exam_attribute.downcase.include?("inactive")
+    arr_exam_id = $arr_all_exam_id - $arr_valid_exam_id
+    on(EHR::SearchPatient).update_exam_status(arr_exam_id, "inactive")
+    $world.puts("Test data (update) : Inactive")
+  end
+
+  raise "No such visit/exam exists with id #{$arr_all_exam_id}" if !on(EHR::SearchPatient).is_exam_exists($arr_all_exam_id)
+  $log.success("Exam(s)/Visit(s) created successfully (#{$arr_all_exam_id}) for patient #{@str_patient_id}")
+end
+
+# And "1" exam is created as "active" "12 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+And /^"([^"]*)" exam is created as(?: "([^"]*)")? "([^"]*)" "([^"]*)" the reporting period and "([^"]*)"$/ do |str_exam_count, str_exam_attribute, str_date_attribute, str_report_range, str_day_specification|
+  str_exam_attribute ||= ""
+  str_exam_time = exam_date_time_calculation(str_date_attribute, str_report_range)
+  arr_date_attribute = str_date_attribute.split(" ")
+  arr_date_attribute[1] = "hours" if str_report_range.downcase == "on" && arr_date_attribute[1].nil?
+  arr_week_ends = ["saturday", "sunday"]
+  arr_specific_days = ["on saturday", "on sunday", "on friday", "on thursday"]
+
+  if str_day_specification.downcase == "not in week end or us federal holiday"
+    if weekend_calculation(str_date_attribute, str_report_range) && holiday_calculation(str_date_attribute, str_report_range)
+      if ($report_generation_time.strftime("%A").downcase == "saturday" || $report_generation_time.strftime("%A").downcase == "sunday" || $arr_holidays.include?($report_generation_time.strftime(DATE_FORMAT_WITH_SLASH))) && ($scenario_tags.include?("@tc_500") || $scenario_tags.include?("@tc_4236") || $scenario_tags.include?("@tc_4766") || $scenario_tags.include?("@tc_4765") || $scenario_tags.include?("@tc_7680")) && $str_report_range.downcase != "outside report range"
+        $log.success("This scenario runs only on week days")
+        pending
+      end
+      str_new_date_attribute = "#{arr_date_attribute[0].to_f + 72} #{arr_date_attribute[1]}"
+      str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+      if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase) || arr_week_ends.include?((str_new_exam_time + 1.days).strftime("%A").downcase) # || arr_week_ends.include?((str_new_exam_time + 2.days).strftime("%A").downcase)
+        str_new_date_attribute = "#{arr_date_attribute[0].to_f + 120} #{arr_date_attribute[1]}"
+        str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+        if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 168} #{arr_date_attribute[1]}"
+        elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH)) || $arr_holidays.include?((str_new_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH))
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 144} #{arr_date_attribute[1]}"
+        else
+          str_final_date_attribute = str_new_date_attribute
+        end
+      elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH)) || $arr_holidays.include?((str_new_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH)) || $arr_holidays.include?((str_new_exam_time + 2.days).strftime(DATE_FORMAT_WITH_SLASH))
+        str_new_date_attribute = "#{arr_date_attribute[0].to_f + 96} #{arr_date_attribute[1]}"
+        str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+        if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 144} #{arr_date_attribute[1]}"
+        elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 120} #{arr_date_attribute[1]}"
+        else
+          str_final_date_attribute = str_new_date_attribute
+        end
+      else
+        str_final_date_attribute = str_new_date_attribute
+      end
+
+    elsif weekend_calculation(str_date_attribute, str_report_range)
+      if ($report_generation_time.strftime("%A").downcase == "saturday" || $report_generation_time.strftime("%A").downcase == "sunday" || $arr_holidays.include?($report_generation_time.strftime(DATE_FORMAT_WITH_SLASH))) && ($scenario_tags.include?("@tc_500") || $scenario_tags.include?("@tc_4236") || $scenario_tags.include?("@tc_4766") || $scenario_tags.include?("@tc_4765") || $scenario_tags.include?("@tc_7680")) && $str_report_range.downcase != "outside report range"
+        $log.success("This scenario runs only on week days")
+        pending
+      end
+      str_new_date_attribute = "#{arr_date_attribute[0].to_f + 48} #{arr_date_attribute[1]}"
+      str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+      if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+        str_new_date_attribute = "#{arr_date_attribute[0].to_f + 96} #{arr_date_attribute[1]}"
+        str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+        if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 144} #{arr_date_attribute[1]}"
+        elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH)) || $arr_holidays.include?((str_new_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH))
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 120} #{arr_date_attribute[1]}"
+        else
+          str_final_date_attribute = str_new_date_attribute
+        end
+      elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH)) || $arr_holidays.include?((str_new_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH))
+        str_new_date_attribute = "#{arr_date_attribute[0].to_f + 72} #{arr_date_attribute[1]}"
+        str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+        if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 120} #{arr_date_attribute[1]}"
+        elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 96} #{arr_date_attribute[1]}"
+        else
+          str_final_date_attribute = str_new_date_attribute
+        end
+      else
+        str_final_date_attribute = str_new_date_attribute
+      end
+
+    elsif holiday_calculation(str_date_attribute, str_report_range)
+      if ($report_generation_time.strftime("%A").downcase == "saturday" || $report_generation_time.strftime("%A").downcase == "sunday" || $arr_holidays.include?($report_generation_time.strftime(DATE_FORMAT_WITH_SLASH))) && ($scenario_tags.include?("@tc_500") || $scenario_tags.include?("@tc_4236") || $scenario_tags.include?("@tc_4766") || $scenario_tags.include?("@tc_4765") || $scenario_tags.include?("@tc_7680")) && $str_report_range.downcase != "outside report range"
+        $log.success("This scenario runs only on week days")
+        pending
+      end
+      str_new_date_attribute = "#{arr_date_attribute[0].to_f + 24} #{arr_date_attribute[1]}"
+      str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+      if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+        str_new_date_attribute = "#{arr_date_attribute[0].to_f + 72} #{arr_date_attribute[1]}"
+        str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+        if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 120} #{arr_date_attribute[1]}"
+        elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH)) || $arr_holidays.include?((str_new_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH))
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 96} #{arr_date_attribute[1]}"
+        else
+          str_final_date_attribute = str_new_date_attribute
+        end
+      elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+        str_new_date_attribute = "#{arr_date_attribute[0].to_f + 48} #{arr_date_attribute[1]}"
+        str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+        if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 96} #{arr_date_attribute[1]}"
+        elsif $arr_holidays.include?(str_new_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+          str_final_date_attribute = "#{arr_date_attribute[0].to_f + 72} #{arr_date_attribute[1]}"
+        else
+          str_final_date_attribute = str_new_date_attribute
+        end
+      else
+        str_final_date_attribute = str_new_date_attribute
+      end
+
+    else
+      str_final_date_attribute = str_date_attribute
+    end
+
+  elsif str_day_specification.downcase == "on us federal holiday"
+    if weekend_calculation(str_date_attribute, str_report_range) && $arr_holidays.include?(str_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+      str_new_date_attribute = "#{arr_date_attribute[0].to_f + 48} #{arr_date_attribute[1]}"
+      str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+      if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+        str_final_date_attribute = "#{arr_date_attribute[0].to_f +96} #{arr_date_attribute[1]}"
+      else
+        str_final_date_attribute = str_new_date_attribute
+      end
+    elsif $arr_holidays.include?(str_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+      str_final_date_attribute = str_date_attribute
+    else
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not a US Federal Holiday and the date is '#{str_exam_time.strftime(DATE_FORMAT_WITH_SLASH)}'")
+      pending
+    end
+
+  elsif str_day_specification.downcase == "1 day prior to us federal holiday"
+    if weekend_calculation(str_date_attribute, str_report_range) && $arr_holidays.include?((str_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH))
+      str_new_date_attribute = "#{arr_date_attribute[0].to_f + 48} #{arr_date_attribute[1]}"
+      str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+      if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+        str_final_date_attribute = "#{arr_date_attribute[0].to_f +96} #{arr_date_attribute[1]}"
+      else
+        str_final_date_attribute = str_new_date_attribute
+      end
+    elsif $arr_holidays.include?((str_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH))
+      str_final_date_attribute = str_date_attribute
+    else
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not 1 day prior to US Federal Holiday and the date is '#{str_exam_time.strftime(DATE_FORMAT_WITH_SLASH)}'")
+      pending
+    end
+
+  elsif str_day_specification.downcase == "2 days prior to us federal holiday"
+    if weekend_calculation(str_date_attribute, str_report_range) && $arr_holidays.include?((str_exam_time + 2.days).strftime(DATE_FORMAT_WITH_SLASH))
+      str_new_date_attribute = "#{arr_date_attribute[0].to_f + 48} #{arr_date_attribute[1]}"
+      str_new_exam_time = exam_date_time_calculation(str_new_date_attribute, str_report_range)
+      if arr_week_ends.include?(str_new_exam_time.strftime("%A").downcase)
+        str_final_date_attribute = "#{arr_date_attribute[0].to_f +96} #{arr_date_attribute[1]}"
+      else
+        str_final_date_attribute = str_new_date_attribute
+      end
+    elsif $arr_holidays.include?((str_exam_time + 2.days).strftime(DATE_FORMAT_WITH_SLASH))
+      str_final_date_attribute = str_date_attribute
+    else
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not 2 days prior to US Federal Holiday and the date is '#{str_exam_time.strftime(DATE_FORMAT_WITH_SLASH)}'")
+      pending
+    end
+
+  elsif arr_specific_days.include?(str_day_specification.downcase)
+    if holiday_calculation(str_date_attribute, str_report_range) && str_day_specification.downcase.include?(str_exam_time.strftime("%A").downcase)
+      if str_day_specification.downcase == "on sunday"
+        str_final_date_attribute = "#{arr_date_attribute[0].to_f + 48} #{arr_date_attribute[1]}"
+      else
+        str_final_date_attribute = "#{arr_date_attribute[0].to_f + 24} #{arr_date_attribute[1]}"
+      end
+    elsif str_day_specification.downcase.include?(str_exam_time.strftime("%A").downcase)
+      str_final_date_attribute = str_date_attribute
+    else
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not '#{str_day_specification}' and the day is '#{str_exam_time.strftime("%A")}'")
+      pending
+    end
+  else
+    raise "Invalid input for str_day_specification : #{str_day_specification}"
+  end
+  step %{"#{str_exam_count}" exam is created for the patient as "#{str_exam_attribute}" and "#{str_final_date_attribute}" "#{str_report_range}" the reporting period}
+end
+
+# And ensure "24 hours" "after" the reporting period is not a Week end and not a US Federal Holiday
+And /^ensure "([^"]*)" "([^"]*)" the reporting period is not a Week end and not a US Federal Holiday$/ do |str_date_attribute, str_report_range|
+  str_exam_time = exam_date_time_calculation(str_date_attribute, str_report_range)
+  arr_week_ends = ["saturday", "sunday"]
+
+  if weekend_calculation(str_date_attribute, str_report_range)  #arr_week_ends.include?(str_exam_time.strftime("%A").downcase)
+    if $scenario_tags.include?("@tc_4762")
+      step %{get "all" details of "#{@str_amc_objective}" under "#{@str_amc_table}" for "#{$str_ep}" as "3 days before within report range"}
+    else
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period consists weekend")
+      pending
+      end
+  elsif holiday_calculation(str_date_attribute, str_report_range)  #$arr_holidays.include?(str_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+    if $scenario_tags.include?("@tc_4762")
+      step %{get "all" details of "#{@str_amc_objective}" under "#{@str_amc_table}" for "#{$str_ep}" as "2 days before within report range"}
+    else
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period consists US Federal Holiday")
+      pending
+    end
+  end
+end
+
+# And ensure "143.5 hours" "before" the reporting period is "saturday"
+And /^ensure "([^"]*)" "([^"]*)" the reporting period is "([^"]*)"$/ do |str_date_attribute, str_report_range, str_day|
+  str_exam_time = exam_date_time_calculation(str_date_attribute, str_report_range)
+  arr_specific_days = ["saturday", "sunday", "friday", "thursday"]
+
+  if str_day.downcase == "2 days prior to us federal holiday"
+    if !$arr_holidays.include?((str_exam_time + 2.days).strftime(DATE_FORMAT_WITH_SLASH))
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not 2 days before US Federal Holiday and the date is '#{str_exam_time.strftime(DATE_FORMAT_WITH_SLASH)}'")
+      pending
+    end
+  elsif str_day.downcase == "1 day prior to us federal holiday"
+    if !$arr_holidays.include?((str_exam_time + 1.days).strftime(DATE_FORMAT_WITH_SLASH))
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not 1 day before US Federal Holiday and the date is '#{str_exam_time.strftime(DATE_FORMAT_WITH_SLASH)}'")
+      pending
+    end
+  elsif str_day.downcase == "us federal holiday"
+    if !$arr_holidays.include?(str_exam_time.strftime(DATE_FORMAT_WITH_SLASH))
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not a US Federal Holiday and the date is '#{str_exam_time.strftime(DATE_FORMAT_WITH_SLASH)}'")
+      pending
+    end
+  elsif arr_specific_days.include?(str_day.downcase)
+    if !(str_day.downcase == str_exam_time.strftime("%A").downcase)
+      $log.success("#{str_date_attribute} #{str_report_range} reporting period is not a '#{str_day}' and the day is '#{str_exam_time.strftime("%A")}'")
+      pending
+    end
+  else
+    raise "Invalid input for str_day : #{str_day}"
+  end
+end
+
+# When the exam is updated as "inpatient"
+When /^the exam is updated as "(.*?)"$/ do |str_exam_attribute|
+  on(EHR::MasterPage).select_menu_item(HOME)
+  wait_for_loading
+  on(EHR::SearchPatient).edit_exam_visit(@str_exam_id) if str_exam_attribute.downcase != "inactive" && str_exam_attribute.downcase != "active"
+
+  on(EHR::CreateExam) do |page|
+    case str_exam_attribute.downcase
+      when "mu unchecked"
+        page.uncheck_check_count_mu
+      when "mu checked"
+        page.check_check_count_mu
+      when "inpatient"
+        page.select_radio_inpatient
+      when "outpatient"
+        page.select_radio_outpatient
+      when "send visit information to phr unchecked"
+        page.uncheck_check_exclude_send
+      when "inactive"
+        on(EHR::SearchPatient).update_exam_status([@str_exam_id], str_exam_attribute)
+      when "active"
+        on(EHR::SearchPatient).update_exam_status([@str_exam_id], str_exam_attribute)
+      else
+        raise "Invalid exam attribute : #{str_exam_attribute}"
+    end
+
+    if str_exam_attribute.downcase != "inactive" && str_exam_attribute.downcase != "active"
+      page.button_save_edited_exam_element.scroll_into_view rescue Exception
+      click_on(page.button_save_edited_exam_element)
+    end
+    $log.success("Exam updated as : #{str_exam_attribute}")
+
+    arr_invalid_exam_attribute = ["mu unchecked", "inpatient", "send visit information to phr unchecked", "inactive"]
+    arr_valid_exam_attribute = ["mu checked", "outpatient", "active"]
+
+    # remove invalid exam id from $arr_valid_exam_id array
+    if arr_invalid_exam_attribute.include?(str_exam_attribute.downcase)
+      $num_family_history -= 1 if $num_family_history != 0   # decrement number of family history record for the patient
+      $arr_valid_exam_id = $arr_valid_exam_id - [@str_exam_id] if $arr_valid_exam_id.include?(@str_exam_id)
+    end
+
+    # add valid exam id to $arr_valid_exam_id array
+    $arr_valid_exam_id = $arr_valid_exam_id + [@str_exam_id] if arr_valid_exam_attribute.include?(str_exam_attribute.downcase)
+
+  end
+end
+
+# Then ensure "Send this visit information to PHR" checkbox is unchecked in create exam page
+Then /^ensure "([^"]*)" checkbox is unchecked in create exam page$/ do |str_checkbox_name|
+  on(EHR::MasterPage).select_menu_item(HOME)
+  wait_for_loading
+  click_on(on(EHR::SearchPatient).span_create_exam_visit_element)
+  if !on(EHR::CreateExam).check_send_visit_info_to_phr.checked?
+    $log.success("'Send this visit information to PHR' checkbox is in unchecked status")
+  else
+    raise "'Send this visit information to PHR' checkbox is in checked status"
+  end
+end

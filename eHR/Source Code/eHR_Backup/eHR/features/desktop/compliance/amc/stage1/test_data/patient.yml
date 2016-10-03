@@ -1,0 +1,9 @@
+patient_data:
+  textfield_last_name: "auto"
+  textfield_first_name: "f"
+  textfield_dob: "03281990"
+  select_sex: "Male"
+  select_ethnicity: "Hispanic or Latino"
+  select_language: "English (eng)"
+  paragraph_race: "Asian"
+  textfield_email: "autofemail@gmail.com"

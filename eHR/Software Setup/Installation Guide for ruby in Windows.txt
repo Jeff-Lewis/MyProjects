@@ -1,0 +1,30 @@
+Installation Guide for ruby in Windows
+Setup for Ruby : -
+1.	Download the latest version of ruby installer from http://rubyinstaller.org/downloads/
+2.	Run the rubyinstaller-*.exe
+3.	It will create a folder (say C:\Ruby200) in the C drive
+4.	Now, configure the environment path variable for ruby
+Add the bin path of ruby (say “C:\Ruby200\bin”) to the system path variable
+5.	Now open command prompt and type “ruby -v”, it should show the ruby with version
+Like “ruby 2.0.0p481 (2014-05-08) [i386-mingw32]”
+6.	Now you can work with ruby.
+
+Setup for JRuby : - 
+1.	Copy the jruby folder to c:\
+2.	For jruby we need java skd to work with java API’s, so install “jdk-7-windows-i586” exe file
+3.	Now, configure the environment path variable for jruby and java
+Add the jdk path and jruby bin path (say “C:\Program Files (x86)\Java\jdk1.7.0\;C:\JRuby 1.7.0\bin”) to the system path variable
+4.	That’s it, open command prompt and type “jruby -v”, it should show 
+“jruby 1.7.0.preview1 (ruby-1.9.3-p203) (2012-05-19 00c8c98) (Java HotSpot(TM) Client VM 1.7.0) [Windows 7-x86-java]”
+5.	Now you can work with jruby.
+
+Setup for Iron-Ruby : -
+1.	Iron-ruby is a .net plugin for ruby
+2.	Install IronRuby.exe file
+3.	If you have visual studio installed, it will automatically detect the plugin and you can start writing ruby scripts in visual studio.
+
+Setup for Cucumber : -
+1.	Cucumber is available as a gem in ruby 
+(for installing a gem run “gem install <gem name>” 
+and “gem uninstall <gem name>” for uninstalling)
+2.	Type “gem install cucumber”, it will install the cucumber gem and its dependencies.

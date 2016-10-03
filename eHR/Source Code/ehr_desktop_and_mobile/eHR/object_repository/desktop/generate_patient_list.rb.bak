@@ -1,0 +1,89 @@
+=begin
+  *Name             : GeneratePatientList
+  *Description      : Class that contains all objects and methods in Generate Patient List page
+  *Author           : Gomathi
+  *Creation Date    : 27/10/2014
+  *Modification Date:
+=end
+
+module EHR
+  class GeneratePatientList
+    include PageObject
+    include PageUtils
+    include Pagination
+
+    select_list(:select_EP,                   :id     => "PhysicianId")
+    text_field(:textfield_from_date,          :id     => "felix-widget-calendar-VisitFromDate-input")
+    text_field(:textfield_to_date,            :id     => "felix-widget-calendar-VisitToDate-input")
+    checkbox(:check_visit_associated_to_EP,   :id     => "SearchPatientAssociatedtoEP")
+    button(:button_search,                    :id     => "btnGeneratePatientList-button")
+    button(:button_clear,                     :id     => "btnClearGeneratePatient-button")
+    div(:div_patient_list, 					          :id     => "generate_patient_div")
+    table(:table_patient_list,                :xpath  => "//div[@id='generate_patient_div']/table")
+
+    # description      : invoked automatically when page class object is created
+    # Author           : Gomathi
+    #
+    def initialize_page
+      wait_for_page_load
+      wait_for_loading
+      wait_for_object(check_visit_associated_to_EP_element, "Failure in finding checkbox for visit associated to EP")
+      hash_creation
+    end
+
+    # description          : creates hash for indexing table data
+    # Author               : Gomathi
+    #
+    def hash_creation
+      @hash_patient_list_table = {
+          :VISIT_DATE_TIME => 1,
+          :PATIENT_ID => 2,
+          :PATIENT_NAME => 3,
+          :PREFERRED_METHOD_OF_COMMUNICATION => 4,
+          :SEX => 5,
+          :RACE => 6,
+          :ETHNICITY => 7,
+          :PREFERRED_LANGUAGE => 8,
+          :PROBLEM => 9
+      }
+    end
+
+    # description          : Generates a patient list based on search item
+    # Author               : Gomathi
+    # Arguments            :
+    #  str_search_item     : type of search item
+    #
+    def generate_patient_list(str_search_item)
+      begin
+        case str_search_item.downcase
+          when "exam date"
+            object_date_time = pacific_time_calculation
+            str_from_date = object_date_time - 1.days
+
+            select_EP_element.when_visible.select($str_ep_name)
+            textfield_from_date_element.focus
+            self.textfield_from_date = str_from_date.strftime(DATE_FORMAT)
+            textfield_to_date_element.focus
+            self.textfield_to_date = object_date_time.strftime(DATE_FORMAT)
+
+          else
+            "Invalid search item #{str_search_item}"
+        end
+        div_copy_right_element.when_visible.scroll_into_view rescue Exception
+        click_on(button_search_element)
+        ##wait_for_loading
+        div_copy_right_element.when_visible.scroll_into_view rescue Exception
+        wait_for_object(table_patient_list_element, "Failure in finding patient list table")
+        if is_record_exists(div_patient_list_element, @hash_patient_list_table[:PATIENT_ID], $str_patient_id)
+          $log.success("Patient list table generated and Patient record(#{$str_patient_id}) exist in the table")
+        else
+          raise "Patient record(#{$str_patient_id}) is not exist in patient list table"
+        end
+      rescue Exception => ex
+        $log.error("Error while generating patient list using #{str_search_item} :#{ex} ")
+        exit
+      end
+
+    end
+  end
+end

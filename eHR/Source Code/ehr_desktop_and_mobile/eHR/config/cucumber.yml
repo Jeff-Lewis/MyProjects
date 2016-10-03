@@ -1,0 +1,46 @@
+default: --profile app_dir --profile desktop --profile test --profile chrome --profile html --profile json
+
+desktop_dev_ie: --profile app_dir --profile desktop --profile dev --profile ie --profile html --profile json
+desktop_devbox1_ie: --profile app_dir --profile desktop --profile dev_box1 --profile ie --profile html --profile json
+desktop_devbox2_ie: --profile app_dir --profile desktop --profile dev_box2 --profile ie --profile html --profile json
+desktop_devbox3_ie: --profile app_dir --profile desktop --profile dev_box3 --profile ie --profile html --profile json
+
+desktop_dev_chrome: --profile app_dir --profile desktop --profile dev --profile chrome --profile html --profile json
+desktop_devbox1_chrome: --profile app_dir --profile desktop --profile dev_box1 --profile chrome --profile html --profile json
+desktop_devbox2_chrome: --profile app_dir --profile desktop --profile dev_box2 --profile chrome --profile html --profile json
+desktop_devbox3_chrome: --profile app_dir --profile desktop --profile dev_box3 --profile chrome --profile html --profile json
+
+desktop_test_ie: --profile app_dir --profile desktop --profile test --profile ie --profile html --profile json
+desktop_testbox1_ie: --profile app_dir --profile desktop --profile test_box1 --profile ie --profile html --profile json
+desktop_testbox2_ie: --profile app_dir --profile desktop --profile test_box2 --profile ie --profile html --profile json
+desktop_testbox3_ie: --profile app_dir --profile desktop --profile test_box3 --profile ie --profile html --profile json
+
+desktop_test_chrome: --profile app_dir --profile desktop --profile test --profile chrome --profile html --profile json
+desktop_testbox1_chrome: --profile app_dir --profile desktop --profile test_box1 --profile chrome --profile html --profile json
+desktop_testbox2_chrome: --profile app_dir --profile desktop --profile test_box2 --profile chrome --profile html --profile json
+desktop_testbox3_chrome: --profile app_dir --profile desktop --profile test_box2 --profile chrome --profile html --profile json
+
+mobile_dev_chrome_device: --profile app_dir --profile mobile --profile dev --profile chrome --profile device --profile html --profile json
+mobile_dev_chrome_emulator: --profile app_dir --profile mobile --profile dev --profile chrome --profile emulator --profile html --profile json
+
+app_dir: -r support -r step_definitions -r library -r object_repository
+ie: BROWSER=internet_explorer
+chrome: BROWSER=chrome
+desktop: PLATFORM=desktop
+mobile: PLATFORM=mobile
+
+dev: PROFILE=development
+dev_box1: BOX=dev_box1 PROFILE=development
+dev_box2: BOX=dev_box2 PROFILE=development
+dev_box3: BOX=dev_box3 PROFILE=development
+
+test: PROFILE=test
+test_box1: BOX=test_box1 PROFILE=test
+test_box2: BOX=test_box2 PROFILE=test
+test_box3: BOX=test_box3 PROFILE=test
+
+device: DEVICE=true
+emulator: DEVICE=false
+
+html: -f Formatter::HtmlFormatter -o report_<%= $$%>.html
+json: -f json -o report_<%= $$%>.json

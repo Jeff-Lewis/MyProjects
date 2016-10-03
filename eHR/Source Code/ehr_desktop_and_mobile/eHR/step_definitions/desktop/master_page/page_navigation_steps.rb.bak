@@ -1,0 +1,9 @@
+#And currently in "AMC" page
+Given /^currently in "([^"]*)" page$/  do |str_page|
+  case str_page.downcase
+    when "amc", "automated measure calculator"
+      on(EHR::MasterPage).select_menu_item(AUTOMATED_MEASURE_CALCULATOR)
+    when "non compliance report"
+      on(EHR::MasterPage).select_menu_item(NON_COMPLIANCE_REPORT)
+  end
+end

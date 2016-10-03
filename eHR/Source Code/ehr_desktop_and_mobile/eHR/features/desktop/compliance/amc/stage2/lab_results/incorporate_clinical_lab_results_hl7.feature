@@ -1,0 +1,76 @@
+#Name             : Incorporate Clinical Lab Results - HL7
+#Description      : Covers scenarios under Incorporate Clinical Lab Results - HL7 feature for stage2
+#Author           : Chandra sekaran
+
+@all @s2_incorporate_clinical_lab_results @stage2 @milestone3 @hl7
+Feature: AMC - Verification of Numerator and Denominator changes - Incorporate Clinical Lab Results - HL7 part - Stage 2
+
+  Background:
+    Given login as "non EP"
+    
+  @tc_6236
+  Scenario: Verification of Stage 2 Incorporated Clinical Lab Results takes into account numeric lab results created by HL7
+    And get "all" details of "Incorporate Clinical Lab Results" under "core set" for "stage2 ep" as "within report range"
+    # Numeric, Multiple, Negative, Not Positive Negative Numeric or Inconclusive, Positive
+    When an HL-7 message with Lab order "within report range" and "Numeric" Lab result "within report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "1"
+    And "a record" should be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+    When an HL-7 message with Lab order "within report range" and "Numeric" Lab result "outside report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "1"
+    And "a record" should be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+  @tc_6237
+  Scenario: Verification of Stage 2 Incorporated Clinical Lab Results takes into account positive lab results created by HL7
+    And get "all" details of "Incorporate Clinical Lab Results" under "core set" for "stage2 ep" as "within report range"
+    When an HL-7 message with Lab order "within report range" and "Positive" Lab result "within report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "1"
+    And "a record" should be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+    When an HL-7 message with Lab order "within report range" and "Positive" Lab result "outside report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "1"
+    And "a record" should be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+  @tc_6238
+  Scenario: Verification of Stage 2 Incorporated Clinical Lab Results takes into account negative lab results created by HL7
+    And get "all" details of "Incorporate Clinical Lab Results" under "core set" for "stage2 ep" as "within report range"
+    When an HL-7 message with Lab order "within report range" and "Negative" Lab result "within report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "1"
+    And "a record" should be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+    When an HL-7 message with Lab order "within report range" and "Negative" Lab result "outside report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "1"
+    And "a record" should be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+  @tc_6239
+  Scenario: Verification of Stage 2 Incorporated Clinical Lab Results does not take into account HL7 results which are not positive, negative or numeric
+    And get "all" details of "Incorporate Clinical Lab Results" under "core set" for "stage2 ep" as "within report range"
+    When an HL-7 message with Lab order "within report range" and "Inconclusive" Lab result "within report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+    When an HL-7 message with Lab order "within report range" and "Inconclusive" Lab result "outside report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+  @tc_6240
+  Scenario: Verification of Stage 2 Incorporated Clinical Lab Results does not take into account HL7 lab orders and results added outside reporting period
+    And get "all" details of "Incorporate Clinical Lab Results" under "core set" for "stage2 ep" as "outside report range"
+    When an HL-7 message with Lab order "outside report range" and "Numeric" Lab result "outside report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+    When an HL-7 message with Lab order "outside report range" and "Positive" Lab result "within report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+    When an HL-7 message with Lab order "outside report range" and "Negative" Lab result "outside report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Incorporate Clinical Lab Results" numerator report under "core set"
+
+  @tc_6241
+  Scenario: Verification of Stage 2 Incorporate Clinical Lab Results takes into account for HL7 lab order having multiple results
+    And get "all" details of "Incorporate Clinical Lab Results" under "core set" for "stage2 ep" as "within report range"
+    When an HL-7 message with Lab order "within report range" and "Multiple" Lab results "within report range" is sent
+    Then the "numerator and denominator" of "Incorporate Clinical Lab Results" under "core set" should be "increased" by "3"
+    And "a record" should be in "Incorporate Clinical Lab Results" numerator report under "core set"

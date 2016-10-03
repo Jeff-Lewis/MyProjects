@@ -1,0 +1,10 @@
+ep_creation_data_for_stage1:
+  textfield_last_name: "name"
+  textfield_first_name: "ep1"
+  select_status: "Active"
+
+ep_creation_data_for_stage2:
+  textfield_last_name: "name"
+  textfield_first_name: "ep2"
+  select_status: "Active"
+

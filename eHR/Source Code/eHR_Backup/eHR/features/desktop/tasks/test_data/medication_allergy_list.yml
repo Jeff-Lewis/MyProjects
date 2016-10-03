@@ -1,0 +1,29 @@
+allergy_data:
+  medication_allergey: "Medication"
+  gadolinium_contrast_material_allergy: "Gadolinium contrast material"
+  iodine_contrast_material_allergy : "Iodine contrast material"
+  other_allergy: "Other"
+  coded_medication_name: "Penicillin"
+  uncoded_medication_name: "Tussi"
+  severity: ""
+  adverse_reaction: ""
+
+allergy_data_with_reaction_and_mild_severity:
+  medication_allergey: "Medication"
+  gadolinium_contrast_material_allergy: "Gadolinium contrast material"
+  iodine_contrast_material_allergy : "Iodine contrast material"
+  other_allergy: "Other"
+  coded_medication_name: "Iron"
+  uncoded_medication_name: "Tussi"
+  severity: "Mild"
+  adverse_reaction: "Cardiac arrest"
+
+allergy_data_with_reaction_and_severe_severity:
+  medication_allergey: "Medication"
+  gadolinium_contrast_material_allergy: "Gadolinium contrast material"
+  iodine_contrast_material_allergy : "Iodine contrast material"
+  other_allergy: "Other"
+  coded_medication_name: "Iron"
+  uncoded_medication_name: "Tussi"
+  severity: "Severe"
+  adverse_reaction: "Wheezing"

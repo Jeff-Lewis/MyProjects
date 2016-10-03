@@ -1,0 +1,17 @@
+# Description      : step definitions for steps related to Site Administration
+# Author           : Gomathi
+
+# When "medication reconciliation" is removed from compliance check
+When /^"([^"]*)" is removed from compliance check$/ do |str_option|
+  on(EHR::MasterPage).select_menu_item(SITE_ADMINISTRATION)
+  div_copy_right_element.scroll_into_view rescue Exception
+  on(EHR::SiteAdministration) do |page|
+    if str_option.downcase == "medication reconciliation"
+      page.check_check_reconciliation_not_require_for_compliance if !page.check_reconciliation_not_require_for_compliance_checked?
+    else
+      raise "Invalid input for str_option : #{str_option}"
+    end
+    click_on(page.button_update_org_details_element)
+    raise "Organization details not updated successfully" if !is_text_present(page, "Organization details updated successfully", 20)
+  end
+end

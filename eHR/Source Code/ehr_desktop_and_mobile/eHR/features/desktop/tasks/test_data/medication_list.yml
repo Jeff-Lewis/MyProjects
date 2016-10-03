@@ -1,0 +1,32 @@
+medication_list_data1:
+  textfield_medication_name: "ZyrTEC (Oral Pill) 5 mg"
+  select_medication_format:
+  select_medication_does_unit:
+  select_medication_route:
+  select_medication_source:
+  select_medication_no: "1"
+  select_medication_frequency: "pc - after meals"
+  textfield_date_administered:
+  textarea_description: "test description text"
+
+medication_list_data2:
+  textfield_medication_name: "Simvastatin (Oral Pill) 40 mg"
+  select_medication_format:
+  select_medication_does_unit:
+  select_medication_route:
+  select_medication_source:
+  select_medication_no: "1"
+  select_medication_frequency: "ac - before meals"
+  textfield_date_administered:
+  textarea_description: "test description text"
+
+medication_list_data_uncoded:
+  textfield_medication_name: "Afatinib"
+  select_medication_format:
+  select_medication_does_unit:
+  select_medication_route:
+  select_medication_source:
+  select_medication_no: "1"
+  select_medication_frequency: "ac - before meals"
+  textfield_date_administered:
+  textarea_description: "test description text"

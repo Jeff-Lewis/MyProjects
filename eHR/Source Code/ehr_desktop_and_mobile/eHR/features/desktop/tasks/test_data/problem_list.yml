@@ -1,0 +1,8 @@
+problem_list_data1:
+  textfield_problem: "268519009 - Diabetic - poor control (finding)"
+  textarea_description: "description text for the problem"
+  textfield_uncoded_problem: "Adult diabetes"
+problem_list_data2:
+  textfield_problem: "39155009 - Hypertension education (procedure)"
+  textarea_description: "description text for the problem"
+  textfield_uncoded_problem: "Hypoglycemic coma"

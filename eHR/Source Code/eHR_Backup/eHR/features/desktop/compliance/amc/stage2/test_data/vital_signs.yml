@@ -1,0 +1,6 @@
+vital_signs_data:
+  textfield_height_feet: "6"
+  textfield_height_inch: "2"
+  textfield_weight: "80"
+  textfield_bp_systolic: "80"
+  textfield_bp_diastolic: "60"

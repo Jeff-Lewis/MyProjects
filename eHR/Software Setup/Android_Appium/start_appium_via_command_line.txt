@@ -1,0 +1,11 @@
+C:\Appium\node_modules\appium\bin>node appium --address 127.0.0.1 --port 4723 --platform-name Android --platform-version "4.4 KitKat (API Level 19)" --automation-name Appium
+
+
+
+-------------------- other links
+https://raveendran.wordpress.com/page/3/
+http://www.toolsqa.com/selenium-webdriver/browser-commands/
+https://code.google.com/p/selenium/wiki/RubyBindings
+
+https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/iOS_Simulator_Guide/GettingStartedwithiOSStimulator/GettingStartedwithiOSStimulator.html#//apple_ref/doc/uid/TP40012848-CH5-SW2
+http://developer.android.com/tools/help/adb.html

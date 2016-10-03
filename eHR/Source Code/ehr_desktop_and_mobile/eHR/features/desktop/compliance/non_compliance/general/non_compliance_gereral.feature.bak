@@ -1,0 +1,296 @@
+#Name             : Non Compliance (General)
+#Description      : Covers scenarios under Non Compliance Report page
+#Author           : Jeyapratha
+
+@all @non_compliance @non_compliance_general @milestone8
+Feature: Non Compliance - Verification of Non Compliance Scenarios - General
+
+  Background:
+    Given login as "non ep"
+    And set EP as "stage1 ep"
+    #And set Current EP in Non Compliance filter
+
+  @tc_955
+  Scenario: Verify that user can generate Non Compliance report for All Providers
+    Given a site is created
+    And a "stage1 ep" is created
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with site" and "1 minute" "before" the reporting period
+
+    And a "stage1 ep" is created
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with site" and "1 minute" "before" the reporting period
+
+    And a "stage1 ep" is created
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with site" and "1 minute" "before" the reporting period
+
+    When the Non Compliance report for "today" is generated for "All" "Provider" and "Current" "Site"
+    Then "3" exams should "be" "present" in "Non Compliance report"
+
+  @tc_956
+  Scenario: Verify that user can generate Non Compliance Report for All Sites
+    Given a "stage1 ep" is created
+    And a site is created
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with site" and "1 minute" "before" the reporting period
+
+    And a site is created
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with site" and "1 minute" "before" the reporting period
+
+    And a site is created
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with site" and "1 minute" "before" the reporting period
+
+    When the Non Compliance report for "today" is generated for "All" "Site" and "Current" "EP"
+    Then "3" exams should "be" "present" in "Non Compliance report"
+
+  @tc_957
+  Scenario: Verify that user can generate Non Compliance Report for Inactive Visits
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 minute" "before" the reporting period
+    And "1" exam is created for the patient as "Inactive" and "2 minutes" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Inactive" "Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "Inactive" and "1 day" "before" the reporting period
+    When the Non Compliance report for "yesterday" is generated for "Inactive" "Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created as "Active" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    And "1" exam is created as "Inactive" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    When the Non Compliance report for "last 3 business days" is generated for "Inactive" "Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "Inactive" and "1 day" "before" the reporting period
+    When the Non Compliance report for "selected range" is generated for "Inactive" "Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_1120
+  Scenario: Verify that user can edit visit information from Non Compliance dialog
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Active" "Visit"
+    And "Note Description" field of the exam is "updated" in "Visit"
+    Then the "Note Description" field of the exam should "be" updated in "Non Compliance report"
+    And "Note Description" field of the exam is "updated" in "Select Patient tab"
+
+  @tc_1612
+  Scenario: Verify that user can generate Non Compliance Report for visits with no assigned EP
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 minute" "before" the reporting period
+    And "1" exam is created for the patient as "active with Site and no EP" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "No" "Provider" and "with no EP" "included Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "active with Site and no EP" and "1 day" "before" the reporting period
+    When the Non Compliance report for "yesterday" is generated for "Active" "Visit" and "with no EP" "included Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created as "active with Site" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    And "1" exam is created as "active with Site and no EP" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    When the Non Compliance report for "last 3 business days" is generated for "Active" "Visit" and "with no EP" "included Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "active with Site and no EP" and "1 day" "before" the reporting period
+    When the Non Compliance report for "Selected range" is generated for "Active" "Visit" and "with no EP" "included Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_1613
+  Scenario: Verify that user can Activate Inactivated visits from Non Compliance report
+    Given a patient is created "without MU"
+    And "2" exams are created for the patient as "Inactive" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Inactive" "Visit"
+    And all visits are "activated"
+    Then "2" exams should "not be" "present" in "Non Compliance report"
+    And "2" exams should "be" "activated" in "Select Patient tab"
+
+  @tc_1614
+  Scenario: Verify that user can Deactivate Activated visits from Non Compliance report
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Active" "Visit"
+    And the visit is "inactivated"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+    And "1" exam should "be" "inactivated" in "Select Patient tab"
+
+  @tc_1615
+  Scenario: Verify that user can Delete Activated visits from Non Compliance report
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Active" "Visit"
+    And the visit is "deleted"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+    And "1" exam should "not be" "present" in "Select Patient tab"
+
+  @tc_1616
+  Scenario: Verify that user can generate Non Compliance Report for a single EP
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 minute" "before" the reporting period
+    And "1" exam is created for the patient as "Active with another EP" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "default" "EP"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "Active with another EP" and "1 day" "before" the reporting period
+    When the Non Compliance report for "yesterday" is generated for "default" "EP"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created as "Active" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    And "1" exam is created as "Active with another EP" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    When the Non Compliance report for "last 3 business days" is generated for "default" "EP"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "Active" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "Active with another EP" and "1 day" "before" the reporting period
+    When the Non Compliance report for "Selected range" is generated for "default" "EP"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_1617
+  Scenario: Verify that user can generate Non Compliance Report for a single Site
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 minute" "before" the reporting period
+    And "1" exam is created for the patient as "active with another Site" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "default" "Site"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "active with another Site" and "1 day" "before" the reporting period
+    When the Non Compliance report for "yesterday" is generated for "default" "Site"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created as "Active with Site" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    And "1" exam is created as "Active with another Site" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    When the Non Compliance report for "last 3 business days" is generated for "default" "Site"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "active with another Site" and "1 day" "before" the reporting period
+    When the Non Compliance report for "Selected range" is generated for "default" "Site"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_1618
+  Scenario: Verify that user can generate Non Compliance Report for visits with no assigned Sites
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 minute" "before" the reporting period
+    And "1" exam is created for the patient as "active with no Site" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "No" "Site" and "with no Site" "included Visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "active with no Site" and "1 day" "before" the reporting period
+    When the Non Compliance report for "yesterday" is generated for "No" "Site"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created as "Active with Site" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    And "1" exam is created as "Active with no Site" "48 hours" "before" the reporting period and "not in Week end or US Federal Holiday"
+    When the Non Compliance report for "last 3 business days" is generated for "No" "Site"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active with Site" and "1 day" "before" the reporting period
+    And "1" exam is created for the patient as "active with no Site" and "1 day" "before" the reporting period
+    When the Non Compliance report for "Selected range" is generated for "No" "Site"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_4209
+  Scenario: Verify all defaults values for checkboxes and fields available in Non Compliance report page
+    When currently in "Non Compliance Report" page
+    Then "All" "EP" should "be" "checked"
+    And "All" "Site" should "be" "checked"
+    And "No Site" "Included Visit" should "be" "checked"
+    And "All" "Compliance related" should "be" "checked"
+    And "All" "Report" should "be" "set default"
+    And "No EP" "Included Visit" should "be" "unchecked"
+    And "Count for MU" "Included Visit" should "be" "unchecked"
+    And "All" "Visit" should "be" "unchecked"
+    And "Inactive" "Visit" should "be" "unchecked"
+    And "Active" "Visit" should "be" "checked"
+
+  @tc_4210
+  Scenario: Verify that Non Compliance report filters exams appropriately based on "Include visits with Count for MU unset" checkbox
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "MU unchecked" and "1 minute" "before" the reporting period
+
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "MU checked" and "1 minute" "before" the reporting period
+
+    When the Non Compliance report for "today" is generated for "default" "Included visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    When the Non Compliance report for "today" is generated for "Count for MU" "Included visit"
+    Then "2" exams should "be" "present" in "Non Compliance report"
+
+    When the Non Compliance report for "today" is generated for "default" "Included visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+    When "Count for MU" field of the exam is "unchecked" in "Health Status"
+    And the Non Compliance report for "today" is generated for "Count for MU" "Included visit"
+    Then "2" exams should "be" "present" in "Non Compliance report"
+
+  @tc_4211_1
+  Scenario: Verify that user can mark exam compliance as "Count for MU" via Non Compliance Report - Health Status
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "MU unchecked" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "default" "Included visit"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+    When the Non Compliance report for "today" is generated for "Count for MU" "Included visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "Count for MU" field of the exam is "checked" in "Health Status"
+    And the Non Compliance report for "today" is generated for "default" "Included visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_4211_2
+  Scenario: Verify that user can mark exam compliance as "Count for MU" via Non Compliance Report - Visit
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "MU unchecked" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "default" "Included visit"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+    When the Non Compliance report for "today" is generated for "Count for MU" "Included visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "Count for MU" field of the exam is "checked" in "Visit"
+    And the Non Compliance report for "today" is generated for "default" "Included visit"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_6082
+  Scenario: Verify user can edit reason for visit and chief complaint from Non Compliance report
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "All" "EP"
+    And "Reason for Visit(Coded) and Chief Compliant" fields of the exam are "updated" in "Visit"
+    Then the "Reason for Visit(Coded) and Chief Compliant" field of the exam should "be" updated in "Non Compliance report"
+    And the "Reason for Visit(Coded) and Chief Compliant" field of the exam should "be" updated in "Select Patient"
+
+  @tc_7418
+  Scenario: Verify user can generate Non Compliance Report for visits entered by specific User
+    Given a User is created
+    And login as "current user"
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with User" and "1 minute" "before" the reporting period
+
+    And a User is created
+    And login as "current user"
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active with User" and "1 minute" "before" the reporting period
+
+    When the Non Compliance report for "today" is generated for "Current" "User"
+    Then "1" exam should "be" "present" in "Non Compliance report"

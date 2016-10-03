@@ -1,0 +1,19 @@
+# Description   : step definitions for steps related to demographics tab
+# Author        : Gomathi
+
+# When patient "sex" is updated in demographics tab
+When /^patient "(.*?)" is updated in demographics tab$/ do |str_mu_attribute,|
+  #on(EHR::MasterPage) do |page|
+  #  page.select_menu_item(HOME)
+  #  wait_for_loading
+  #  page.link_demographics_element.when_visible.click
+  #  if !is_text_present(page, "Contact Information", 10)
+  #    page.link_demographics_element.click
+  #    wait_for_loading
+  #  end
+  #end
+  on(EHR::MasterPage).select_tab("demographics")
+  ##wait_for_loading
+  on(EHR::CreatePatient).enter_mu(str_mu_attribute)
+  wait_for_loading
+end

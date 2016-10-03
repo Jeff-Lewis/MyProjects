@@ -1,0 +1,14 @@
+patient_info:
+  textfield_last_name: "auto"
+  textfield_first_name: "f"
+  textfield_middle_name: "m"
+  textfield_dob: "03281990"
+demographics:
+  select_gender: "Male"
+  race: "Asian"
+  select_pref_language: "English (eng)"
+  select_ethinicity: "Hispanic or Latino"
+communication:
+  textfield_email_address: "autotest@gmail.com"
+  textfield_pref_phone: "1234567890"
+  select_pref_communication_method: "Secure Messaging"

@@ -1,0 +1,13 @@
+if gem is not installed then follow these steps
+
+1. copy the 'File' type file with the gem name and move it to "C:\Ruby200\bin"
+2. create a .bat file with the name of the gem under "C:\Ruby200\bin"
+
+the gem_name.bat file content should be : -
+
+@ECHO OFF
+IF NOT "%~f0" == "~f0" GOTO :WinNT
+@"ruby.exe" "C:/Ruby200/bin/gem_name" %1 %2 %3 %4 %5 %6 %7 %8 %9
+GOTO :EOF
+:WinNT
+@"ruby.exe" "%~dpn0" %*

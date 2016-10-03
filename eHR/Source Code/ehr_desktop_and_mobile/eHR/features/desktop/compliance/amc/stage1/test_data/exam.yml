@@ -1,0 +1,11 @@
+exam_data:
+  check_count_mu: "true"
+  select_cpt_code: "99488"
+  select_modality_code: "AN - Anesthesiology"
+  textfield_procedure:
+
+exam_data_for_patient_education_modality:
+  check_count_mu: "true"
+  select_cpt_code:
+  select_modality_code: "CR - Computed Radiography"
+  textfield_procedure: "ANKLE LEFT"

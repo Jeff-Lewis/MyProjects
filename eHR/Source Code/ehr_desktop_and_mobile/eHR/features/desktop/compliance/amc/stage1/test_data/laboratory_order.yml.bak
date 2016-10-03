@@ -1,0 +1,7 @@
+laboratory_order_data:
+  select_specimen_source: "Blood"
+  select_lab_priority: "ASAP"
+  textfield_lab: "San Diego Lab"
+  textfield_test: "Eosinophils"  #"Eosinophils [#/volume] in Blood"    #"6460-0 - Bacteria Spt Cult"
+  textfield_number: "1"
+  select_frequency: "Once"

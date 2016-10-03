@@ -1,0 +1,26 @@
+# Description    : step definitions for steps related to Login
+# Author         : Gomathi
+
+# Given login as "non EP"
+Given /^login as "([^"]*)"$/ do |str_role|
+  case str_role.downcase
+    when "non ep"
+      $username = $obj_yml.get_value("application/#{BOX}/#{PROFILE}/login_credentials/non_ep/user_name")         # get the credential hash
+      $password = $obj_yml.get_value("application/#{BOX}/#{PROFILE}/login_credentials/non_ep/password")
+    when "stage1 ep"
+      $username = $obj_yml.get_value("application/#{BOX}/#{PROFILE}/login_credentials/stage1_ep/user_name")
+      $password = $obj_yml.get_value("application/#{BOX}/#{PROFILE}/login_credentials/stage1_ep/password")
+    when "stage2 ep"
+      $username = $obj_yml.get_value("application/#{BOX}/#{PROFILE}/login_credentials/stage2_ep/user_name")         # get the credential hash
+      $password = $obj_yml.get_value("application/#{BOX}/#{PROFILE}/login_credentials/stage2_ep/password")
+    when "current user"
+      # do nothing
+    else
+      raise "Invalid login person : #{str_role}"
+  end
+  $user = str_role.downcase
+  if !on(EHR::MasterPage).is_session_active     # checks if an user is already logged in
+    visit(EHR::LoginPage).login                 # creates a new session
+    on(EHR::MasterPage).verify_login
+  end
+end

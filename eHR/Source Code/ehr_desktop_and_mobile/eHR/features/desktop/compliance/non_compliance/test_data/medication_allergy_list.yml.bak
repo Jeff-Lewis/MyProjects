@@ -1,0 +1,7 @@
+allergy_data:
+  medication_allergey: "Medication"
+  gadolinium_contrast_material_allergy: "Gadolinium contrast material"
+  iodine_contrast_material_allergy : "Iodine contrast material"
+  other_allergy: "Other"
+  coded_medication_name: "Absorbine Veterinary"
+  uncoded_medication_name: "Tussi"

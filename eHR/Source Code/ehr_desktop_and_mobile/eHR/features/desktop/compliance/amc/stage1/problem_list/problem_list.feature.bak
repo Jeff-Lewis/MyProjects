@@ -1,0 +1,151 @@
+#Name             : Problem List
+#Description      : Covers scenarios under Problem List feature for stage1
+#Author           : Gomathi
+
+@all @s1_problem_list @stage1 @milestone5
+Feature: AMC - Verification of Numerator and Denominator changes - Problem List - Stage 1
+
+  Background:
+    Given login as "non EP"
+    
+  @tc_3595 @tc_help_text
+  Scenario: Verification of Help text and Requirement column for Stage 1 Problem List AMC measure
+    When get "requirement" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    Then the "requirement" of "Problem List" under "core set" should be "equal" to "80"
+    When get help text of "Problem List" under "core set" from tooltip
+    Then help text for "Problem List" should be equal to the text
+    """
+    More than 80% of all unique patients seen by the EP or admitted to the eligible hospital's or CAH's inpatient or emergency department (POS 21 or 23) have at least one entry or an indication that no problems are known for the patient recorded as structured data.
+    """
+
+  @tc_3594
+  Scenario: Verification of Problem List Stage 1 AMC measure does account inactive problems
+    Then get "all" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+    When the "problem list" is "inactivated"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "decreased" by "1 and 0"
+    And "invalid record" should not be in "Problem List" numerator report under "core set"
+
+  @tc_4756
+  Scenario: Verification of Problem List Stage 1 AMC measure does not account for patients seen outside reporting period
+    Then get "all" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "invalid" and "1 day" "after" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Problem List" numerator report under "core set"
+
+  @tc_4757
+  Scenario: Verification of Problem List Stage 1 AMC measure does not account non Face-to-Face patients
+    Then get "all" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+    When the exam is updated as "MU unchecked"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Problem List" numerator report under "core set"
+
+  @tc_4758
+  Scenario: Verification of Problem List Stage 1 AMC measure does not account for Inpatients
+    Then get "all" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+    When the exam is updated as "inpatient"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Problem List" numerator report under "core set"
+
+  @tc_4759
+  Scenario: Verification of Problem List Stage 1 AMC measure does not account for patients with inactive visits
+    Then get "all" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+    When the exam is updated as "inactive"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Problem List" numerator report under "core set"
+
+  @tc_4760
+  Scenario: Verification of Problem List Stage 1 AMC measure
+    Then get "all" details of "Problem List" under "core set" for "stage1 ep" as "outside report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "outside reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    When get "all" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "none known problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "2" "coded problem list" are created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "2" exams are created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "invalid" and "1 day" "after" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "MU unchecked" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "inpatient" and "1 day" "before" the reporting period
+    And "1" "none known problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "inactive" and "1 day" "before" the reporting period
+    And "1" "coded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Problem List" numerator report under "core set"
+
+  @tc_4761
+  Scenario: Verification of Problem List Stage 1 AMC measure does not account for patients with uncoded problems
+    Then get "all" details of "Problem List" under "core set" for "stage1 ep" as "within report range"
+    When a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "uncoded problem list" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Problem List" under "core set" should be "increased" by "0 and 1"
+    And "invalid record" should not be in "Problem List" numerator report under "core set"

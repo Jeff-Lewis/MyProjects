@@ -1,0 +1,8 @@
+contact_data:
+  textfield_contact_first_name: "test"
+  textfield_contact_middle_name:
+  textfield_contact_last_name: "contact"
+  textfield_contact_display_name: "test contact"
+  textfield_contact_email_id: "testcontact@gmail.com"
+  textfield_contact_mobile: 123456789
+  textfield_contact_phone: 123456789

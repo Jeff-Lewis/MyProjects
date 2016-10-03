@@ -1,0 +1,8 @@
+laboratory_order_data:
+  select_specimen_source: "Blood"
+  select_lab_priority: "ASAP"
+  textfield_lab: "DR Dev Lab"
+  textfield_test_half_name: "Hemoglobin"
+  textfield_test_full_name: "30313-1 - Hemoglobin [Mass/volume] in Arterial blood"
+  textfield_number: "1"
+  select_frequency: "Once"

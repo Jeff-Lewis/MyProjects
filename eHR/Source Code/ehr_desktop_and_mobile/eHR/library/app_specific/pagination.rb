@@ -1,0 +1,216 @@
+=begin
+*Name             : Pagination
+*Description      : module that contains pagination methods
+*Author           : Gomathi
+*Creation Date    : 26/08/2014
+*Modification Date: 26/09/2014
+=end
+
+module EHR
+  module Pagination
+
+    include PageObject
+    #include PageUtils
+
+    # Objects visible under pagination div
+    link(:link_first, :link_text => "<< first")
+    link(:link_prev, :link_text => "< prev")
+    link(:link_next, :link_text => "next >")
+    link(:link_last, :link_text => "last >>")
+
+    # description       : clicks 'next >' link in pagination
+    # Author            : Gomathi
+    # Arguments         :
+    #    parent_element : parent div element that contains the table of records and pagination
+    # Return value      : a boolean value
+    #
+    def click_next(parent_element)
+      begin
+        return false unless parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "next >").visible?
+        click_on(parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "next >"))
+      rescue Exception => ex
+        return false
+      end
+    end
+
+    # description       : clicks previous page in pagination
+    # Author            : Gomathi
+    # Arguments         :
+    #    parent_element : parent div element that contains the table of records and pagination
+    # Return value      : a boolean value
+    #
+    def click_prev(parent_element)
+      begin
+        return false unless parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "< prev").visible?
+        click_on(parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "< prev"))
+      rescue Exception => ex
+        return false
+      end
+    end
+
+    # description       : clicks first page in pagination
+    # Author            : Gomathi
+    # Arguments         :
+    #    parent_element : parent div element that contains the table of records and pagination
+    # Return value      : a boolean value
+    #
+    def click_first(parent_element)
+      begin
+        return false unless parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "<< first").visible?
+        click_on(parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "<< first"))
+      rescue Exception => ex
+        return false
+      end
+    end
+
+    # description       : clicks last page in pagination
+    # Author            : Gomathi
+    # Arguments         :
+    #    parent_element : parent div element that contains the table of records and pagination
+    # Return value      : a boolean value
+    #
+    def click_last(parent_element)
+      begin
+        return false unless parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "last >>").visible?
+        click_on(parent_element.div_element(:xpath => "./div[3]").link_element(:link_text => "last >>"))
+      rescue Exception => ex
+        return false
+      end
+    end
+
+    # description       : function for counting no of rows available in table
+    # Author            : Gomathi
+    # Arguments         :
+    #   parent_element  : Parent div element for the table of records
+    # Return value      : total number of records
+    #
+    def get_table_row_count(parent_element)
+      begin
+        @num_total_record_count = 0
+        @num_record_count_per_page = 0
+        @num_record_count_in_last_page = 0
+        @str_row = nil
+        sleep 5 # static wait for sync issue
+        wait_for_object(parent_element, "Failure in finding parent container #{parent_element}")
+
+        if parent_element.table_element(:xpath => $xpath_table_message_row).exists?
+           obj_tr = parent_element.table_element(:xpath => $xpath_table_message_row)
+           if obj_tr.visible?
+             @str_row = obj_tr.text.strip
+           end
+        end
+
+        if !@str_row.nil? && @str_row.downcase.include?("no records found")
+          @num_record_count_per_page = 0
+          return @num_record_count_per_page
+        else
+          sleep 1 until !parent_element.table_element(:xpath => $xpath_table_message_row).visible?
+          @num_record_count_per_page = parent_element.table_elements(:xpath => $xpath_table_data_row).size
+        end
+
+        bool_link_exists = parent_element.link_element(:xpath => "./div[3]/a[text()='last >>']").exists?
+        if bool_link_exists
+          if parent_element.link_element(:xpath => "./div[3]/a[text()='last >>']").enabled?
+            click_last(parent_element)
+            span_object = parent_element.span_element(:xpath => "./div[3]/span[@id='yui-pg0-1-pages']")
+            num_max_page = span_object.link_elements(:xpath => "./a").size
+            if num_max_page > 0
+              link_object = span_object.link_element(:xpath => "./a[#{num_max_page}]")
+              @page_count = link_object.when_visible.text.to_i
+              click_on(link_object)
+            end
+            @num_record_count_in_last_page = parent_element.table_elements(:xpath => $xpath_table_data_row).size
+          end
+        end
+
+        # Record count per page is multiplied by page count only when page count is not nil
+        if !@page_count.nil?
+          @num_total_record_count = (@num_record_count_per_page * (@page_count - 1)) + @num_record_count_in_last_page
+        else
+          @num_total_record_count = @num_record_count_per_page
+        end
+
+        @num_total_record_count
+      rescue Exception => ex
+        $log.error("Error while counting number of records in table : #{ex}")
+        exit
+      end
+    end
+
+    # description             : function for counting no of rows available per page in table
+    # Author                  : Gomathi
+    # Arguments               :
+    #   parent_div_element    : Parent div element for the table of records
+    # Return value            : number of records per page
+    #
+    def get_table_row_count_per_page(parent_div_element)
+      begin
+        @num_record_count_per_page = 0
+        @str_row = nil
+        wait_for_object(parent_div_element, "Failure in finding div for #{parent_div_element}")
+        if parent_div_element.table_element(:xpath => $xpath_tbody_message_row).exists?
+          obj_tr = parent_div_element.table_element(:xpath => $xpath_tbody_message_row)
+          if obj_tr.visible?
+            @str_row = obj_tr.text.strip
+          end
+        end
+        if !@str_row.nil? && @str_row.downcase.include?("no records found")
+          return @num_record_count_per_page
+        else
+          sleep 1 until !parent_div_element.table_element(:xpath => $xpath_tbody_message_row).visible?
+        end
+
+        @num_record_count_per_page = parent_div_element.table_elements(:xpath => $xpath_table_data_row).size
+        @num_record_count_per_page
+      rescue Exception => ex
+        $log.error("Error while counting number of records per page in table : #{ex}")
+        exit
+      end
+    end
+
+    # description             : function for checking record in report
+    # Author                  : Gomathi
+    # Arguments
+    #   parent_div_element    : Parent div element for the table of records
+    #   index_element         : index of table
+    #   str_record_id         : record id to find record
+    # Return value            : a boolean value
+    #
+    def is_record_exists(parent_div_element, index_element, str_record_id)
+      begin
+        wait_for_object(parent_div_element, "Failure in finding parent container #{parent_div_element}")
+        parent_div_element.scroll_into_view rescue Exception
+        @str_row = nil
+        if parent_div_element.table_element(:xpath => $xpath_table_message_row).exists?
+          obj_tr = parent_div_element.table_element(:xpath => $xpath_table_message_row)
+          if obj_tr.visible?
+            @str_row = obj_tr.text.strip
+          end
+        end
+
+        if !@str_row.nil? && @str_row.downcase.include?("no records found")
+          return false
+        else
+          sleep 1 until !parent_div_element.table_element(:xpath => $xpath_table_message_row).visible?
+        end
+
+        iterate = true
+        while(iterate)
+          wait_for_object(parent_div_element)
+          parent_div_element.table_elements(:xpath => $xpath_table_data_row).each do |row|
+            wait_for_object(row, "Failure in finding row in table")
+            if row.cell_element(:xpath => "./td[#{index_element}]").when_visible.text.strip.downcase == str_record_id.downcase
+              return true
+            end
+          end
+          iterate = click_next(parent_div_element)
+        end
+        return false
+      rescue Exception => ex
+        $log.error("Error while checking record(#{str_record_id}) : #{ex}")
+        exit
+      end
+    end
+
+  end
+end

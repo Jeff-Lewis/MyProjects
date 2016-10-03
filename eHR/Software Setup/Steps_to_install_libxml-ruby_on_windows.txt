@@ -1,0 +1,8 @@
+1. install the gem "gem install libxml-ruby"
+2. when run a script using "xml/libxml" and if it throws an error that "xml/libxml" could not be found, then follow the steps below : -
+ 2.1 open the ruby file under "C:\Ruby200\lib\ruby\gems\2.0.0\gems\libxml-ruby-2.7.0-x86-mingw32\lib"
+ 2.2 add the below to the top of the file
+     ENV['PATH'] = ENV['PATH'] + ';' + File.expand_path(File.dirname(__FILE__) + '/libs')
+ 2.3 Save the file
+
+Now if you run the script, then it should work.

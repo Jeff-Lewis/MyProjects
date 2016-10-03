@@ -1,0 +1,323 @@
+---
+application:
+  dev_box1:
+    development1:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin1
+          password: admin1
+        stage1_ep:
+          ep_name: Dr. doctor5 stage1
+          user_name: s1_doc5
+          password: pwd1
+          first_name: doctor5
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor5 stage2
+          user_name: s2_doc5
+          password: pwd1
+          first_name: doctor5
+          last_name: stage2
+          npi: '3333333336'
+      url:
+        ehrbox: https://172.24.130.106/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+    development2:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin2
+          password: admin2
+        stage1_ep:
+          ep_name: Dr. doctor6 stage1
+          user_name: s1_doc6
+          password: pwd1
+          first_name: doctor6
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor6 stage2
+          user_name: s2_doc6
+          password: pwd1
+          first_name: doctor6
+          last_name: stage2
+          npi: '3214563214'
+      url:
+        ehrbox: https://172.24.130.106/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+  dev_box2:
+    development3:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin3
+          password: pwd2
+        stage1_ep:
+          ep_name: doctor7 stage1
+          user_name: s1_doc7
+          password: pwd1
+          first_name: doctor7
+          last_name: stage1
+        stage2_ep:
+          ep_name: doctor7 stage2
+          user_name: s2_doc7
+          password: pwd1
+          first_name: doctor7
+          last_name: stage2
+          npi: '6985741452'
+      url:
+        ehrbox: https://172.24.130.106/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+    development4:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin5
+          password: pwd1
+        stage1_ep:
+          ep_name: Dr. doctor4 stage1
+          user_name: s1_doc4
+          password: pwd1
+          first_name: doctor4
+          last_name: stage1
+          npi: '4444444444'
+        stage2_ep:
+          ep_name: Dr. doctor4 stage2
+          user_name: s2_doc4
+          password: pwd1
+          first_name: doctor4
+          last_name: stage2
+          npi: '6666666666'
+      url:
+        ehrbox: https://172.24.130.106/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+  dev_box3:
+    development5:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin4
+          password: pwd3
+        stage1_ep:
+          ep_name: Dr. stage1 doctor3
+          user_name: s1doctor3
+          password: pwd1
+          first_name: stage1
+          last_name: doctor3
+          npi: '7777777777'
+        stage2_ep:
+          ep_name: Dr. stage2 doctor3
+          user_name: s2doctor3
+          password: pwd1
+          first_name: stage2
+          last_name: doctor3
+          npi: '6666666666'
+      url:
+        ehrbox: https://172.24.130.106/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+  test_box1:
+    test1:
+      in_use: 'yes'
+      login_credentials:
+        non_ep:
+          user_name: adminnew
+          password: admin4
+        stage1_ep:
+          ep_name: Dr. doctor10 stage1
+          user_name: s1_doc10
+          password: pwd1
+          first_name: doctor10
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor10 stage2
+          user_name: s2_doc10
+          password: pwd1
+          first_name: doctor10
+          last_name: stage2
+          npi: '1111111113'
+      url:
+        ehrbox: https://vm-ehr-aspire-aio/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+    test2:
+      in_use: 'yes'
+      login_credentials:
+        non_ep:
+          user_name: admin1
+          password: admin1
+        stage1_ep:
+          ep_name: Dr. doctor5 stage1
+          user_name: s1_doc5
+          password: pwd1
+          first_name: doctor5
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor5 stage2
+          user_name: s2_doc5
+          password: pwd1
+          first_name: doctor5
+          last_name: stage2
+          npi: '3333333336'
+      url:
+        ehrbox: https://vm-ehr-aspire-aio/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+    test3:
+      in_use: 'yes'
+      login_credentials:
+        non_ep:
+          user_name: admin2
+          password: admin2
+        stage1_ep:
+          ep_name: Dr. doctor6 stage1
+          user_name: s1_doc6
+          password: pwd1
+          first_name: doctor6
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor6 stage2
+          user_name: s2_doc6
+          password: pwd1
+          first_name: doctor6
+          last_name: stage2
+          npi: '3214563214'
+      url:
+        ehrbox: https://vm-ehr-aspire-aio/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+  test_box2:
+    test4:
+      in_use: 'yes'
+      login_credentials:
+        non_ep:
+          user_name: admin3
+          password: pwd1
+        stage1_ep:
+          ep_name: Dr. doctor7 stage1
+          user_name: s1_doc7
+          password: pwd1
+          first_name: doctor7
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor7 stage2
+          user_name: s2_doc7
+          password: pwd1
+          first_name: doctor7
+          last_name: stage2
+          npi: '6985741452'
+      url:
+        ehrbox: https://vm-ehr-aspire-aio/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+    test5:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin4
+          password: pwd1
+        stage1_ep:
+          ep_name: Dr. doctor8 stage1
+          user_name: s1_doc8
+          password: pwd1
+          first_name: doctor8
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor8 stage2
+          user_name: s2_doc8
+          password: pwd1
+          first_name: doctor8
+          last_name: stage2
+          npi: '5555544444'
+      url:
+        ehrbox: https://vm-ehr-aspire-aio/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+  test_box3:
+    test6:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin5
+          password: pwd1
+        stage1_ep:
+          ep_name: Dr. doctor9 stage1
+          user_name: s1_doc9
+          password: pwd1
+          first_name: doctor9
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor9 stage2
+          user_name: s2_doc9
+          password: pwd1
+          first_name: doctor9
+          last_name: stage2
+          npi: '1111111112'
+      url:
+        ehrbox: https://vm-ehr-aspire-aio/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+    test7:
+      in_use: 'no'
+      login_credentials:
+        non_ep:
+          user_name: admin6
+          password: pwd1
+        stage1_ep:
+          ep_name: Dr. doctor10 stage1
+          user_name: s1_doc10
+          password: pwd1
+          first_name: doctor10
+          last_name: stage1
+        stage2_ep:
+          ep_name: Dr. doctor10 stage2
+          user_name: s2_doc10
+          password: pwd1
+          first_name: doctor10
+          last_name: stage2
+          npi: '1111111113'
+      url:
+        ehrbox: https://vm-ehr-aspire-aio/Home/Login/drdev
+        ehrmob: https://172.24.130.106:444
+        hcbox: 
+environment:
+  logger_level: DEBUG
+  result_location: 
+  default_page_wait: 150
+  default_element_wait: 150
+  datetime_pattern: '%d_%m_%Y-%H_%M_%S'
+  date_pattern: '%m%d%Y'
+  date_pattern_with_slash: '%m/%d/%Y'
+  date_pattern_in_yyyymmdd: '%Y%m%d'
+  ist_pacific_time_difference: 12.5
+  hl7_details:
+    server_ip: 172.27.101.81
+    port: '12826'
+  organization_code: drdev
+  dev:
+    site1: Test Site1
+    site2: Test Site2
+  test:
+    site1: DR Dev Site
+    site2: DRPACS HL7
+  parallel_execution_count: 4
+  performance_report: 'no'
+  db_server: eHR2Aspire
+  db_name: PerformanceReport
+  db_user_name: dba
+  db_password: sql
+holiday_list:
+  str_new_year: 01/01
+  str_martin_luther_king_day: Third Monday in January
+  str_george_washington_birthday: Third Monday in February
+  str_memorial_day: Last Monday in May
+  str_independence_day: 07/04
+  str_labor_day: First Monday in September
+  str_columbus_day: Second Monday in October
+  str_veterans_day: 11/11
+  str_thanksgiving_day: Fourth Thursday in November
+  str_christmas_day: 12/25

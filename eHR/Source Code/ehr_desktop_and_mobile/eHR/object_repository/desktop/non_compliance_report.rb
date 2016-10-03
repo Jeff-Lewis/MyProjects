@@ -1,0 +1,769 @@
+=begin
+*Name             : NonComplianceReport
+*Description      : contains all objects and methods in Non Compliance Report
+*Author           : Gomathi
+*Creation Date    : 19/08/2014
+*Modification Date:
+=end
+
+module EHR
+  class NonComplianceReport
+    include PageObject
+    include PageUtils
+    include Pagination
+
+    div(:div_non_compliance_page,                                 :class     => "content_container")
+    checkbox(:check_select_all_ep,                                :id        => "AllEp")
+    div(:div_all_EP_list,                                         :xpath     => "//div[@id='divEpId']/div")  # div for list of available EP
+    checkbox(:check_select_all_sites,                             :id        => "AllSites")
+    div(:div_all_site_list,                                       :xpath     => "//div[@id='dashboardcalculationdiv']/div[2]/div[2]/div[2]/div[2]")      # future enhancement after adding site information
+    text_field(:textfield_visit_from_date,                        :id        => "felix-widget-calendar-FromdateStr-input")
+    text_field(:textfield_visit_to_date,                          :id        => "felix-widget-calendar-TodateStr-input")
+    select_list(:select_entered_user,                             :id        => "UserId")
+    div(:div_show_visit_selection,                                :class     => "left")
+    checkbox(:check_show_all_visits,                              :id        => "AllVisit")
+    checkbox(:check_show_active_visits_only,                      :id        => "ActiveVisit")
+    checkbox(:check_show_inactive_visits_only,                    :id        => "InactiveVisit")
+    checkbox(:check_include_visits_with_no_assigned_EP,           :id        => "NoEp")
+    checkbox(:check_include_visits_with_no_site,                  :id        => "NoSites")
+    checkbox(:check_include_visits_with_count_for_MU_unset,       :id        => "IncludeCountForMU")
+    divs(:div_relates_to_non_compliance,                          :class     => "physician left")
+
+    # Show visits if non-compliance relates to
+    checkbox(:check_demographics,                                 :id        => "Demographics")
+    checkbox(:check_problems,                                     :id        => "Problem")
+    checkbox(:check_medications,                                  :id        => "Medication")
+    checkbox(:check_medication_reconciliation,                    :id        => "Reconciliation")
+    checkbox(:check_allergies,                                    :id        => "Allergy")
+    checkbox(:check_family_history,                               :id        => "Family")
+    checkbox(:check_vitals,                                       :id        => "Vital")
+    checkbox(:check_smoking_status,                               :id        => "Smoking")
+    checkbox(:check_clinical_summary_EOE,                         :id        => "ClinicalSummary")
+    divs(:div_visit_relates_section,                              :xpath     => "//div[starts-with(@class,'physician left')]//input[@type='checkbox' and not (@disabled)]/..")
+    divs(:div_visit_relates_with_disabled,                        :xpath     => "//div[starts-with(@class,'physician left')]")
+
+    button(:button_generate_report,                               :id        => "lnkMeasureCalc-button")
+    div(:div_report_day,                                          :class     => "right btn_seperator")
+    #button(:button_view_today_report,                             :id        => "lnkTodaysReport-button")
+    button(:button_view_today_report,                             :id        => "lnkTodaysReport")
+    button(:button_view_yesterday_report,                         :id        => "lnkYesterdaysReport-button")
+    button(:button_view_last_3_business_days_report,              :id        => "lnkLast3DayReport-button")
+
+    # Report table objects
+    div(:div_non_compliance_list,                                 :id        => "Non_compliance_list")
+    table(:table_non_compliance_report,                           :xpath     => "//div[@id='Non_compliance_list']/table")
+    button(:button_activate_selected,                             :id        => "lnkActivateCalc-button")
+    button(:button_inactivate_selected,                           :value     => "Inactivate Selected")
+    button(:button_delete_selected,                               :value     => "Delete Selected")
+    link(:link_edit_visit,                                        :link_text => "Edit Visit")
+
+    # visit iframe
+    link(:link_close_visit_popup,                                 :text     => "Close")
+    div(:div_visit,                                               :id       => "create_patient")
+    text_field(:textfield_visit_id,                               :id       => "VisitID")
+    link(:link_visit_iframe_close,                                :xpath    => "//div[@id='PopUpDivMaster']/a")
+
+    # health status iframe
+    div(:div_edit_record_page,                                    :id       => "popUpNonCompHealthStatus")
+    #link(:link_close_health_status_iframe,                        :xpath    => "//div[@id='popUpNonCompHealthStatus']/a")
+    link(:link_close_health_status_iframe,                        :class    => "container-close")
+    div(:div_health_status_iframe_header, 						  :id       => "popUpNonCompHealthStatus_h")
+
+    # Description          : invoked automatically when the class object is created
+    # Author               : Chandra sekaran
+    #
+    def initialize_page
+      wait_for_loading
+      hash_creation
+    end
+
+    # Description          : creates a hesh for indexing columns in Non Compliance report table
+    # Author               : Chandra sekaran
+    #
+    def hash_creation
+      @hash_non_compliance_table_header = {
+          :TASK => 1,
+          :SELECT => 2,
+          :PATIENT_ID => 3,
+          :VIST_DATE => 4,
+          :ELIGIBLE_PROFESSIONAL => 5,
+          :FIRST_NAME => 6,
+          :LAST_NAME => 7,
+          :VISIT_DESCRIPTION => 8,
+          :MODALITY => 9,
+          :STATUS => 10
+      }
+    end
+
+    # Description      : function for report duration selection
+    # Author           : Gomathi
+    # Arguments:
+    #   from_date      : specifies the starting date of report generation
+    #   to_date        : specifies the ending date of report generation
+    #
+    def date_selection(from_date, to_date)
+      begin
+        self.textfield_visit_from_date = from_date
+        self.textfield_visit_to_date = to_date
+      rescue Exception => ex
+        $log.error("Error while setting date for reporting period : #{ex}")
+        exit
+      end
+    end
+
+    # Description   : function for viewing the edit record page of a first record
+    # Author        : Gomathi
+    #
+    def edit_current_patient_health_status
+      begin
+        wait_for_object(div_non_compliance_list_element, "Failure in finding div for Non Compliance list")
+        div_copy_right_element.scroll_into_view rescue Exception
+        return false if is_text_present(self, "No records found", 5)
+
+        bool_iterate = true
+        while(bool_iterate)
+          wait_for_object(div_non_compliance_list_element)
+          div_non_compliance_list_element.table_elements(:xpath => $xpath_table_data_row).each do |row|
+            wait_for_object(row, "Failure in finding row in table")
+            if row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").when_visible.text.strip.downcase == $str_patient_id.downcase
+              row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").double_click
+              wait_for_object(div_edit_record_page_element, "could not find div for edit record page")
+              $log.success("Health Status popup for the patient has been opened successfully")
+              return true
+            end
+          end
+          bool_iterate = click_next(div_non_compliance_list_element)
+        end
+        raise "No patient record found for patient '#{$str_patient_id}'"
+      rescue Exception => ex
+        $log.error("Error while editing the records in Report (for Health Status) : #{ex}")
+        exit
+      end
+    end
+
+    # Description   : function for selecting first record in non compliance report
+    # Author        : Gomathi
+    #
+    def select_record_in_report
+      begin
+        wait_for_object(div_non_compliance_list_element, "could not find div for non compliance list")
+        div_non_compliance_list_element.table_element(:xpath => "./table/tbody[2]/tr[1]").checkbox_element(:xpath => "./td[2]//input").click
+        $log.success("Record has selected successfully")
+      rescue Exception => ex
+        $log.error("Error while selecting record in Report : #{ex}")
+        exit
+      end
+    end
+
+    # Description     : function for viewing the edit record page
+    # Author          : Gomathi
+    #
+    def view_visit_in_report
+      begin
+        wait_for_object(div_non_compliance_list_element, "could not find div for non compliance list")
+        bool_record = is_record_exists(div_non_compliance_list_element, @hash_non_compliance_table_header[:PATIENT_ID], $str_patient_id)
+        raise "Created patient visit(#{$arr_all_exam_id}) not available in non-compliance report list" if !bool_record
+
+        iterate = true
+        while(iterate)
+          table_non_compliance_report_element.table_elements(:xpath => $xpath_tbody_data_row).each do |row|
+            if row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").text.strip.downcase == $str_patient_id.downcase
+              row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").double_click
+              wait_for_loading
+              wait_for_object(div_edit_record_page_element, "Failure in finding the popup for non-compliance's health status details")
+              $log.success("Non-compliance health status popup getting displayed")
+              iterate = false
+              break
+            end
+          end
+          iterate = click_next(table_non_compliance_report_element) if iterate != false
+        end
+      rescue Exception => ex
+        $log.error("Error while selecting a record in Report : #{ex}")
+        exit
+      end
+    end
+
+	# Description   : function for checking the non compliance relates
+    # Author        : Mani.Sundaram
+    # Argument      :
+    #   str_section : non compliance ralates names
+	#
+    def select_non_compliance_relates_to(str_section)
+      begin
+        if str_section.downcase == "all sections"
+          arr_section = ["demographics", "problems", "medications", "medication reconciliation", "allergies", "family history", "vitals", "smoking status", "clinical summary (eoe)"]
+        else
+          arr_section = get_array_from_string(str_section)
+        end
+
+        div_copy_right_element.scroll_into_view rescue Exception
+        arr_section.each do |relates|
+          div_visit_relates_section_elements.each do |relates_list|
+            relates_list.checkbox_element(:xpath => "./input").click  unless relates_list.label_element(:xpath => ".//label").text.strip.downcase == relates.downcase
+          end
+        end
+        $log.success("Selected the #{arr_section} as a related visit")
+      rescue Exception => ex
+        $log.error("Error while selecting visit relates to '#{arr_section.to_s}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : gets the status of visit relates filter checkbox
+    # Author               : Gomathi
+    # Arguments            :
+    #   str_section        : visit relates to filter
+    #   str_required_status: status of the checkbox
+    #
+    def get_relates_to_checkbox_status(str_section, str_required_status)
+      begin
+        bool_condition = false
+        div_copy_right_element.scroll_into_view rescue Exception
+
+        div_visit_relates_with_disabled_elements.each do |div_parent|
+          div_parent.div_elements(:xpath => "./div/div[@class='group_radio_container']").each do |div_section|
+            if str_section.strip.split.map(&:capitalize).join(" ") == div_section.text.strip
+              if str_required_status.downcase == "disabled"
+                bool_condition = div_section.checkbox_element.attribute('disabled')
+                if bool_condition.nil?
+                  bool_current_condition = div_section.checkbox_element.attribute('checked')
+                  bool_condition = false if bool_current_condition
+                end
+              elsif str_required_status.downcase == "enabled"
+                bool_condition = div_section.checkbox_element.attribute('checked')
+                if bool_condition.nil?
+                  bool_current_condition = div_section.checkbox_element.attribute('disabled')
+                  bool_condition = false if bool_current_condition
+                end
+              else
+                raise "Invalid input for str_required_status : #{str_required_status}"
+              end
+              return bool_condition
+            end
+          end
+        end
+      rescue Exception => ex
+        $log.error("Error while checking checkbox status of '#{str_section.strip.split.map(&:capitalize).join(" ")}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : selects the given EP(s) from EP selection list
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_ep             : ep name(s) strings (with commas for multiple EPs)
+    #
+    def select_ep(str_ep)
+      begin
+        arr_ep = get_array_from_string(str_ep)
+        if (arr_ep.first.downcase.include? "all ep") || (arr_ep.first.downcase.include? "all")
+          check_check_select_all_ep if !check_select_all_ep_checked?
+        elsif (arr_ep.first.downcase.include? "no ep") || (arr_ep.first.downcase.include? "no")
+          uncheck_check_select_all_ep if check_select_all_ep_checked?
+        else
+          if ["default", "current"].include? arr_ep.first.downcase
+            arr_ep[0] = "#{$str_ep_name}"       # set EP from Config
+          end
+          uncheck_check_select_all_ep if check_select_all_ep_checked?
+          div_all_EP_list_element.div_elements(:xpath => "./div").each do |div_ep|
+            if arr_ep.first.downcase == div_ep.text.downcase.strip   #if arr_ep.include?(div_ep.text.downcase.strip)
+              div_ep.checkbox_element(:xpath => "./input[1]").click
+              # $log.info("selected EP in non compliance report page : #{arr_ep} (#{$str_ep_name})")
+            end
+          end
+        end
+      rescue Exception => ex
+        if ex.message.include? "Unable to find element with id == AllEp"
+          self.refresh
+          $log.info("The page is refreshed due to error : Unable to find element with id == AllEp")
+          select_ep(str_ep)
+        else
+          $log.error("Error while selecting EP '#{arr_ep.to_s}' : #{ex}")
+          exit
+        end
+      end
+    end
+
+    # Description          : selects the given Site(s) from Site selection list
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_site           : site name(s) strings (with commas for multiple Sites)
+    #
+    def select_site(str_site)
+      begin
+        arr_site = get_array_from_string(str_site)
+        if (arr_site.first.downcase.include? "all site") || (arr_site.first.downcase.include? "all")
+          check_check_select_all_sites if !check_select_all_sites_checked?
+        elsif (arr_site.first.downcase.include? "no site") || (arr_site.first.downcase.include? "no")
+          uncheck_check_select_all_sites if check_select_all_sites_checked?
+        else
+          if ["default", "current"].include? arr_site.first.downcase
+            arr_site[0] = SITE_NAME1  # set Site from Config
+          end
+          uncheck_check_select_all_sites if check_select_all_sites_checked?
+          div_all_site_list_element.div_elements(:xpath => "./div").each do |div_site|
+            if arr_site.include?(div_site.text.strip)
+              div_site.checkbox_element(:xpath => "./input[1]").click
+            end
+          end
+        end
+      rescue Exception => ex
+        $log.error("Error while selecting Site '#{arr_site.to_s}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : selects the given Visit type from Visit selection list
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_visit_type     : type of visit
+    #
+    def select_visit_type(str_visit_type)
+      begin
+        if str_visit_type.downcase.include? "all"
+          check_check_show_all_visits if !check_show_all_visits_checked?
+        elsif str_visit_type.downcase.include? "inactive"
+          check_check_show_inactive_visits_only if !check_show_inactive_visits_only_checked?
+        elsif ["active", "default"].include? str_visit_type.downcase
+          check_check_show_active_visits_only if !check_show_active_visits_only_checked?
+        else
+          raise "Invalid visit type : #{str_visit_type}"
+        end
+      rescue Exception => ex
+        $log.error("Error while selecting visit type '#{str_visit_type}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : selects the given Include Visit type from Include visit checkbox list
+    # Author               :
+    # Arguments            :
+    #   str_include_type   : type of Include visit type
+    #
+    def include_visit_type(str_include_type)
+      begin
+        arr_include_type = get_array_from_string(str_include_type)
+        arr_include_type.each do |str_include_type|
+          if str_include_type.downcase.include? "no ep"
+            check_check_include_visits_with_no_assigned_EP if !check_include_visits_with_no_assigned_EP_checked?
+            uncheck_check_include_visits_with_no_site if check_include_visits_with_no_site_checked?
+            uncheck_check_include_visits_with_count_for_MU_unset if check_include_visits_with_count_for_MU_unset_checked?
+          elsif str_include_type.downcase.include? "no site"
+            check_check_include_visits_with_no_site if !check_include_visits_with_no_site_checked?
+            uncheck_check_include_visits_with_no_assigned_EP if check_include_visits_with_no_assigned_EP_checked?
+            uncheck_check_include_visits_with_count_for_MU_unset if check_include_visits_with_count_for_MU_unset_checked?
+          elsif str_include_type.downcase.include? "count for mu"
+            check_check_include_visits_with_count_for_MU_unset if !check_include_visits_with_count_for_MU_unset_checked?
+            #uncheck_check_include_visits_with_no_site if check_include_visits_with_no_site_checked?
+            uncheck_check_include_visits_with_no_assigned_EP if check_include_visits_with_no_assigned_EP_checked?
+          #else
+          #  raise "Invalid visit include filter : #{str_include_type}"
+          end
+        end
+      rescue Exception => ex
+        $log.error("Error while selecting include visit type '#{str_include_type}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : selects the given User from Users checkbox list
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_user           : user name
+    #
+    def select_entered_user(str_user)
+      begin
+        if str_user.downcase.include? "current"
+          select_entered_user_element.select($username)
+        else
+          select_entered_user_element.select(str_user)
+        end
+      rescue Exception => ex
+        $log.error("Error while selecting entered User '#{str_user}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : selects the report (button) type
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_report         : name of report type
+    #
+    def select_report(str_report)
+      begin
+        case str_report.downcase
+          when /report/, /all/, /selected range/
+            click_on(button_generate_report_element)
+          when /today/
+            click_on(button_view_today_report_element)
+          when /yesterday/
+            click_on(button_view_yesterday_report_element)
+          when /last 3 business days/
+            click_on(button_view_last_3_business_days_report_element)
+          else
+            raise "Invalid report option : #{str_report}"
+        end
+      rescue Exception => ex
+        $log.error("Error while generating report for '#{str_report}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : sets the report range
+    # Author               : Gomathi
+    # Arguments            :
+    #   str_range          : name of report range
+    #
+    def select_report_range(str_range)
+      begin
+        object_date_time = pacific_time_calculation
+        if str_range.downcase.include?("all") || str_range.downcase.include?("selected range")
+          date_selection((object_date_time - 1.days).strftime(DATE_FORMAT), object_date_time.strftime(DATE_FORMAT))
+          $log.success("Date range for report generation is selected as #{textfield_visit_from_date} and #{textfield_visit_to_date}")
+        end
+        #case str_range.downcase
+        #  when /today/
+        #    date_selection(object_date_time.strftime(DATE_FORMAT), object_date_time.strftime(DATE_FORMAT))
+        #  when /yesterday/
+        #    date_selection((object_date_time - 1.days).strftime(DATE_FORMAT), (object_date_time - 1.days).strftime(DATE_FORMAT))
+        #  when /last 3 business days/
+        #    date_selection((object_date_time - 3.days).strftime(DATE_FORMAT), (object_date_time - 1.days).strftime(DATE_FORMAT))
+        #  when /all/, /selected range/
+        #    date_selection((object_date_time - 2.days).strftime(DATE_FORMAT), object_date_time.strftime(DATE_FORMAT))
+        #  else
+        #    raise "Invalid report range selection str_range : #{str_range}"
+        #end
+      rescue Exception => ex
+        $log.error("Error while selecting report range '#{str_range}' : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : generates the non compliance report
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_report_type    : type of report
+    #   str_relates_to     : name of visit relates to
+    #   str_ep             : name of ep
+    #   str_site           : name of site
+    #   str_visit_type     : name of visit type
+    #   str_include_type   : name of report range
+    #   str_user           : name of report range
+    #   str_report_range   : name of report range
+    #
+    def generate_non_compliance_report(str_report_type = "all", str_relates_to = nil, str_ep = nil, str_site = nil, str_visit_type = nil, str_include_type = nil, str_user = nil, str_report_range = nil)
+      begin
+        apply_non_compliance_filter(str_relates_to, str_ep, str_site, str_visit_type, str_include_type, str_user, str_report_type)
+        select_report(str_report_type)
+        wait_for_object(div_non_compliance_list_element, "Failure in finding Non Compliance report table element")
+        div_copy_right_element.scroll_into_view rescue Exception
+        2.times { div_copy_right_element.send_keys(:arrow_down) rescue Exception }  if BROWSER.downcase == "chrome"
+        $log.success("Non Compliance report generated successfully")
+      rescue Exception => ex
+        $log.error("Error while generating Non Compliance Report : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : selects the given filter(s)
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_relates_to     : name of visit relates to
+    #   str_ep             : name of ep
+    #   str_site           : name of site
+    #   str_visit_type     : name of visit type
+    #   str_include_type   : name of report range
+    #   str_user           : name of report range
+    #   str_report_range   : name of report range
+    #
+    def apply_non_compliance_filter(str_relates_to = nil, str_ep = nil, str_site = nil, str_visit_type = nil, str_include_type = nil, str_user = nil, str_report_range)
+      begin
+        select_ep(str_ep) if !(str_ep.nil?) && !(str_ep.downcase.include? "none")
+        select_site(str_site) if !(str_site.nil?) && !(str_site.downcase.include? "none")
+        select_visit_type(str_visit_type) if !(str_visit_type.nil?) && !(str_visit_type.downcase.include? "none")
+        include_visit_type(str_include_type) if !(str_include_type.nil?) && !(str_include_type.downcase.include? "none")
+        select_report_range(str_report_range)
+        select_entered_user(str_user) if !(str_user.nil?) && !(str_user.downcase.include? "none")
+        select_non_compliance_relates_to(str_relates_to) if !(str_relates_to.nil?) && !(str_relates_to.downcase.include? "none")
+      rescue Exception => ex
+        $log.error("Error while applying filter in Non Compliance Report : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : converts the string input into array based on comma's in the string
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_content        : string of comma separated values
+    # Return Arguments     :
+    #   arr_content        : array of string
+    #
+    def get_array_from_string(str_content)
+      arr_content = []
+      if str_content.include? ","
+        arr_content = str_content.downcase.split(",")
+      else
+        arr_content << str_content.downcase
+      end
+      arr_content
+    end
+
+    # Description          : returns the number of occurances of Visit records for Patient(s) in Non Compliance report
+    # Author               : Gomathi
+    # Return Argument      :
+    #   num_count          : number of visits for patient(s)
+    #
+    def get_visit_count
+      begin
+        num_count = 0
+        str_row = nil
+        if div_non_compliance_list_element.table_element(:xpath => $xpath_table_message_row).exists?
+          obj_tr = div_non_compliance_list_element.table_element(:xpath => $xpath_table_message_row)
+          if obj_tr.visible?
+            str_row = obj_tr.text.strip
+          end
+        end
+
+        if !str_row.nil? && str_row.downcase.include?("no records found")
+          return num_count
+        else
+          sleep 1 until !div_non_compliance_list_element.table_element(:xpath => $xpath_table_message_row).visible?
+        end
+        div_copy_right_element.scroll_into_view rescue Exception
+        click_first(div_non_compliance_list_element)
+
+        ##break_count = 0  # max value for breaking the iteration
+        #break_loop = false
+        $arr_patient_id.each do |str_patient_id|
+          iterate = true
+          while(iterate)
+            div_copy_right_element.scroll_into_view rescue Exception
+            div_non_compliance_list_element.table_elements(:xpath => $xpath_table_data_row).each do |row|
+              wait_for_object(row, "Failure in finding row in table")
+              if row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").when_visible.text.strip.downcase == str_patient_id.downcase
+                num_count += 1
+                #break_loop = true if num_count == $arr_patient_id.size
+              end
+            end
+            #break if break_loop
+            ##break_count += 1
+            ##break if break_count == 10    # break the iteration if it exceeds 10 pages
+            iterate = click_next(div_non_compliance_list_element)
+          end
+          click_first(div_non_compliance_list_element)
+        end
+        num_count    # return total number of visit(s)
+      rescue Exception => ex
+        $log.error("Error while checking for visit for patient (#{$str_patient_id}) in Non Compliance Report page : #{ex}")
+        exit
+      end
+    end
+
+    # Description     : function for viewing the edit record page
+    # Author          : Gomathi
+    #
+    def edit_patient_record_in_report
+      begin
+        div_copy_right_element.scroll_into_view rescue Exception
+        wait_for_object(div_non_compliance_list_element, "could not find div for non compliance list")
+        bool_record = is_record_exists(div_non_compliance_list_element, @hash_non_compliance_table_header[:PATIENT_ID], $str_patient_id)
+        raise "Created patient visit(#{$arr_all_exam_id}) not available in non-compliance report list" if !bool_record
+
+        iterate = true
+        while(iterate)
+          table_non_compliance_report_element.table_elements(:xpath => $xpath_tbody_data_row).each do |row|
+            if row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").text.strip.downcase == $str_patient_id.downcase
+              row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").double_click
+              wait_for_loading
+              wait_for_object(div_edit_record_page_element, "Failure in finding the popup for non-compliance's health status details")
+              $log.success("Non-compliance health status popup getting displayed")
+              iterate = false
+              break
+            end
+          end
+          iterate = click_next(table_non_compliance_report_element) if iterate != false
+        end
+      rescue Exception => ex
+        $log.error("Error while selecting a record in Report : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : edits the current patient Visit
+    # Author               : Chandra sekaran
+    #
+    def edit_current_patient_visit
+      begin
+        #wait_for_object(div_non_compliance_list_element, "Could not find Non Compliance list div element")
+        div_copy_right_element.scroll_into_view rescue Exception
+        raise "No records found in Non Compliance report" if is_text_present(self, "No records found", 5)
+        #raise "No visit found for the patient '#{$str_patient_id}' in Non Compliance report" if !is_visit_exists
+        bool_iterate = true
+        while(bool_iterate)
+          table_non_compliance_report_element.table_elements(:xpath => $xpath_tbody_data_row).each do |row|
+            if row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").text.strip == $str_patient_id
+              row.image_element(:src => "/Content/themes/base/images/menu.gif").fire_event("onmouseover")
+              link_edit_visit_element.click
+              wait_for_loading
+              if BROWSER.downcase == "internet_explorer" #&& ($scenario_tags.include?("@tc_6082"))
+                link_element(:class => "container-close").click rescue Exception
+                wait_for_loading rescue Exception
+                row.image_element(:src => "/Content/themes/base/images/menu.gif").fire_event("onmouseover")
+                link_edit_visit_element.click
+                wait_for_loading
+              end
+              return true
+            end
+          end
+          bool_iterate = click_next(div_non_compliance_list_element)
+          wait_for_loading
+        end
+        raise "No visit found for the patient '#{$str_patient_id}' in Non Compliance report"
+      rescue Exception => ex
+        $log.error("Error while opening visit for patient  (#{$str_patient_id}) in Non Compliance Report page : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : Updates the visit(s) status in Non Compliance report
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_action         : status of visit(s)
+    #
+    def update_visit_status(str_action)
+        begin
+          select_patient
+          if str_action.downcase == "activated"
+            str_message = confirm(true) do      # clicks 'Ok' button on the confirm message box
+              button_activate_selected_element.click
+            end
+          elsif str_action.downcase == "inactivated"
+            str_message = confirm(true) do      # clicks 'Ok' button on the confirm message box
+              button_inactivate_selected_element.click
+            end
+          elsif str_action.downcase == "deleted"
+            str_message = confirm(true) do      # clicks 'Ok' button on the confirm message box
+              button_delete_selected_element.click
+            end
+          else
+            raise "Invalid action : #{str_action}"
+          end
+          wait_for_loading
+          raise "Failure in '#{str_action}' action upon patient (#{$str_patient_id}) record" if !is_text_present(self, "#{str_action.capitalize} The Visit(s)", 5)
+        rescue Exception => ex
+          $log.error("Error while updating patient visit for '#{str_action}' action in Non Compliance Report : #{ex}")
+          exit
+        end
+      end
+
+    # Description          : selects the current patients visit records in Non Compliance report
+    # Author               : Chandra sekaran
+    #
+    def select_patient
+      begin
+        div_copy_right_element.scroll_into_view rescue  Exception
+        raise "'No records found' in Non Compliance report" if is_text_present(self, "No records found", 1)
+        num_count = 0
+        bool_iterate = true
+        while(bool_iterate)
+          table_non_compliance_report_element.table_elements(:xpath => $xpath_tbody_data_row).each do |row|
+            if row.cell_element(:xpath => "./td[#{@hash_non_compliance_table_header[:PATIENT_ID]}]").text.strip == $str_patient_id
+              row.checkbox_element(:xpath => "./td[#{@hash_non_compliance_table_header[:SELECT]}]/div/input").click
+              num_count += 1
+              #$log.success("Patient record for '#{$str_patient_id}' found in Non Compliance report")
+              return true if num_count == $arr_all_exam_id.size
+            end
+          end
+          bool_iterate = click_next(div_non_compliance_list_element)
+          wait_for_loading
+        end
+        raise "No patient record found in Non Compliance report"
+      rescue Exception => ex
+        $log.error("Error while selecting patient (#{$str_patient_id}) in Non Compliance Report : #{ex}")
+        exit
+      end
+    end
+
+    # Description          : checks if the given filter parameters status are present in Non Compliance Report page
+    # Author               : Chandra sekaran
+    # Arguments            :
+    #   str_filter         : name of the filter
+    #   str_value          : value of the filter option
+    #   str_status         : status of filter value
+    # Return Arguments     :
+    #   bool_actual_status : actual boolean status of filter option
+    #
+    def is_filter_selected(str_filter, str_value, str_status)
+      begin
+        str_filter = str_filter.downcase
+        str_value = str_value.downcase
+        bool_actual_status = true
+        bool_status = str_status.downcase == "checked" ? true : false if str_status != "set default"
+        case str_filter
+          when "ep", "provider"
+            if str_value == "all"
+              bool_actual_status = check_select_all_ep_checked? == bool_status ? true : false
+            end
+          when "site"
+            if str_value == "all"
+              bool_actual_status = check_select_all_sites_checked? == bool_status ? true : false
+            end
+          when "included visit"
+            if str_value == "no site"
+              bool_actual_status = check_include_visits_with_no_site_checked? == bool_status ? true : false
+            elsif str_value == "no ep"
+              bool_actual_status = check_include_visits_with_no_assigned_EP_checked? == bool_status ? true : false
+            elsif str_value == "count for mu"
+              bool_actual_status = check_include_visits_with_count_for_MU_unset_checked? == bool_status ? true : false
+            end
+          when "compliance related"
+            if str_value == "all"
+              div_visit_relates_section_elements.each do |relates_list|
+                bool_actual_status = bool_actual_status && relates_list.checkbox_element(:xpath => "./input").checked?
+              end
+              bool_actual_status = bool_actual_status == bool_status ? true : false
+            end
+          when "report range"
+            if str_value == "all"
+              str_from_date = self.textfield_visit_from_date
+              str_to_date = self.textfield_visit_to_date
+              bool_actual_status = ($str_from_date == str_from_date) && ($report_generation_time.strftime(DATE_FORMAT) == str_to_date)? true : false
+            end
+          when "visit"
+            if str_value == "all"
+               bool_actual_status = check_show_all_visits_checked? == bool_status ? true : false
+            elsif str_value == "active"
+              bool_actual_status = check_show_active_visits_only_checked? == bool_status ? true : false
+            elsif str_value == "inactive"
+              bool_actual_status = check_show_inactive_visits_only_checked? == bool_status ? true : false
+            end
+        end
+        bool_actual_status
+      rescue Exception => ex
+        $log.error("Error while checking filter status for #{str_filter}/#{str_value} is #{str_status} in Non Compliance Report page : #{ex}")
+        exit
+      end
+    end
+
+    def close_health_status_iframe
+      begin
+        div_health_status_iframe_header = @browser.find_element(:id, "popUpNonCompHealthStatus_h")
+        @browser.action.drag_and_drop_by(div_health_status_iframe_header, -300, 300).perform
+        iterate = true
+        while(iterate)
+          if link_close_health_status_iframe_element.exists? && link_close_health_status_iframe_element.visible?
+            link_close_health_status_iframe_element.click
+            wait_for_loading
+          else
+            iterate = false
+          end
+        end
+      rescue Exception => ex
+        $log.error("Error while closing Health Status iframe : #{ex}")
+        exit
+      end
+    end
+
+  end
+end

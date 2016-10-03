@@ -1,0 +1,172 @@
+=begin
+  *Name               : MedicationList
+  *Description        : module to add / edit the medication list in health status screen
+  *Author             : Chandra sekaran
+  *Creation Date      : 08/27/2014
+  *Modification Date  :
+=end
+
+module EHR
+  module HealthStatusTab
+    module MedicationList
+
+      include PageObject
+      include PageUtils
+      include Pagination
+
+      # Page Object details for create medication
+      div(:div_medication_form_create,                :id     =>  "divcreateMed")
+      checkbox(:check_exclude_medication_eoe,         :id     =>  "ExcludeMedicationFromEOE")
+      text_field(:textfield_medication_name,          :id     =>  "MedicationCode_TextBox")
+      select_list(:select_medication_format,          :id     =>  "DFCode")
+      select_list(:select_medication_does_unit,       :id     =>  "DoseUnitId")
+      select_list(:select_medication_route,           :id     =>  "AdministrationCode")
+      select_list(:select_medication_source,          :id     =>  "Informationsourcevaluecode")
+      select_list(:select_medication_no,              :id     =>  "Number")
+      select_list(:select_medication_frequency,       :id     =>  "TimeAndFrequency")
+      text_field(:textfield_date_prescribed,          :id     =>  "felix-widget-calendar-PrescriptionDate-input")
+      text_field(:textfield_date_administered,        :id     =>  "felix-widget-calendar-DateAdministered-input")
+      select_list(:select_medication_ep,              :id     =>  "PhysicianId")
+      select_list(:select_medication_status,          :id     =>  "Status")
+      text_field(:textfield_medication_user,          :id     =>  "User")
+      text_area(:textarea_description,                :id     =>  "Description")
+      button(:button_save_and_add,                    :id     =>  "lnkEditMedication-button")
+      button(:button_save_and_close,                  :id     =>  "lnkSaveCloseEditMedication-button")
+      div(:button_cancel,                             :id     =>  "lnkCloseEditMedication-button")
+      div(:div_medication_ajax,                       :xpath  =>  "//div[@id='MedicationCode_container']/div")
+      div(:div_medication,                            :id     =>  "MedicationList")
+
+      # Page Object details for Edit medication
+      div(:div_medication_form_edit,                  :id     =>  "divEditMed")
+      select_list(:select_edit_medication_status,     :id     =>  "StatusValueCode")
+      text_field(:textfield_medication_entered_user,  :id     =>  "EnteredBy")
+      text_field(:textfield_medication_organization,  :id     =>  "OrganizationName")
+      text_field(:textfield_medication_last_active,   :id     =>  "ActivationDate")
+      text_field(:textfield_medication_active_by,     :id     =>  "ActivatedBy")
+      text_field(:textfield_medication_last_inactive, :id     =>  "InactivationDate")
+      text_field(:textfield_medication_inactive_by,   :id     =>  "InActivatedBy")
+      text_field(:textfield_medication_code,          :id     =>  "CodeType")
+      text_field(:textfield_medication_modified,      :id     =>  "ModifiedDateStr")
+
+      # Error message in add medication screen
+      span(:span_medication_error,                    :id     =>  "lblerrorMedicationCode")   # Please select an existing medication
+      span(:span_status_error,                        :class  =>  "endfield-validation-error") #  Please select Status
+
+      # Description                : Method to Add the medication details in health status screen
+      # Author                     : Chandra sekaran
+      # Arguments                  :
+      #   str_medication_list      : type of medication list
+      #   str_medication_list_node : root node of medication list test data
+      # Return Argument            :
+      #   str_medication_name      : medication name
+      #
+      def add_medication(str_medication_list, str_medication_list_node)
+        begin
+          if $scenario_tags.include?("@tc_754")
+            $num_test_data_count += 1
+            str_medication_list_node = "medication_list_data#{$num_test_data_count}"
+          end
+
+          hash_medication = set_scenario_based_datafile(MEDICATION_LIST)
+
+          str_medication_name = hash_medication[str_medication_list_node]["textfield_medication_name"]
+          #str_source = hash_medication[str_medication_list_node]["select_medication_source"]
+          #str_number = hash_medication[str_medication_list_node]["select_medication_no"]
+          #str_frequency = hash_medication[str_medication_list_node]["select_medication_frequency"]
+          #num_date_administered = hash_medication[str_medication_list_node]["textfield_date_administered"]
+          #str_description = hash_medication[str_medication_list_node]["textarea_description"]
+          object_date_time = pacific_time_calculation
+
+          wait_for_loading
+          wait_for_object(textfield_medication_name_element, "Failure in finding medication name textfield")
+
+          if (str_medication_list == "coded medication list")
+            self.textfield_medication_name = str_medication_name
+            wait_for_loading
+            wait_for_object(div_medication_ajax_element, "Failure in finding div for medication name list")
+            div_medication_ajax_element.list_item_elements(:xpath => ".//ul/li").each do |list_item|
+              list_item.scroll_into_view rescue Exception
+              if list_item.text.downcase.strip == str_medication_name.downcase
+                list_item.click
+                break
+              end
+            end
+            sleep 1    # textfield_medication_name_element.focus
+            #textfield_medication_name_element.send_keys(:arrow_down) rescue Exception
+            #textfield_medication_name_element.send_keys(:tab)
+            #wait_for_loading
+            str_medication = str_medication_name
+
+          elsif str_medication_list == "uncoded medication list"
+            self.textfield_medication_name = str_medication_name
+            wait_for_object(div_medication_ajax_element)
+            sleep 1    # textfield_medication_name_element.focus
+            textfield_medication_name_element.send_keys(:tab)
+            wait_for_loading
+            str_medication = "UNCODED - #{str_medication_name}"
+
+          else
+            raise "Invalid argument for str_medication_list : #{str_medication_list}"
+          end
+          if $scenario_tags.include?("@tc_754")
+            self.textfield_date_prescribed = object_date_time.strftime("0102%Y")
+          else
+            self.textfield_date_prescribed = object_date_time.strftime(DATE_FORMAT)
+          end
+          select_medication_ep_element.when_visible.select($str_ep_name)
+
+          #select_medication_source_element.when_visible.select(str_source)
+          #select_medication_no_element.when_visible.select(str_number)
+          #select_medication_frequency_element.when_visible.select(str_frequency)
+          #self.textfield_date_administered = num_date_administered
+          #self.textarea_description = str_description
+
+          $world.puts("Test data : #{hash_medication[str_medication_list_node].to_s}")
+          return str_medication
+        rescue Exception => ex
+          $log.error("Error while populating data for create medication :#{ex}")
+          exit
+        end
+      end
+
+      # Description                : saves the medication details and closes the iframe
+      # Author                     : Chandra sekaran
+      # Arguments                  :
+      #   str_medication_list      : type of medication
+      #   str_medication_list_node : root node of medication list test data
+      # Return Argument            :
+      #   str_medication           : medication name
+      #
+      def save_and_close_create_medication(str_medication_list, str_medication_list_node = "medication_list_data1")
+        begin
+          str_medication = add_medication(str_medication_list, str_medication_list_node)
+          click_on(button_save_and_close_element)
+          return str_medication
+        rescue Exception => ex
+          $log.error("Error in save and close medication details :#{ex}")
+          exit
+        end
+      end
+
+      # Description                : saves the medication details and add multiple entries
+      # Author                     : Chandra sekaran
+      # Arguments                  :
+      #   str_medication_list      : type of medication
+      #   str_medication_list_node : root node of medication list test data
+      # Return Argument            :
+      #   str_medication           : medication name
+      #
+      def save_and_add_create_medication(str_medication_list, str_medication_list_node = "medication_list_data1")
+        begin
+          str_medication = add_medication(str_medication_list, str_medication_list_node)
+          click_on(button_save_and_add_element)
+          return str_medication
+        rescue Exception => ex
+          $log.error("Error in save and add more medication details :#{ex}")
+          exit
+        end
+      end
+
+    end
+  end
+end

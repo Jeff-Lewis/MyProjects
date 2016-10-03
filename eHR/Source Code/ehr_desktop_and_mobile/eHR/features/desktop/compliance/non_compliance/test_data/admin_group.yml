@@ -1,0 +1,11 @@
+admin_data:
+  textfield_user_name: "admin "
+  textfield_contact_name:
+  textfield_password: "admin"
+  textfield_confirm_password: "admin"
+  select_type: "Admin"
+  select_language: "English (eng)"
+  select_preferred_contact: "mobile"
+  textfield_email: "testadmin@gmail.com"
+  textfield_mobile: 123456789
+  select_status: "Active"

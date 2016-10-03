@@ -1,0 +1,10 @@
+problem_list_data1:
+  textfield_problem: "135841008 - Dry eczema (disorder)"  #"Pain in left arm (finding)"
+  textfield_diagnosed_date:
+  textarea_description: "description text for the problem"
+  textfield_uncoded_problem: "Adult diabetes"
+problem_list_data2:
+  textfield_problem: "44256003 - Chronic eczema (disorder)"  #"Adult diabetes diet (finding)"
+  textfield_diagnosed_date:
+  textarea_description: "description text for the problem"
+  textfield_uncoded_problem: "Hypoglycemic coma"

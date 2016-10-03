@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e47ceeb-d0e4-4494-8f71-6800867ba58b" name="Default" comment="" />
+    <ignored path="DRSYSTEMS.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/a.dummy" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432537560931" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/features/Casino/casino.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408338130239" ignored="false" />
+    <file path="/casino.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408338130239" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/features/step_definitions/common_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408338404810" ignored="false" />
+    <file path="/common_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408338400877" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/features/Casino/step_definitions/search_for_bet365.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408359392971" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408339761273" ignored="false" />
+    <file path="/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427695745945" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_Capybara_App/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408339761273" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/env_support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408339761273" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_Capybara_App/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408339761273" ignored="false" />
+    <file path="/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429766863895" ignored="false" />
+    <file path="/file_library.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424413890514" ignored="false" />
+    <file path="/create_log.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432556297517" ignored="false" />
+    <file path="/env_variables.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408357827753" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/env_variables.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408357827753" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App/Cucumber_PageObject_App/features/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408357913343" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App/Cucumber_PageObject_App/features/step_definitions/fetch_gem_details.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408447758114" ignored="false" />
+    <file path="/fetch_gem_details.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417428248772" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/env_support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408455813171" ignored="false" />
+    <file path="/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429785337326" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/features/Google_search/step_definitions/fetch_casino_featured_games.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408449608810" ignored="false" />
+    <file path="/fetch_casino_featured_games.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408449604972" ignored="false" />
+    <file path="/search_for_bet365.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408359291731" ignored="false" />
+    <file path="/browser_settings.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429255190002" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/yml_manipulaion1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408361550801" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/yml_manipulation2.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408615658839" ignored="false" />
+    <file path="/yml_manipulation2.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408373271406" ignored="false" />
+    <file path="/read_from_yml.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425548805167" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/test_data1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408373279773" ignored="false" />
+    <file path="/test_data1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408372116370" ignored="false" />
+    <file path="/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429257603074" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App/Cucumber_PageObject_App/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408531512891" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App/Cucumber_PageObject_App/features/support/browser_settings.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408531681894" ignored="false" />
+    <file path="/user_logger.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408424993986" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_Logger/user_logger.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408425015215" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_Logger/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408799882670" ignored="false" />
+    <file path="/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432547021273" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App/Cucumber_PageObject_App/features/find_gem_details.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408447782319" ignored="false" />
+    <file path="/find_gem_details.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408511653870" ignored="false" />
+    <file path="D:/RubyMine_Projects/Sample_Test_App/Cucumber_with_multiple_step_definitions_dir/Bet_365/features/Google_search/google_for_bet365.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408447797064" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App/Cucumber_PageObject_App/generic_library/Module/Gem_List_Page/gem_list_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408529429193" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App/Cucumber_PageObject_App/generic_library/Module/Gem_Description_Page/gem_description_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408529569287" ignored="false" />
+    <file path="/common_elements.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409216274776" ignored="false" />
+    <file path="/gem_description_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409217037998" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/generic_library/Global/read_from_excel.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408532842734" ignored="false" />
+    <file path="/read_from_excel.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408532841423" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408539431181" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/features/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408533105162" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408533110512" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409209499962" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/generic_library/Global/common_elements.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409209288916" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408714795441" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/generic_library/Global/abc.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408536376841" ignored="false" />
+    <file path="/abc.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408536376841" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/generic_library/a/a_file.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408536380355" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/yml_manip1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408612292400" ignored="false" />
+    <file path="/yml_manip1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408610263670" ignored="false" />
+    <file path="/create_new_dir_from_file_path.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408706136840" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/create_new_folder/create_new_dir_from_file_path.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408706167633" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/create_new_folder/new_file.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408775365691" ignored="false" />
+    <file path="/new_file.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408775353274" ignored="false" />
+    <file path="/gem_list_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411477771726" ignored="false" />
+    <file path="/datetime_library.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413897290860" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/features/hover_manip.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409030506962" ignored="false" />
+    <file path="/hover_manip.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409030506962" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/features/step_definitions/hover_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417428783491" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/generic_library/home_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417433183400" ignored="false" />
+    <file path="/home_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417433183400" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/features/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417430328896" ignored="false" />
+    <file path="/hover_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417428783491" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/generic_library/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409030314220" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/generic_library/test1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409138868540" ignored="false" />
+    <file path="/test1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425468966950" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/App_data_for_eHR/non_compliance_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1408966331641" ignored="false" />
+    <file path="/non_compliance_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426080807764" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/App_data_for_eHR/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409044565923" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/date_time_diff/file1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409111460926" ignored="false" />
+    <file path="/file1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409111460127" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/date_time_diff/file2.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409116936883" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/date_time_diff/file3.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409121543067" ignored="false" />
+    <file path="/file3.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409121356078" ignored="false" />
+    <file path="E:/../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/date_time_diff/file4.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409121995038" ignored="false" />
+    <file path="/file4.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409121887559" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417432597875" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/features/support/factories.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409142097933" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/features/test_factory_girl.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409140328888" ignored="false" />
+    <file path="/test_factory_girl.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409139995461" ignored="false" />
+    <file path="/factories.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409140666711" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Deltapage/features/step_definitions/test_factory_girl_step.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409145583349" ignored="false" />
+    <file path="/test_factory_girl_step.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409145574180" ignored="false" />
+    <file path="/page_utils.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427969839939" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/generic_library/Module/Home_Page/home_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409207833918" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/generic_library/Module/Gem_Description_Page/gem_description_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409207568251" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/generic_library/Module/Gem_List_Page/gem_list_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409207587065" ignored="false" />
+    <file path="D:/RubyMine_Projects/Test_Responsive_App_New/Cucumber_PageObject_App/step_definitions/test/fetch_gem_details.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409209550501" ignored="false" />
+    <file path="/app_driver.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1421931841642" ignored="false" />
+    <file path="/test_feature.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409737642568" ignored="false" />
+    <file path="/steps_for_test_feature.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409825046734" ignored="false" />
+    <file path="/login_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427715415803" ignored="false" />
+    <file path="/application_master_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409562853826" ignored="false" />
+    <file path="/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1423024663559" ignored="false" />
+    <file path="/master_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427971575077" ignored="false" />
+    <file path="/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424837303094" ignored="false" />
+    <file path="D:/object_repository/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409655964674" ignored="false" />
+    <file path="/Dummy.txt" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427167042153" ignored="false" />
+    <file path="/denominator_of_demographics.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410525844943" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409820045574" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/generic_library/login_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409820088970" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/sample/login.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409812432448" ignored="false" />
+    <file path="/login.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409813400251" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/sample_data/login.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409813400251" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/sample_data/sample_1/login.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409813573190" ignored="false" />
+    <file path="/login_1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409813610143" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/sample_data/sample_1/login_1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409813610143" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/step_definitions/login_trac.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409819935727" ignored="false" />
+    <file path="/login_trac.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409819893436" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409823033816" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Dataset_with_data_magic/features/sam.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1409831473783" ignored="false" />
+    <file path="/denominator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411043124050" ignored="false" />
+    <file path="/create_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417169724161" ignored="false" />
+    <file path="/create_exam.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425880773199" ignored="false" />
+    <file path="/pagination.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424835523149" ignored="false" />
+    <file path="/exam_data.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410439396665" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410152942860" ignored="false" />
+    <file path="/test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427715219401" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/step_definitions/test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410427762230" ignored="false" />
+    <file path="/test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422362066917" ignored="false" />
+    <file path="E:/test_report_28_08_2014-19_25_10/test_sub_test.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410157017055" ignored="false" />
+    <file path="/test_sub_test.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410156898640" ignored="false" />
+    <file path="E:/test_report_28_08_2014-19_25_10/app_env.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410157101362" ignored="false" />
+    <file path="/app_env.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410158780822" ignored="false" />
+    <file path="E:/TestRepo/trunk/test_report_23_08_2014-18_51_21/app_env.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410158557237" ignored="false" />
+    <file path="E:/Test/trunk/test_report_23_08_2014-18_52_16/app_env.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410158782047" ignored="false" />
+    <file path="E:/Test/trunk/test_report_23_08_2014-18_52_16/test_framework_sub_test.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410158839434" ignored="false" />
+    <file path="/test_framework_sub_test.log" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410158839434" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410431864640" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410518330242" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/test1/test1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410170242825" ignored="false" />
+    <file path="/test1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410170242436" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/step_definitions/test1_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410170207753" ignored="false" />
+    <file path="/test1_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410170200761" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/test/patient_data.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410416346372" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/goms/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410184528673" ignored="false" />
+    <file path="/demographics.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424947083314" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/goms/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410185309352" ignored="false" />
+    <file path="/numerator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413437574922" ignored="false" />
+    <file path="/numerator_of_demographics.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410494022386" ignored="false" />
+    <file path="/requirement_of_demographics.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410355429952" ignored="false" />
+    <file path="/inpatient_in_demographics.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410355912939" ignored="false" />
+    <file path="/non_face_to_face_patients_in_demo.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410355960280" ignored="false" />
+    <file path="/positive_scenarios_in_demo.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410356119273" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/bala/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410356486185" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/go/demographics.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410357237734" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/test/test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410414193600" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/test/new_test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410414482933" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/step_definitions/new_test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410415606607" ignored="false" />
+    <file path="/new_test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410521232735" ignored="false" />
+    <file path="/new_test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410524859181" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/step_definitions/new_test/new_test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410435033782" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new_test/patient_data_s1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410416426473" ignored="false" />
+    <file path="/patient_data_s1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410416426473" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new_test/patient_data_s2.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410416445068" ignored="false" />
+    <file path="/patient_data_s2.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410416445068" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new_test/new_test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410417355817" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new/new_test/new_test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410516511974" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new/new_test/exam_data_t1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410424550849" ignored="false" />
+    <file path="/exam_data_t1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410424550849" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new1/new_test/new_test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410435136208" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/step_definitions/new1/new_test/new_test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410516639917" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new1/new_test/new_test1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410428483940" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/new1/new_test/patient_data1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410431987995" ignored="false" />
+    <file path="/patient_data1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410431839563" ignored="false" />
+    <file path="/patient_data.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410505264338" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/actual/new_test/new_test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410521404527" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/step_definitions/actual/new_test/new_test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410524952140" ignored="false" />
+    <file path="D:/Cucumber/calculator/features/examples/actual/new_test/exam_data_s1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410517159774" ignored="false" />
+    <file path="/exam_data_s1.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410517159774" ignored="false" />
+    <file path="/create_problem_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413808167163" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418280353943" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412771716155" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/generic_library/select_list_sample.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410927395458" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410927491106" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/step_definitions/test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415002647999" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/generic_library/test/test_home_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410943805136" ignored="false" />
+    <file path="/test_home_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410943789947" ignored="false" />
+    <file path="/select_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411044261060" ignored="false" />
+    <file path="/element.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1410939607235" ignored="false" />
+    <file path="/record_electronic_notes.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413872869452" ignored="false" />
+    <file path="/visit_notes.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417169506108" ignored="false" />
+    <file path="E:/support/browser_settings.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411017765223" ignored="false" />
+    <file path="/visit_notes.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411033003632" ignored="false" />
+    <file path="/record_electronic_notes_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424176107805" ignored="false" />
+    <file path="/create_allergen.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413787258739" ignored="false" />
+    <file path="/create_family.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413873997396" ignored="false" />
+    <file path="/create_immunization.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413804185141" ignored="false" />
+    <file path="/create_implant.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413787477212" ignored="false" />
+    <file path="/create_medication.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412770599544" ignored="false" />
+    <file path="/health_status.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424839667794" ignored="false" />
+    <file path="/patient.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426825023758" ignored="false" />
+    <file path="/fragment.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428573949916" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411390102243" ignored="false" />
+    <file path="/sample.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414391138594" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/generic_library/sample/sample_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411386704588" ignored="false" />
+    <file path="/sample_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414391203419" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411390107368" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample/sample.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413433768496" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample/sample1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413364300891" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/temp/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414560493012" ignored="false" />
+    <file path="/amc_report_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424670443275" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/generic_library/gem_list_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411477771726" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/step_definitions/fetch_gem_details.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417428248464" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/generic_library/home_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417427201629" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/Rakefile.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412773376030" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/test_rake.rake" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411627658326" ignored="false" />
+    <file path="/test_rake.rake" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411627657126" ignored="false" />
+    <file path="/Rakefile.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419585664607" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/step_definitions/sample/sample_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414391203419" ignored="false" />
+    <file path="D:/A_Checkout/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412934707205" ignored="false" />
+    <file path="D:/A_Checkout/library/app_specific/page_utils.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412935184962" ignored="false" />
+    <file path="D:/A_Checkout/library/app_specific/pagination.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412950023445" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412936881188" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/create_exam.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412936939646" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/create_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412937008294" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/demographics.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412937390634" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/login_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412937843493" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/master_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412937922806" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412938175888" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/visit_notes.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412938226683" ignored="false" />
+    <file path="D:/A_Checkout/step_definitions/amc/stage2/electronic_notes/record_electronic_notes_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411639207019" ignored="false" />
+    <file path="D:/A_Checkout/support/browser_settings.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411639378735" ignored="false" />
+    <file path="D:/A_Checkout/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412940515169" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage1/exam.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411723499336" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage1/patient.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411723535950" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage2/exam.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412935018972" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage2/patient.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412935076476" ignored="false" />
+    <file path="D:/A1_CHeckout/page_utils.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411728851051" ignored="false" />
+    <file path="D:/A1_checkout/pagination.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411736326925" ignored="false" />
+    <file path="D:/A2_checkout/object_repository/create_problem_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411968345058" ignored="false" />
+    <file path="D:/A2_checkout/object_repository/demographics.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411968372834" ignored="false" />
+    <file path="D:/A2_checkout/object_repository/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411970495036" ignored="false" />
+    <file path="/demographics_stage2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412930770668" ignored="false" />
+    <file path="/demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424242166010" ignored="false" />
+    <file path="D:/A2_temp/features/amc/stage2/demographics/demographics_stage2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411979783672" ignored="false" />
+    <file path="D:/A2_temp/step_definitions/amc/stage1/numerator/numerator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1411976114298" ignored="false" />
+    <file path="/patient_tc_4789.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413868311287" ignored="false" />
+    <file path="D:/A3_checkout/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412000589130" ignored="false" />
+    <file path="D:/A3_checkout/features/amc/stage2/electronic_notes/record_electronic_notes.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412000649108" ignored="false" />
+    <file path="D:/A3_checkout/object_repository/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412000811647" ignored="false" />
+    <file path="D:/A3_checkout/object_repository/create_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412000933785" ignored="false" />
+    <file path="D:/A3_checkout/object_repository/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412001010893" ignored="false" />
+    <file path="D:/A3_checkout/step_definitions/amc/stage1/demographics/numerator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412001173090" ignored="false" />
+    <file path="D:/A3_checkout/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412001335195" ignored="false" />
+    <file path="D:/A3_checkout/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412001361119" ignored="false" />
+    <file path="D:/Atemp/ehr_desktop_web/features/amc/stage2/demographics/demographics_stage2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412049995548" ignored="false" />
+    <file path="D:/Atemp/ehr_desktop_web/step_definitions/amc/report/amc_report_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412050029067" ignored="false" />
+    <file path="D:/Atemp/ehr_desktop_web/step_definitions/amc/stage2/demographics/demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412050067754" ignored="false" />
+    <file path="D:/A1_Checkout/features/amc/stage2/demographics/demographics_stage2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412050210464" ignored="false" />
+    <file path="D:/A1_Checkout/step_definitions/amc/stage2/demographics/demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412055700408" ignored="false" />
+    <file path="D:/A1_Checkout/features/amc/stage2/electronic_notes/record_electronic_notes.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412133527129" ignored="false" />
+    <file path="D:/A1_Checkout/step_definitions/amc/report/amc_report_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412146917747" ignored="false" />
+    <file path="D:/A1_Checkout/library/generic/file_library.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412050933325" ignored="false" />
+    <file path="D:/A1/amc_report_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412052409105" ignored="false" />
+    <file path="D:/A1_Checkout/object_repository/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412059129497" ignored="false" />
+    <file path="D:/A1_Checkout/object_repository/master_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412054536097" ignored="false" />
+    <file path="D:/A1_Checkout/object_repository/create_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412058709932" ignored="false" />
+    <file path="D:/A1_Checkout/object_repository/create_exam.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412055193040" ignored="false" />
+    <file path="D:/A1_Checkout/step_definitions/amc/stage1/demographics/numerator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412146917747" ignored="false" />
+    <file path="D:/A1_Checkout/step_definitions/amc/stage1/healthstatus/healthstatus_step.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412055648036" ignored="false" />
+    <file path="D:/A1_Checkout/.idea/workspace.xml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412057630842" ignored="false" />
+    <file path="D:/A1_Checkout/support/browser_settings.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412146917747" ignored="false" />
+    <file path="D:/A1_Checkout/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412056081763" ignored="false" />
+    <file path="D:/A1_Checkout/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412146917747" ignored="false" />
+    <file path="D:/A1_Checkout/object_repository/login_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412059414020" ignored="false" />
+    <file path="D:/A1_Checkout/eHR/ehr_desktop_web/object_repository/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412060572511" ignored="false" />
+    <file path="D:/A1/object_repository/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412170966517" ignored="false" />
+    <file path="/cpoe_availablity.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412064423032" ignored="false" />
+    <file path="D:/A1/step_definitions/amc/stage1/demographics/numerator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412169925921" ignored="false" />
+    <file path="/cpoe_for_medication_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415078709881" ignored="false" />
+    <file path="D:/A1_Checkout/object_repository/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412133664908" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Actual_Checkout_Test/ehr_desktop_web/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412085917137" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/step_definitions/new_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412141320656" ignored="false" />
+    <file path="/new_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412141316770" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412147556037" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/object_repository/order_entry.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412158240277" ignored="false" />
+    <file path="/order_entry.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418289181407" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/object_repository/order_entry_medications.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412162683667" ignored="false" />
+    <file path="/order_entry_medications.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417175536165" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/features/amc/stage2/medication_order.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412159558162" ignored="false" />
+    <file path="/medication_order.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413808513340" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/object_repository/visit_notes.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412162705602" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/features/amc/stage2/cpoe/cpoe_for_medication_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412163008669" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/step_definitions/amc/report/amc_report_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412169031825" ignored="false" />
+    <file path="D:/A1/step_definitions/amc/report/amc_report_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412169437034" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/step_definitions/amc/stage1/demographics/numerator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412169944721" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/step_definitions/amc/stage2/demographics/demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412170036297" ignored="false" />
+    <file path="D:/A1/step_definitions/amc/stage2/demographics/demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412170040979" ignored="false" />
+    <file path="D:/A1/features/amc/stage2/exam.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412170143939" ignored="false" />
+    <file path="D:/A1/features/amc/stage2/electronic_notes/record_electronic_notes.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412170452356" ignored="false" />
+    <file path="D:/A1/object_repository/visit_notes.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412170569874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Source_Code/Updated_Framework/eHR/ehr_desktop_web/object_repository/search_patient.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412171012511" ignored="false" />
+    <file path="/cpoe_for_medication_orders_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413275554202" ignored="false" />
+    <file path="/health_status_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425881193112" ignored="false" />
+    <file path="/login_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425634025751" ignored="false" />
+    <file path="/medication_list.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414411672063" ignored="false" />
+    <file path="/create_order_entry_medications.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412918714638" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412861924541" ignored="false" />
+    <file path="/select_patient_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415968719202" ignored="false" />
+    <file path="/y_test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412931464004" ignored="false" />
+    <file path="/exam.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425268390799" ignored="false" />
+    <file path="D:/A_Checkout/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412934750190" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage2/cpoe/cpoe_for_medication_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412934861930" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage2/demographics/demographics_stage2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412934908671" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage2/electronic_notes/record_electronic_notes.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412934978356" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage2/medication_order.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412935061574" ignored="false" />
+    <file path="D:/A_Checkout/features/amc/stage2/visit_notes.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412935095714" ignored="false" />
+    <file path="D:/A_Checkout/library/generic/file_library.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412936820824" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/health_status.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412950291735" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/order_entry.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412939770869" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/order_entry_medications.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412938043350" ignored="false" />
+    <file path="D:/A_Checkout/step_definitions/amc/stage1/demographics/numerator_of_demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412940220873" ignored="false" />
+    <file path="D:/A_Checkout/step_definitions/amc/stage2/cpoe/cpoe_for_medication_orders_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412940325503" ignored="false" />
+    <file path="D:/A_Checkout/step_definitions/amc/stage2/demographics/demographics_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412940364765" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/create_allergen.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412949389415" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/create_family.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412949413825" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/create_immunization.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412949419615" ignored="false" />
+    <file path="D:/A_Checkout/object_repository/create_implant.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1412949425108" ignored="false" />
+    <file path="D:/A1_checkout/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413020502486" ignored="false" />
+    <file path="D:/A1_checkout/features/amc/stage2/cpoe/cpoe_for_medication_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413020610295" ignored="false" />
+    <file path="D:/A1_checkout/step_definitions/amc/stage2/cpoe/cpoe_for_medication_orders_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413020646880" ignored="false" />
+    <file path="D:/A1_checkout/object_repository/order_entry.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413020675714" ignored="false" />
+    <file path="D:/A1_checkout/object_repository/order_entry_medications.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413020701560" ignored="false" />
+    <file path="D:/A1_checkout/object_repository/AMC_stage.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413020952867" ignored="false" />
+    <file path="D:/A1_checkout/object_repository/medication_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413021036114" ignored="false" />
+    <file path="/generate_transmit_eRx_stage2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413276853748" ignored="false" />
+    <file path="/family_health_history_stage2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413361819962" ignored="false" />
+    <file path="$PROJECT_DIR$/../../eHR/ehr_desktop_web/object_repository/order_entry.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413032732568" ignored="false" />
+    <file path="$PROJECT_DIR$/../../eHR/ehr_desktop_web/object_repository/health_status.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413032782081" ignored="false" />
+    <file path="$PROJECT_DIR$/../../eHR/ehr_desktop_web/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413171402989" ignored="false" />
+    <file path="/family_health_history_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413436540158" ignored="false" />
+    <file path="/ascii.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413210075282" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/ascii/ascii.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413210075282" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/step_definitions/ascii_steps/ascii_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418288604575" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/generic_library/ascii_class.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413259099253" ignored="false" />
+    <file path="/ascii_class.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413259098878" ignored="false" />
+    <file path="/ascii_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418288571719" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/temp/test1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414390298963" ignored="false" />
+    <file path="/cpoe_for_laboratory_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1421986501961" ignored="false" />
+    <file path="/cpoe_for_radialogy_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413275745786" ignored="false" />
+    <file path="/medication_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417172188988" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample/sample3.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413368816533" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample/sample4.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413373334846" ignored="false" />
+    <file path="/sample3.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413451758635" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample/sample2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413373596110" ignored="false" />
+    <file path="/sample2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413451748787" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/ascii/test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413434233013" ignored="false" />
+    <file path="/family_health_history.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413814324156" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample_text/sample1/sample2.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413451749223" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample_text/sample1/sample3.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413451759041" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample_text/sample1/sample4.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413451774213" ignored="false" />
+    <file path="/sample4.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413451774213" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample_text/sam/sample1/sam1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413452102564" ignored="false" />
+    <file path="/sam1.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413452102564" ignored="false" />
+    <file path="/generate_and_transmit_erx.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413814284132" ignored="false" />
+    <file path="/Ruby Console" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413806624686" ignored="false" />
+    <file path="/create_order_entry_laboratory.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413617402779" ignored="false" />
+    <file path="/order_entry_results_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424175551916" ignored="false" />
+    <file path="/create_ep.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426046747568" ignored="false" />
+    <file path="/order_entry_laboratory.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417173205571" ignored="false" />
+    <file path="/update_visit.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413795931021" ignored="false" />
+    <file path="/cpoe_for_radiology_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1413814435997" ignored="false" />
+    <file path="/demographics.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426767640794" ignored="false" />
+    <file path="/family_history.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426496522120" ignored="false" />
+    <file path="/order_entry_radiology.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417168565860" ignored="false" />
+    <file path="/numerator_report_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424241981248" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample_text/sam/sample/sample.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414391206324" ignored="false" />
+    <file path="/patient_education.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417084993343" ignored="false" />
+    <file path="/problem_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417175921783" ignored="false" />
+    <file path="/problem_list.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427094112154" ignored="false" />
+    <file path="/clinical_report_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417146579896" ignored="false" />
+    <file path="/imaging_results.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416548462968" ignored="false" />
+    <file path="/preventive_care.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420606171006" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/date_time_diff/get_previous_dates.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414757503594" ignored="false" />
+    <file path="/get_previous_dates.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1414757503594" ignored="false" />
+    <file path="/remainder_mail_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416400162744" ignored="false" />
+    <file path="/send_patient_remainders.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417500361270" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/sample_text/test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415002471073" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/test/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415186563234" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/test/full-book.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415178259285" ignored="false" />
+    <file path="/full-book.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415178151975" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/test/test1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415178368811" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/test/test.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415179045180" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/test/out.txt" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415180039892" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/test/style.css" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415180344080" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/test/script.js" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415180344080" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415181025434" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/test_script.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415195005669" ignored="false" />
+    <file path="/test_script.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415195005669" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/script.js" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415183488631" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/body.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415183488631" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/test/home.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415186445564" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/test/script.js" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415186445564" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/test/style.css" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415193224536" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/test/body.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415195024621" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/report_updated.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415191306065" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/test/test.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415195024621" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/Split_html_file/actual/report.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415190334890" ignored="false" />
+    <file path="/test.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415194139745" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/actual_script.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417601505358" ignored="false" />
+    <file path="/actual_script.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417601502731" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/demographics.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/cpoe_for_radiology_orders.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/cpoe_for_laboratory_orders.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/record_electronic_notes.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/cpoe_for_medication_orders.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/test_template1.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/smoking_status.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/generate_and_transmit_erx.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/patient_education.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/generate_patient_list.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/test/new/family_health_history.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415353410639" ignored="false" />
+    <file path="/custom_html_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424838342493" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415364686317" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/test_with_read_report/actual_test/report_01_11_2014-01_38_12.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415598039376" ignored="false" />
+    <file path="/send_patient_remainder_page_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415774266431" ignored="false" />
+    <file path="/med_reconciliation.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415852055818" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/file_upload/file_upload.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415862528787" ignored="false" />
+    <file path="/file_upload.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415862528787" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/features/step_definitions/file_upload/file_upload_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415865651095" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/generic_library/file_upload.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415870474356" ignored="false" />
+    <file path="/file_upload.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415870377334" ignored="false" />
+    <file path="/file_upload_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415865641573" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/open_uri_sample.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415868212768" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417674268013" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/Z_temp/reconcile.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415883219667" ignored="false" />
+    <file path="/reconcile.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417176116098" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/Z_temp/document_note.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1415883202241" ignored="false" />
+    <file path="/document_note.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416202414783" ignored="false" />
+    <file path="/med_reconciliation_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416221035306" ignored="false" />
+    <file path="/transition_of_care_document.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424173661885" ignored="false" />
+    <file path="/generate_patient_list.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416407613441" ignored="false" />
+    <file path="/incorporate_clinical_lab_results.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416493116804" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/hl7/sample_socket_1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416904943362" ignored="false" />
+    <file path="/sample_socket_1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416904928012" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/hl7/simple_web_client.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416905335144" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/hl7/sample_hl7.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416906552303" ignored="false" />
+    <file path="/provide_clinical_summary.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1416996996202" ignored="false" />
+    <file path="/generate_patient_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417168166755" ignored="false" />
+    <file path="/family_history.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417166719875" ignored="false" />
+    <file path="/lab_results.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417171067084" ignored="false" />
+    <file path="/*.regexp" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1423735953445" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/sample_text.txt" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417674216102" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/hl7/read_hl7_data.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418305501720" ignored="false" />
+    <file path="/read_hl7_data.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418305501720" ignored="false" />
+    <file path="/update_hl7_data.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418040230628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/hl7/update_hl7_data.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418040237651" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/hl7/hl7_message_template.txt" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417677224606" ignored="false" />
+    <file path="/patient_electronic_access.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1417757267611" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/hl7/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418021501848" ignored="false" />
+    <file path="/test_hl7.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418288693434" ignored="false" />
+    <file path="/hl7_messaging_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418289917716" ignored="false" />
+    <file path="/hl7_utils.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432558002011" ignored="false" />
+    <file path="/htmlformatter.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418123860718" ignored="false" />
+    <file path="/html.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418115371503" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/sam.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418644444302" ignored="false" />
+    <file path="/sam.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419577991135" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/RubyGems/sample1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418620506927" ignored="false" />
+    <file path="/sample1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418620506927" ignored="false" />
+    <file path="/ep_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427339751043" ignored="false" />
+    <file path="/a.rxml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418635969681" ignored="false" />
+    <file path="/test_mobile.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418883624146" ignored="false" />
+    <file path="/mobile_login.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420533289096" ignored="false" />
+    <file path="/test_mobile_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419933332888" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420613973168" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418726075371" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/step_definitions/test_mobile_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419933333200" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/library/mobile_login.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420533289096" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/support/browser_settings.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420613597561" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../Z_temp/DR_Systems_POC/DR_Systems/features/support/browser.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418729995611" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/valid_code/split_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420435207197" ignored="false" />
+    <file path="/split_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420435203794" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/others/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418806429117" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/ehr_desktop_web/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418876650018" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/ehr_desktop_web/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418880334689" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/config/cucumber.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418887470513" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/ehr_desktop_web/library/app_init/app_driver.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418879269968" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418883275372" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/ehr_mobile_web/library/app_init/app_driver.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418881108462" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/library/app_init/app_driver.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418882808123" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/ehr_mobile_web/features/test_mobile.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418883624508" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/support/browser_settings.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418899712460" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/ehr_mobile_web/object_repository/mobile_login.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418887275447" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile/eHR/ehr_mobile_web/step_definitions/test_mobile_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1418887181048" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/read_and_update_yml.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419425883927" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/data.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419425911275" ignored="false" />
+    <file path="/read_and_update_yml.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419425880668" ignored="false" />
+    <file path="/data.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419425895320" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/watir-webdriver-demo-master/sample.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419430169891" ignored="false" />
+    <file path="/sample.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419430149559" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/sam.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419585678247" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Ruby_YML/Rakefile.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419585666131" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420525440683" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1419934415654" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/rename_yml_files/rename_yml.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420000885911" ignored="false" />
+    <file path="/rename_yml.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420000885381" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/valid_code/custom_report/report_summary.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420198980256" ignored="false" />
+    <file path="$PROJECT_DIR$/ehr_desktop_web/library/app_init/app_driver.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420205025210" ignored="false" />
+    <file path="/temp.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420613473804" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/watir-webdriver-demo-master/temp.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420613474476" ignored="false" />
+    <file path="$PROJECT_DIR$/ehr_desktop_web/step_definitions/amc/stage2/lab_results/lab_results_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1420795308613" ignored="false" />
+    <file path="$PROJECT_DIR$/ehr_desktop_web/step_definitions/amc/report/numerator_report_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1421398069476" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/ehr_mobile_web/features/allergies/allergies.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1421726756904" ignored="false" />
+    <file path="/allergies.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426234690859" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ehr_mobile_sample/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1421735037961" ignored="false" />
+    <file path="/mobile_login_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422420781399" ignored="false" />
+    <file path="/mobile_login_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427339690951" ignored="false" />
+    <file path="/medication_allergy.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1421822222874" ignored="false" />
+    <file path="/ep_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429176139004" ignored="false" />
+    <file path="/patient_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428312507433" ignored="false" />
+    <file path="/patient_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429099136416" ignored="false" />
+    <file path="/visit_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1421833134698" ignored="false" />
+    <file path="/clinical_data_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427359303066" ignored="false" />
+    <file path="/dashboard_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428390372205" ignored="false" />
+    <file path="/exam_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428556672876" ignored="false" />
+    <file path="/med_allergy_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427340219530" ignored="false" />
+    <file path="/master_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428556817558" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422362327730" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/features/mobile/test/test.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422340385320" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/step_definitions/mobile/test/test_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422362066917" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/object_repository/desktop/login_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422017621612" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422351195245" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/Gemfile" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422349798092" ignored="false" />
+    <file path="/Gemfile" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429245150387" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/Gemfile.lock" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422349803572" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/23_Jan_2015/eHR/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422349748939" ignored="false" />
+    <file path="/desktop_health_status.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427343641719" ignored="false" />
+    <file path="/desktop_health_status_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1422522364152" ignored="false" />
+    <file path="/medication_allergy_list.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1423738234396" ignored="false" />
+    <file path="/desktop_master_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429154274630" ignored="false" />
+    <file path="/non_compliance.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424510781973" ignored="false" />
+    <file path="/non_compliance_report_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426078973118" ignored="false" />
+    <file path="/lab_results_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424176558734" ignored="false" />
+    <file path="/page_navigation_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424238533032" ignored="false" />
+    <file path="$PROJECT_DIR$/test_result/test_report_18_02_2015-10_17_21/report_18_02_2015-10_22_09.json1" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424238386471" ignored="false" />
+    <file path="$PROJECT_DIR$/test_result/test_report_18_02_2015-10_17_21/custom_report/detailed_report/stage1_medication_allergy.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424238386471" ignored="false" />
+    <file path="$PROJECT_DIR$/test_result/test_report_18_02_2015-09_33_58/custom_report/detailed_report/stage1_smoking_status.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424238386471" ignored="false" />
+    <file path="$PROJECT_DIR$/test_result/test_report_18_02_2015-09_40_47/report_18_02_2015-09_44_47.json1" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424238386471" ignored="false" />
+    <file path="$PROJECT_DIR$/test_result/test_report_18_02_2015-09_40_47/custom_report/detailed_report/stage1_smoking_status.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424238386471" ignored="false" />
+    <file path="$PROJECT_DIR$/test_result/test_report_18_02_2015-10_39_12/custom_report/detailed_report/stage1_problem_list.html" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424238386471" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/TAF_custom_report/custom_html_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424339251321" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/create_consolidated_report/custom_html_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424353308207" ignored="false" />
+    <file path="D:/Cucumber/cucumber_with_pageobject/split_test_report/create_consolidated_report/TAF_custom_report/custom_html_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424407336231" ignored="false" />
+    <file path="D:/BACKUP/Source_Code_Backup/ehr_desktop_and_mobile/Feb/20_temp_before_merge/eHR/library/generic/custom_html_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424439945287" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/features/desktop/compliance/amc/stage2/demographics/demographics.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424440794038" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/library/generic/file_library.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424441364511" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/library/generic/custom_html_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424498774866" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/features/amc/stage2/cpoe/cpoe_for_laboratory_orders.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424498686416" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/config/config.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424498670701" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/features/amc/stage2/smoking_status/smoking_status.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424497984775" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/features/amc/stage2/demographics/demographics.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424498693727" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424498964938" ignored="false" />
+    <file path="D:/Jenkins/workspace/eHR-Goms/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424499105482" ignored="false" />
+    <file path="/non_compliance_gereral.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426079967823" ignored="false" />
+    <file path="/general.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428397324873" ignored="false" />
+    <file path="/site.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426048839586" ignored="false" />
+    <file path="/site.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1424922488045" ignored="false" />
+    <file path="/data_file_names.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425559064727" ignored="false" />
+    <file path="/site_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425876693557" ignored="false" />
+    <file path="/exam_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427340082340" ignored="false" />
+    <file path="/updated_non_compliance_general.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425123694695" ignored="false" />
+    <file path="/non_compliance_general_updated.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425272913734" ignored="false" />
+    <file path="/site_administration.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428562223898" ignored="false" />
+    <file path="/users_and_groups.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425981657734" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/parse_json1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425275321073" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/sample1.json" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425274803162" ignored="false" />
+    <file path="/parse_json1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425274849520" ignored="false" />
+    <file path="/sample1.json" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425274779826" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/get_feature_details.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425377235104" ignored="false" />
+    <file path="/get_feature_details.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425377229246" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/json_files/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425299391707" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/performance_report/performance_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425389868388" ignored="false" />
+    <file path="/performance_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426057729744" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/performance_report/json_files/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425472307196" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/performance_report/json_files/test1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425469331584" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Parse_JSON/04_mar/performance_report.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425532677738" ignored="false" />
+    <file path="/admin_group.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425557092866" ignored="false" />
+    <file path="/new_contact.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425558918976" ignored="false" />
+    <file path="/site_administartion_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425881311319" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/a_temp/create_ep.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425979256885" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/a_temp/menu_traverse.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425978117653" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/a_temp/master_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425978240394" ignored="false" />
+    <file path="$PROJECT_DIR$/step_definitions/desktop/visit_notes/record_electronic_notes_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1425988738380" ignored="false" />
+    <file path="$PROJECT_DIR$/step_definitions/desktop/select_patient/exam_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427087037759" ignored="false" />
+    <file path="/family_history.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429251871347" ignored="false" />
+    <file path="/desktop_visit_page.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428381470416" ignored="false" />
+    <file path="/medications.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427089895640" ignored="false" />
+    <file path="/medication.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1426846931768" ignored="false" />
+    <file path="/problems.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427105627813" ignored="false" />
+    <file path="/smoking_status.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427107867916" ignored="false" />
+    <file path="/vitals.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427191263821" ignored="false" />
+    <file path="/vital_signs.yml" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427112731281" ignored="false" />
+    <file path="/html_formatter.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1427696721469" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/access_levels.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570001028" ignored="false" />
+    <file path="/access_levels.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570001028" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/file_manip.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570567371" ignored="false" />
+    <file path="/file_manip.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570567371" ignored="false" />
+    <file path="/module_sample2.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570898589" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/module_sample2.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570898589" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/my_spec1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570962802" ignored="false" />
+    <file path="/my_spec1.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570924008" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/Print_Numbers_without_Loop.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428570977144" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/remove_duplicates_new.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428663219409" ignored="false" />
+    <file path="/remove_duplicates_new.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428661579059" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428661258872" ignored="false" />
+    <file path="/string_reverse.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428662831737" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/string_reverse.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428662853454" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/angle_betweeb_hands_on_clock.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428918174033" ignored="false" />
+    <file path="/angle_betweeb_hands_on_clock.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428918146017" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/random_array_addition.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428907433553" ignored="false" />
+    <file path="/random_array_addition.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428907248684" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/quick_sort.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428916613985" ignored="false" />
+    <file path="/quick_sort.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428916571043" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/convert_date_to_year_month_day.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428910075851" ignored="false" />
+    <file path="/convert_date_to_year_month_day.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428910073402" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/q.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428916686021" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/stack.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428916727534" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/linked_list.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428917163550" ignored="false" />
+    <file path="/anagrams.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428923976886" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/anagrams.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428923983974" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/Console_App/Ruby_Console_App/Ruby_Console_App/sum_of_pair_in_array.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428924726482" ignored="false" />
+    <file path="/sum_of_pair_in_array.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1428924697908" ignored="false" />
+    <file path="$USER_HOME$/Downloads/A_goms/17_April/eHR/features/mobile/clinical_data/patient_allergies/allergies.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429269648715" ignored="false" />
+    <file path="$USER_HOME$/Downloads/A_goms/17_April/eHR/features/mobile/clinical_data/patient_family_history/family_history.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429269657803" ignored="false" />
+    <file path="$USER_HOME$/Downloads/A_goms/17_April/eHR/features/mobile/clinical_data/patient_medications/medications.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429269665167" ignored="false" />
+    <file path="$USER_HOME$/Downloads/A_goms/17_April/eHR/features/mobile/clinical_data/patient_problems/problems.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429269672152" ignored="false" />
+    <file path="$USER_HOME$/Downloads/A_goms/17_April/eHR/features/mobile/clinical_data/patient_smoking_status/smoking_status.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429269680684" ignored="false" />
+    <file path="$USER_HOME$/Downloads/A_goms/17_April/eHR/features/mobile/clinical_data/patient_vitals/vitals.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429269688713" ignored="false" />
+    <file path="$USER_HOME$/Downloads/A_goms/17_April/eHR/features/mobile/general/general_case/general.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429269698939" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Calabash_Cucumber/features/support/app_installation_hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429766505410" ignored="false" />
+    <file path="/app_installation_hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429766505410" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Calabash_Cucumber/features/support/app_life_cycle_hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429766578059" ignored="false" />
+    <file path="/app_life_cycle_hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429766575447" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Calabash_Cucumber/features/support/env.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429785585559" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Calabash_Cucumber/features/my_first.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429785010093" ignored="false" />
+    <file path="/my_first.feature" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429785008574" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Calabash_Cucumber/features/step_definitions/calabash_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429783767122" ignored="false" />
+    <file path="/calabash_steps.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429783138587" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Calabash_Cucumber/features/support/hooks.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1429785604136" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/hl7/hl7_utils.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432558018599" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/hl7/test.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432547042462" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/hl7/create_log.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432557330266" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../Ruby_App/hl7/driver.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432557323714" ignored="false" />
+    <file path="/driver.rb" changelist="6e47ceeb-d0e4-4494-8f71-6800867ba58b" time="1432557268242" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DRSYSTEMS@record_electronic_notes.coverage" NAME="record_electronic_notes Coverage Results" MODIFIED="1411377883177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ehr_desktop_web" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="DRSYSTEMS" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="demographics.feature" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/desktop/compliance/amc/stage2/demographics/demographics.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="19" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master_page.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/object_repository/desktop/master_page.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="446" column="40" selection-start="22295" selection-end="22295" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="browser_settings.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/support/browser_settings.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="169" column="73" selection-start="5733" selection-end="5733" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hl7_utils.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/library/app_specific/hl7_utils.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="39" selection-start="3143" selection-end="3143" vertical-scroll-proportion="0.5422535">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file_library.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/generic/file_library.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="47" selection-start="641" selection-end="668" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hooks.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/support/hooks.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="32" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#11884#12382#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/object_repository/mobile/master_page.rb" />
+        <option value="$PROJECT_DIR$/support/hooks.rb" />
+        <option value="$PROJECT_DIR$/object_repository/mobile/desktop_master_page.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/support/env.rb" />
+        <option value="$PROJECT_DIR$/object_repository/desktop/master_page.rb" />
+        <option value="$PROJECT_DIR$/features/mobile/clinical_data/patient_allergies/allergies.feature" />
+        <option value="$PROJECT_DIR$/features/mobile/clinical_data/patient_family_history/family_history.feature" />
+        <option value="$PROJECT_DIR$/features/mobile/clinical_data/patient_medications/medications.feature" />
+        <option value="$PROJECT_DIR$/features/mobile/clinical_data/patient_problems/problems.feature" />
+        <option value="$PROJECT_DIR$/features/mobile/clinical_data/patient_smoking_status/smoking_status.feature" />
+        <option value="$PROJECT_DIR$/features/mobile/clinical_data/patient_vitals/vitals.feature" />
+        <option value="$PROJECT_DIR$/features/mobile/general/general_case/general.feature" />
+        <option value="$PROJECT_DIR$/object_repository/mobile/ep_page.rb" />
+        <option value="$PROJECT_DIR$/support/browser_settings.rb" />
+        <option value="$PROJECT_DIR$/config/config.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="step_definitions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="object_repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hl7_messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app_specific" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DRSYSTEMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eHR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="110" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="110" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="73" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="112" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="105" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="104" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="105" />
+    <property name="RakeTaksPopup.undocumentedIncluded" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="765" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="107" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="104" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="116" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="769" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="options.lastSelected" value="preferences.toDoOptions" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="last.edited.regexp" value="Sample Text" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\DRSYS_QA\Source_Code\ehr_desktop_and_mobile\eHR\features\mobile\general\test_data" />
+      <recent name="E:\Projects\DRSYS_QA\Z_others\ehr_desktop_and_mobile\eHR\features\desktop\test" />
+      <recent name="E:\Projects\DRSYS_QA\Z_others\ehr_desktop_and_mobile\eHR\support" />
+      <recent name="E:\Projects\DRSYS_QA\Z_others\ehr_desktop_and_mobile\eHR\features\mobile\allergies\test_data" />
+      <recent name="E:\Projects\DRSYS_QA\Z_others\ehr_desktop_and_mobile\eHR\test_result" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\DRSYS_QA\Source_Code\ehr_desktop_and_mobile\eHR\test_result\test_report_16_04_2015-15_01_26" />
+      <recent name="E:\Projects\DRSYS_QA\Source_Code\ehr_desktop_and_mobile\eHR\test_result\test_report_08_04_2015-09_07_13" />
+      <recent name="E:\Projects\DRSYS_QA\Source_Code\ehr_desktop_and_mobile\eHR\test_result\test_report_07_04_2015-14_33_31" />
+      <recent name="E:\Projects\DRSYS_QA\Source_Code\ehr_desktop_and_mobile\eHR\features\mobile\general\general_case" />
+      <recent name="E:\Projects\DRSYS_QA\Source_Code\ehr_desktop_and_mobile\eHR\test_result\test_report_01_04_2015-12_44_46" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber.general">
+    <configuration default="false" name="test" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="DRSYSTEMS" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="ANSICON" value="" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$PROJECT_DIR$/features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/features/desktop/test/test.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="@all" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features --profile desktop_dev_ie" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="DRSYSTEMS" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/test_result" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test_result/test.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="browser_settings" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="DRSYSTEMS" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/support" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/support/browser_settings.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All features in: mobile" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="DRSYSTEMS" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="ANSICON" value="" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$PROJECT_DIR$/features/mobile" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="@all" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features --profile mobile_dev_chrome_device" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="general" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="DRSYSTEMS" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="ANSICON" value="" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$PROJECT_DIR$/features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/features/mobile/general/general_case/general.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="@all" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features --profile mobile_dev_chrome_device" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CommandRunConfigurationType" factoryName="Gem Command">
+      <module name="" />
+      <COMMAND_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <COMMAND_RUN_CONFIGURATION NAME="WORK DIR" VALUE="E:\Projects\DRSYS_QA\Source_Code\ehr_desktop_and_mobile\eHR" />
+      <COMMAND_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="false" />
+      <COMMAND_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="" />
+      <COMMAND_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <COMMAND_CONFIG_SETTINGS_ID NAME="GEM_NAME" VALUE="" />
+      <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_NAME" VALUE="" />
+      <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CapistranoRunConfigurationType" factoryName="Capistrano">
+      <module name="" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="WORK DIR" VALUE="" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_TASK_NAME" VALUE="" />
+      <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_TASK_ARGS" VALUE="" />
+      <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_STAGE" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="IrbRunConfigurationType" factoryName="IRB console">
+      <module name="" />
+      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="DRSYSTEMS" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="ANSICON" value="" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$PROJECT_DIR$/features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="@all" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features --profile mobile_dev_chrome_device" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="eHR_Config" type="CucumberRunConfigurationType" factoryName="Cucumber" folderName="eHR_Config" singleton="true">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="DRSYSTEMS" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/ehr_desktop_web" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="DEVICE" value="" />
+        <env name="BROWSER" value="internet_explorer" />
+        <env name="ANSICON" value="" />
+        <env name="PLATFORM" value="desktop" />
+        <env name="BOX" value="development" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$PROJECT_DIR$/features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="@all" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ehr_test_rake" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="DRSYSTEMS" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/ehr_desktop_web" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="BOX" value="development" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="all" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec :cucumber " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Cucumber.eHR_Config" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.ehr_test_rake" />
+      <item index="2" class="java.lang.String" itemvalue="Cucumber.test" />
+      <item index="3" class="java.lang.String" itemvalue="Ruby.test" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.browser_settings" />
+      <item index="5" class="java.lang.String" itemvalue="Cucumber.All features in: mobile" />
+      <item index="6" class="java.lang.String" itemvalue="Cucumber.general" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Cucumber.general" />
+        <item index="1" class="java.lang.String" itemvalue="Cucumber.general" />
+        <item index="2" class="java.lang.String" itemvalue="Cucumber.All features in: mobile" />
+        <item index="3" class="java.lang.String" itemvalue="Cucumber.general" />
+        <item index="4" class="java.lang.String" itemvalue="Cucumber.general" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false">C:\Users\chandrasekar.raja\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e47ceeb-d0e4-4494-8f71-6800867ba58b" name="Default" comment="" />
+      <created>1408335175040</created>
+      <updated>1408335175040</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294893" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3196046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23333333" sideWeight="0.51894563" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24166666" sideWeight="0.68039536" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.71499175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.225" sideWeight="0.35914332" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.369028" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36408567" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49093905" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32784185" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3937397" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="new eHR directory" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Wrong commit" />
+    <MESSAGE value="Remove html report" />
+    <MESSAGE value="Moved into demographics" />
+    <MESSAGE value="Remove old feature file" />
+    <MESSAGE value="Remove old file" />
+    <MESSAGE value="Moved to demographics" />
+    <MESSAGE value="Renamed ehr_desktop_web to eHR" />
+    <MESSAGE value="new eHR directory" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/ehr_desktop_web/step_definitions/test_amc/stage1/sample_tc/steps_for_test_feature.rb</url>
+          <line>5</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="952" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/features/desktop/compliance/amc/stage2/med_reconciliation/med_reconciliation.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-9.06338" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/desktop/compliance/amc/stage2/electronic_notes/record_electronic_notes.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="10" selection-start="1171" selection-end="1179" vertical-scroll-proportion="-1.3556339" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/desktop/compliance/non_compliance/general/non_compliance_gereral.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-10.658451" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/desktop/compliance/amc/general/general_case/amc_general.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="51" selection-start="611" selection-end="652" vertical-scroll-proportion="0.5422535" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/desktop/compliance/amc/stage2/demographics/demographics.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="19" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/object_repository/desktop/master_page.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="446" column="40" selection-start="22295" selection-end="22295" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/app_specific/menu_traverse.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.34859154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/app_specific/pagination.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.34859154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/app_specific/page_utils.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="49" selection-start="218" selection-end="218" vertical-scroll-proportion="0.27112675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/generic/create_log.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="24" selection-start="680" selection-end="696" vertical-scroll-proportion="0.7746479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/support/hooks.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#11884#12382#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="287" column="16" selection-start="7544" selection-end="7549" vertical-scroll-proportion="0.39414802">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/support/env.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="47" selection-start="617" selection-end="617" vertical-scroll-proportion="0.5422535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/support/browser_settings.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="73" selection-start="5733" selection-end="5733" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/generic/file_library.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="47" selection-start="641" selection-end="668" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/app_specific/hl7_utils.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="39" selection-start="3143" selection-end="3143" vertical-scroll-proportion="0.5422535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

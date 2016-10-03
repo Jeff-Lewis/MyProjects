@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClinicalDocument xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mif="urn:hl7-org:v3/mif" xmlns:sdtc="urn:hl7-org:sdtc" xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd" moodCode="EVN" xmlns="urn:hl7-org:v3">
+	<realmCode code="US" />
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<templateId root="2.16.840.1.113883.10.20.22.1.1" />
+	<templateId root="2.16.840.1.113883.10.20.22.1.2" />
+	<id root="9bc04375-7bfb-479a-8c60-149b49b635e9" extension="Continuity of Care Document" />
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of episode note" />
+	<title>Radiology Imaging Continuity of Care Document</title>
+	<effectiveTime value="20141121095010-0800" />
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+	<languageCode code="en-US" />
+	<setId root="2.16.840.1.113883.19" extension="111199021" />
+	<versionNumber value="1" />
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<patientRole classCode="PAT">
+			<id root="2.16.840.1.113883.4.1" extension="P015183X" assigningAuthorityName="Radiology Imaging" />
+			<addr use="HP">
+				<streetAddressLine>UnKnown</streetAddressLine>
+				<city>UnKnown</city>
+				<country>US</country>
+			</addr>
+			<telecom value="" />
+			<telecom value="" use="HP" />
+			<telecom value="" use="WP" />
+			<telecom value="" use="MC" />
+			<telecom value="" />
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>21254</given>
+					<family>med</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="Male" />
+				<birthTime value="20141101" />
+				<raceCode nullFlavor="UNK" displayName="-" />
+				<ethnicGroupCode nullFlavor="NI" />
+				<languageCommunication>
+					<languageCode nullFlavor="NI" />
+				</languageCommunication>
+			</patient>
+			<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="3fdd1f84-9059-46b2-8ff2-8b6824419f42" />
+				<name>Radiology Imaging</name>
+				<telecom value="858-625-3344" use="" />
+				<addr use="">
+					<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+					<city>San Diego</city>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<time value="20141121" />
+		<assignedAuthor classCode="ASSIGNED">
+			<id root="2.16.840.1.113883.4.6" />
+			<addr>
+				<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+				<streetAddressLine>2</streetAddressLine>
+				<city>San Diego</city>
+				<state>CA</state>
+				<postalCode>92012-3333</postalCode>
+			</addr>
+			<telecom value="tel:858-625-3344" use="" />
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Dr. new1 ep2 </given>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.19.5" extension="2" />
+				<name>Radiology Imaging</name>
+				<telecom value="tel:858-625-3344" use="" />
+				<telecom value="mailto:jsuh@drsys.com" use="" />
+				<addr>
+					<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+					<streetAddressLine>2</streetAddressLine>
+					<city>San Diego</city>
+					<state>CA</state>
+					<postalCode>92012-3333</postalCode>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.4.6" />
+				<name>Radiology Imaging</name>
+				<telecom value="tel:858-625-3344" use="" />
+				<addr>
+					<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+					<streetAddressLine>2</streetAddressLine>
+					<city>San Diego</city>
+					<state>CA</state>
+					<postalCode>92012-3333</postalCode>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient>
+		<intendedRecipient>
+			<addr />
+			<telecom value="" use="" />
+			<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<family>ep</family>
+					<suffix>new</suffix>
+					<prefix>Dr. </prefix>
+				</name>
+			</informationRecipient>
+		</intendedRecipient>
+	</informationRecipient>
+	<legalAuthenticator typeCode="LA" contextControlCode="OP">
+		<time value="20141121" />
+		<signatureCode code="S" />
+		<assignedEntity classCode="ASSIGNED">
+			<id nullFlavor="NI" />
+			<addr>
+				<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+				<streetAddressLine>2</streetAddressLine>
+				<city>San Diego</city>
+				<state>CA</state>
+				<postalCode>92012-3333</postalCode>
+			</addr>
+			<telecom nullFlavor="NI" />
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Dr. new1 ep2 </given>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.19.5" extension="2" />
+				<name>Radiology Imaging</name>
+				<telecom value="tel:858-625-3344" use="" />
+				<telecom value="mailto:jsuh@drsys.com" use="" />
+				<addr>
+					<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+					<streetAddressLine>2</streetAddressLine>
+					<city>San Diego</city>
+					<state>CA</state>
+					<postalCode>92012-3333</postalCode>
+				</addr>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="PCPR" moodCode="EVN">
+			<effectiveTime>
+				<low value="20141101" />
+				<high value="20141121" />
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<templateId root="2.16.840.1.113883.10.20.6.2.1" />
+				<functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="participationFunction" displayName="Primary Care Physician" />
+				<assignedEntity classCode="ASSIGNED">
+					<id root="24c73af1-2cde-4c7b-ad45-98d9278481aa" extension="1234554321" />
+					<code code="418" codeSystem="2.16.840.1.113883.6.101" codeSystemName="NUCC" displayName="Specialist" />
+					<addr>
+						<streetAddressLine>123</streetAddressLine>
+						<postalCode>*****-****</postalCode>
+					</addr>
+					<telecom nullFlavor="NI" />
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<name>
+							<given>Dr. new1 ep2 </given>
+						</name>
+					</assignedPerson>
+					<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<id root="2.16.840.1.113883.19.5" extension="2" />
+						<name>Radiology Imaging</name>
+						<telecom value="tel:858-625-3344" use="" />
+						<telecom value="mailto:jsuh@drsys.com" use="" />
+						<addr>
+							<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+							<streetAddressLine>2</streetAddressLine>
+							<city>San Diego</city>
+							<state>CA</state>
+							<postalCode>92012-3333</postalCode>
+						</addr>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<componentOf>
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<id root="2.16.840.1.113883.4.6" extension="V013472Z" />
+			<code code="99213" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Anesthesiology" />
+			<effectiveTime>
+				<low value="20141121092500.000" />
+				<high nullFlavor="UNK" />
+			</effectiveTime>
+			<responsibleParty typeCode="RESP">
+				<assignedEntity classCode="ASSIGNED">
+					<id root="2.16.840.1.113883.4.6" />
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<name>
+							<given>Dr. new1 ep2 </given>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</responsibleParty>
+			<location>
+				<healthCareFacility>
+					<id root="2.16.540.1.113883.19.2" extension="2" />
+					<location determinerCode="INSTANCE">
+						<addr>
+							<streetAddressLine>10140 Mesa Rim Drive</streetAddressLine>
+							<streetAddressLine>2</streetAddressLine>
+							<city>San Diego</city>
+							<state>CA</state>
+							<postalCode>92012-3333</postalCode>
+						</addr>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component>
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.6.1" />
+					<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies" />
+					<title>Allergies</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<table width="100%" border="1">
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th>Allergy</th>
+									<th>Substance</th>
+									<th>Drug Allergy SNOMED Code</th>
+									<th>Substance RxNorm Code</th>
+									<th>Reactions</th>
+									<th>Severity</th>
+									<th>Date Diagnosed</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="ALGSUMMARY_1">
+									<td>Gadolinium contrast material</td>
+									<td>Gadolinium contrast material</td>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+									<td> </td>
+									<td>Active</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.30" />
+							<id root="79d6d3da-d25c-4366-b289-778e9ca60d2a" />
+							<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts" />
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low nullFlavor="UNK" />
+								<high nullFlavor="UNK" />
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ" inversionInd="false">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.7" />
+									<id root="6ce7e6ea-c5a4-435e-827e-db2d3e6d2d1e" />
+									<code xsi:type="CE" code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
+									<text>
+										<reference value="#ALGSUMMARY_1" />
+									</text>
+									<statusCode code="completed" />
+									<effectiveTime>
+										<low nullFlavor="UNK" />
+										<high nullFlavor="UNK" />
+									</effectiveTime>
+									<value xsi:type="CD" code="419199007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Allergy to substance (disorder)" />
+									<participant typeCode="CSM" contextControlCode="OP">
+										<participantRole classCode="MANU">
+											<addr use="" />
+											<telecom value="UnKnown" use="" />
+											<playingEntity classCode="MMAT" determinerCode="INSTANCE">
+												<code code="105879004" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" displayName="Gadolinium contrast material">
+													<originalText>
+														<reference value="#ALGSUMMARY_1" />
+													</originalText>
+												</code>
+												<name>Gadolinium contrast material</name>
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="SUBJ" inversionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.22.4.8" />
+											<code xsi:type="CE" code="SEV" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Severity" />
+											<text>
+												<reference value="#ALGSUMMARY_1" />
+											</text>
+											<statusCode code="completed" />
+											<value xsi:type="CD" nullFlavor="NI" />
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="SUBJ" inversionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.22.4.28" />
+											<code xsi:type="CE" code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status" />
+											<statusCode code="completed" />
+											<value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active" />
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="SUBJ">
+								<act classCode="ACT" moodCode="EVN">
+									<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comments" />
+									<text />
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.2.1" />
+					<code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of immunizations" />
+					<title>Immunizations</title>
+					<text mediaType="text/x-hl7-text+xml">   No immunization        
+          </text>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="true">
+							<templateId root="2.16.840.1.113883.10.20.22.4.52" />
+							<id root="e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92" />
+							<statusCode code="completed" />
+							<effectiveTime xsi:type="IVL_TS" value="199911" />
+							<consumable typeCode="CSM">
+								<manufacturedProduct classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.22.4.54" />
+									<manufacturedMaterial classCode="MMAT">
+										<code nullFlavor="UNK" />
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.1.1" />
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use" />
+					<title>Medications</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<table width="100%" border="1">
+							<thead>
+								<tr>
+									<th>Medicaton</th>
+									<th>Code</th>
+									<th>Dose Unit</th>
+									<th>Drug Format</th>
+									<th>Route</th>
+									<th>Frequency</th>
+									<th>Patient Instructions</th>
+									<th>Date Prescribed</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Selenium sulfide (Shampoo)</td>
+									<td>1436940 (RXNORM)</td>
+									<td>2.3%</td>
+									<td>Medicated Shampoo</td>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+									<td> </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.16" assigningAuthorityName="CCD" />
+							<id root="07b355bf-b7d6-43d7-8721-55c21c4724a3" />
+							<statusCode code="completed" />
+							<effectiveTime xsi:type="IVL_TS">
+								<low nullFlavor="UNK" />
+								<high nullFlavor="UNK" />
+							</effectiveTime>
+							<routeCode nullFlavor="UNK" />
+							<doseQuantity>
+								<translation>
+									<originalText>2.3%</originalText>
+								</translation>
+								<low value="2.3" unit="%" />
+							</doseQuantity>
+							<administrationUnitCode codeSystem="2.16.840.1.113883.3.26.1.1" displayName="Medicated Shampoo">
+								<originalText>Medicated Shampoo</originalText>
+							</administrationUnitCode>
+							<consumable typeCode="CSM">
+								<manufacturedProduct classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.22.4.23" />
+									<manufacturedMaterial classCode="MMAT">
+										<code code="1436940" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNORM" displayName="selenium sulfide 23 MG/ML Medicated Shampoo">
+											<originalText>Selenium sulfide (Shampoo)<reference value="Pntr to Section text" /></originalText>
+										</code>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<entryRelationship typeCode="SUBJ">
+								<act classCode="ACT" moodCode="EVN">
+									<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comments" />
+									<text></text>
+									<effectiveTime>
+										<low nullFlavor="UNK" />
+									</effectiveTime>
+								</act>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.10" />
+					<code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Treatment plan" />
+					<title>Plan of Care</title>
+					<text mediaType="text/x-hl7-text+xml">
+            No planned cares
+          </text>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="RQO">
+							<templateId root="2.16.840.1.113883.10.20.22.4.44" />
+							<id nullFlavor="NI" />
+							<code nullFlavor="NI" />
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low nullFlavor="UNK" />
+								<high nullFlavor="UNK" />
+							</effectiveTime>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.5" />
+					<templateId root="2.16.840.1.113883.10.20.22.2.5.1" />
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list" />
+					<title>Problems</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<table width="100%" border="1">
+							<thead>
+								<tr>
+									<th>Problem</th>
+									<th>ICD-9 Code</th>
+									<th>SNOMED-CT Code</th>
+									<th>Date Diagnosed</th>
+									<th>Problem Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="PROBSUMMARY_1">
+									<td>Hematocrit - borderline high (finding)</td>
+									<td>-</td>
+									<td>165412000</td>
+									<td> </td>
+									<td>Active</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.3" />
+							<id root="4534bba6-ec24-4433-b8db-860ff5d80e29" />
+							<code code="CONC" codeSystem="2.16.840.1.113883.5.6" />
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low value="20141121000000.000" />
+								<high nullFlavor="UNK" />
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ" inversionInd="false">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.4" assigningAuthorityName="CCD" />
+									<id root="c22502a3-071e-4153-a1ff-615c997abfc5" />
+									<code xsi:type="CE" code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Condition" />
+									<text>
+										<reference value="#PROBSUMMARY_1" />
+									</text>
+									<statusCode code="completed" />
+									<effectiveTime>
+										<low nullFlavor="UNK" />
+										<high nullFlavor="UNK" />
+									</effectiveTime>
+									<value xsi:type="CD" code="165412000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hematocrit - borderline high (finding)" />
+									<entryRelationship typeCode="SUBJ" inversionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.22.4.6" />
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status" />
+											<statusCode code="completed" />
+											<value xsi:type="CD" code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active" />
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="SUBJ">
+								<act classCode="ACT" moodCode="EVN">
+									<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comments" />
+									<text />
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.7.1" assigningAuthorityName="CCD" />
+					<code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedures" />
+					<title>Procedures</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<table width="100%" border="1">
+							<thead>
+								<tr>
+									<th>Procedure</th>
+									<th>Code</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="Proc_1">
+									<td>Anesthesiology - Anesthesia</td>
+									<td> </td>
+									<td>11/21/2014</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<procedure classCode="PROC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.14" />
+							<id root="a890abba-fcad-41e1-998d-b3636448b6e1" />
+							<code nullFlavor="UNK" displayName="Anesthesia">
+								<originalText />
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low value="20141121092500.000" />
+								<high nullFlavor="UNK" />
+							</effectiveTime>
+						</procedure>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.1" />
+					<code code="42349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Reason for referral" />
+					<title>Reason for referral</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<table width="100%" border="1">
+							<thead>
+								<tr>
+									<th>Reason for Referral</th>
+									<th> Plan Date</th>
+									<th> Provider</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="ReferalReason_1">
+									<td>med</td>
+									<td> -</td>
+									<td>Dr. ep new</td>
+								</tr>
+								<tr ID="ReferalReason_2">
+									<td>med</td>
+									<td> -</td>
+									<td>Dr. ep2 new1</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.3.1" />
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RESULTS" />
+					<title>Results</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<content ID="NKN_results" />
+            No Known Results
+          </text>
+					<entry typeCode="DRIV">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.1" />
+							<id root="7d5a02b0-67a4-11db-bd13-0800200c9a66" />
+							<code />
+							<statusCode code="completed" />
+							<component>
+								<procedure classCode="PROC" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.3.88.11.83.17" assigningAuthorityName="HITSP/C83" />
+									<templateId root="2.16.840.1.113883.10.20.1.29" assigningAuthorityName="CCD" />
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19" assigningAuthorityName="IHE PCC" />
+									<id root="471d4c32-0db7-4a53-8a53-ebc8d4ebf836" />
+									<code nullFlavor="NA">
+										<originalText>
+											<reference value="#NKN_results" use="" />
+										</originalText>
+									</code>
+									<text>
+										<reference value="#NKN_results" use="" />
+									</text>
+									<statusCode code="completed" />
+									<effectiveTime nullFlavor="NI" />
+								</procedure>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.3.88.11.83.15.1" assigningAuthorityName="HITSP C83" />
+									<templateId root="2.16.840.1.113883.10.20.22.4.2" assigningAuthorityName="CCD" />
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" assigningAuthorityName="IHE PCC" />
+									<id root="107c2dc0-67a5-11db-bd13-0800200c9a66" />
+									<code nullFlavor="NI" />
+									<text>
+										<reference value="#NKN_results" use="" />
+									</text>
+									<statusCode code="completed" />
+									<effectiveTime nullFlavor="NI" />
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#NKN_results" use="" />
+										</originalText>
+									</value>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.17" />
+					<code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Social History" />
+					<title>Social History</title>
+					<text mediaType="text/x-hl7-text+xml">
+            No social History
+          </text>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.78" assigningAuthorityName="CCD" />
+							<id nullFlavor="NI" />
+							<code nullFlavor="NI" />
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low nullFlavor="UNK" />
+								<high nullFlavor="UNK" />
+							</effectiveTime>
+							<value xsi:type="CD" nullFlavor="NI" />
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.14" />
+					<code code="47420-5" codeSystem="2.16.840.1.113883.6.1" />
+					<title>Functional Status</title>
+					<text mediaType="text/x-hl7-text+xml">No functional status</text>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.4" />
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" />
+					<title>Vitals</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<table width="100%" border="1">
+							<thead>
+								<tr>
+									<th>Vitals</th>
+									<th>Value</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Height</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>Weight</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>BMI</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>BP</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>Pulse</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>Respiration</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.22.2.9" />
+					<code code="51847-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Assessment And Plan" />
+					<title>Assessment And Plan</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<table width="100%" border="1">
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th>Note</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="Fut_Appints_1">
+									<td> Referral to other providers</td>
+									<td> ep2 dr new1 </td>
+								</tr>
+								<tr ID="Fut_Appints_2">
+									<td> Referral to other providers</td>
+									<td> ep new new </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="RQO">
+							<templateId root="2.16.840.1.113883.10.20.22.4.39" />
+							<id root="fc5ae261-d1a4-47ad-8d98-64361bd72625" />
+							<code nullFlavor="NI" />
+							<statusCode code="new" />
+							<effectiveTime>
+								<center xsi:type="IVXB_TS" value="20141121092729.793" />
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<act classCode="ACT" moodCode="EVN">
+									<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comments" />
+									<text>Provider Name: ep2 dr new1 Provider's Contact Information:</text>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="RQO">
+							<templateId root="2.16.840.1.113883.10.20.22.4.39" />
+							<id root="5cbad78a-540e-4fc5-9f7f-6b484c387e67" />
+							<code nullFlavor="NI" />
+							<statusCode code="new" />
+							<effectiveTime>
+								<center xsi:type="IVXB_TS" value="20141121094833.745" />
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<act classCode="ACT" moodCode="EVN">
+									<code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comments" />
+									<text>Provider Name: ep new new Provider's Contact Information:</text>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

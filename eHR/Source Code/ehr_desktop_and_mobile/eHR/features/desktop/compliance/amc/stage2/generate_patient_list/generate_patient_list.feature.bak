@@ -1,0 +1,36 @@
+#Name             : Generate Patient List
+#Description      : Covers scenarios under Generate Patient List feature for stage2
+#Author           : Gomathi
+
+@all @s2_generate_patient_list @stage2 @milestone2
+Feature: AMC - Verification of Percentage changes - Generate Patient List - Stage 2
+
+  Background:
+    Given login as "non ep"
+    
+  @tc_597 @tc_help_text
+  Scenario: Verification of Help text for Generate Patient List AMC measure
+    When get "all" details of "Generate Patient List" under "core set" for "stage2 ep" as "within report range"
+    And get help text of "Generate Patient List" under "core set" from tooltip
+    Then help text for "Generate Patient List" should be equal to the text
+    """
+    Generate at least one report listing patient's of the EP with a specific condition
+    """
+
+  @tc_598
+  Scenario: Verification of Generate Patient List stage 2 AMC measure
+    When get "all" details of "Generate Patient List" under "core set" for "stage2 ep" as "within report range"
+    And a "stage2 ep" is created
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And currently in "AMC" page
+    And get checkbox status of "Generate Patient List" under "core set" for "stage2 ep" as "within report range"
+    Then the checkbox status for "Generate Patient List" should be "unchecked"
+    When a patient list is generated
+    And currently in "AMC" page
+    And get checkbox status of "Generate Patient List" under "core set" for "stage2 ep" as "within report range"
+    Then the checkbox status for "Generate Patient List" should be "checked"
+    When get checkbox status of "Generate Patient List" under "core set" for "stage2 ep" as "outside report range"
+    Then the checkbox status for "Generate Patient List" should be "unchecked"
+    Then set "stage2 ep" as current EP
+

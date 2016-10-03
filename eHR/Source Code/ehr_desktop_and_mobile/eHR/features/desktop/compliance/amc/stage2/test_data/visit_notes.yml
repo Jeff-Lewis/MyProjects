@@ -1,0 +1,5 @@
+visit_note_data:
+  select_visit_note_type: "Care plan fields"
+  select_service_type: "Medications Documented"
+  textfield_goal: "233985008 - Abdominal aortic aneurysm (disorder)"
+  textarea_visit_note: "sample visit note data"

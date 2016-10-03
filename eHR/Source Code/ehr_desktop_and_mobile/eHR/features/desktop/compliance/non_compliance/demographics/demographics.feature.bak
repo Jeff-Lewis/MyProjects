@@ -1,0 +1,38 @@
+#Name             : Demographics
+#Description      : Covers scenarios under Non Compliance related to Demographics
+#Author           : Mani.Sundaram
+
+@all @non_compliance @non_compliance_demographics
+Feature: Non Compliance - Verification of Non Compliance Scenarios - Demographics
+
+  Background:
+    Given login as "non ep"
+    And set EP as "stage1 ep"
+
+  @tc_7407
+  Scenario: Verify visits getting disappear from Non Compliance list when all Demographics values re entered for patient
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "5 minutes" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Demographics" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "" "Sex" is added for a exam in "non compliance report"
+    Then "1" exam should "be" "present" in "non compliance report"
+
+    When "" "Race" is added for a exam in "non compliance report"
+    Then "1" exam should "be" "present" in "non compliance report"
+
+    When "" "Ethnicity" is added for a exam in "non compliance report"
+    Then "1" exam should "be" "present" in "non compliance report"
+
+    When "" "Preferred Language" is added for a exam in "non compliance report"
+    Then "1" exam should "not be" "present" in "non compliance report"
+
+  @tc_7408
+  Scenario: To add patient demographic values via Non Compliance Report - Patient with multiple visits
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    When the Non Compliance report for "all" is generated for "Demographics" "related Non Compliance"
+    Then "2" exams should "be" "present" in "Non Compliance report"
+    When "" "demographics" are added for a exam in "non compliance report"
+    Then "2" exams should "not be" "present" in "non compliance report"

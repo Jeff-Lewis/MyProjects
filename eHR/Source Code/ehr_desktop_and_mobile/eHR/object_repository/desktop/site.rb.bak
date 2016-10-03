@@ -1,0 +1,91 @@
+=begin
+  *Name               : Site
+  *Description        : class that holds methods for Site related activities
+  *Author             : Chandra sekaran
+  *Creation Date      : 02/03/2014
+  *Modification Date  :
+=end
+
+module EHR
+  class Site
+    include PageObject
+    include PageUtils
+    include Pagination
+
+    form(:form_site,                             :id      =>  "SiteForm")
+    div(:div_site,                               :id      => "siteInputs")
+
+    div(:div_site_list,                          :id      => "SiteList")
+
+    # create site
+    text_field(:textfield_site_code,             :id      => "SiteCode")
+    text_field(:textfield_site_name,             :id      => "SiteName")
+    text_area(:textarea_contact_info,            :id      => "ContactInfo")
+
+    # medical records contact information
+    text_field(:textfield_contact,               :id      => "MedicalRecordsPhone")
+    text_field(:textfield_email,                 :id      => "MedicalRecordsEmail")
+    text_field(:textfield_fax,                   :id      => "MedicalRecordsFax")
+    button(:button_save_site,                    :id      => "lnkCreateSite-button")
+    button(:button_clear_site,                   :value   => "Clear")
+
+    # site list
+    div(:div_site_list,                          :id      => "site_div")
+    table(:table_site_list,                      :xpath   => "//div[@id='site_div']/table")
+    link(:link_edit,                             :link_text => "Edit")
+    link(:link_delete,                           :link_text => "Delete")
+    link(:link_inactivate,                       :link_text => "Inactivate")
+
+    # description       : function for creating a new site
+    # Author            : Chandra sekaran
+    # Arguments         :
+    #   str_data_node   : test data node
+    # Return Arugument  :
+    #   str_site_name   : newly created site name
+    #
+    def create_site(str_data_node = "site_data")
+      begin
+        wait_for_object(div_site_element, "Failure in finding Site inputs div element")
+        hash_site = set_scenario_based_datafile(SITE_CREATION)
+
+        str_code = hash_site[str_data_node]["textfield_site_code"]
+        str_site_name = hash_site[str_data_node]["textfield_site_name"]
+        str_contact_info = hash_site[str_data_node]["textarea_contact_info"]
+
+        arr_temp = str_code.split("-")
+        num_ascii = arr_temp.first.to_i
+        num_id = arr_temp.last.to_i
+
+        str_code = "#{num_ascii.chr}#{num_id}"
+        str_site_name += " #{Time.now.strftime('%d%m%Y%H%M%S')}"
+
+        self.textfield_site_code = str_code
+        self.textfield_site_name = str_site_name
+        self.textarea_contact_info = str_contact_info
+        click_on(button_save_site_element)
+        raise "Failure in creating site" if !is_text_present(self, "Site created successfully", 5)
+
+        if num_id == 999            # logic for creating new site with name holding combination of ascii and numbers from 100-999
+          if num_ascii == 90
+            num_ascii = 65
+          else
+            num_ascii += 1
+          end
+          num_id = 100
+        else
+          num_id += 1
+        end
+
+        str_new_code = "#{num_ascii}-#{num_id}"      # set the updated site code
+        obj_yml = EHR::Read_From_YML.new("features/desktop/compliance/non_compliance/test_data/site.yml") # read the config file content
+        obj_yml.set_value("site_data/textfield_site_code", str_new_code)   # update site code in yml
+        $log.success("Successfully created new site '#{str_site_name}' (#{str_code}) and updated old site code with '#{str_new_code}'")
+        return str_site_name
+      rescue Exception => ex
+        $log.error("Error while creating site : #{ex}")
+        exit
+      end
+    end
+
+  end
+end

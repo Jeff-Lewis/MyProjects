@@ -1,0 +1,126 @@
+#Name             : Smoking Status
+#Description      : Covers scenarios under Smoking Status feature for stage2
+#Author           : Gomathi
+
+@all @s2_smoking_status @stage2 @milestone2
+Feature: AMC - Verification of Numerator and Denominator changes - Smoking Status - Stage 2
+
+  Background:
+    Given login as "non EP"
+    
+  @tc_61 @tc_help_text
+  Scenario: Verification of Help text and threshold measure for smoking status measure on AMC stage 2 report
+    When get "requirement" details of "Smoking Status" under "core set" for "stage2 ep" as "within report range"
+    Then the "requirement" of "Smoking Status" under "core set" should be "equal" to "80"
+    When get help text of "Smoking Status" under "core set" from tooltip
+    Then help text for "Smoking Status" should be equal to the text
+    """
+    More than 80 percent of all unique patients 13 years old or older seen by the EP have smoking status recorded as structured data.
+    """
+
+  @tc_249
+  Scenario: Verification of Smoking Status stage 2 AMC measure
+    Then get "all" details of "Smoking Status" under "core set" for "stage2 ep" as "outside report range"
+    When a patient is created "with MU and age 30"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "smoking status" is created "outside reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+
+    When get "all" details of "Smoking Status" under "core set" for "stage2 ep" as "within report range"
+    And a patient is created "with MU and age 13"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+
+    When a patient is created "with MU and age 21"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "invalid record" should not be in "Smoking Status" numerator report under "core set"
+
+    When a patient is created "with MU and age greater than 13"
+    And "1" exam is created for the patient as "1 day" "after" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+
+    When a patient is created "with MU and age greater than 13"
+    And "1" exam is created for the patient as "MU unchecked" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+
+    When a patient is created "with MU and age greater than 13"
+    And "1" exam is created for the patient as "inpatient" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+
+    When a patient is created "with MU and age greater than 13"
+    And "1" exam is created for the patient as "inactive" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+
+  @tc_4798
+  Scenario: Verification of Smoking Status Stage 2 AMC measure does not account for patients seen outside reporting period
+    Then get "all" details of "Smoking Status" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and age greater than 13"
+    And "1" exam is created for the patient as "1 day" "after" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Smoking Status" numerator report under "core set"
+
+  @tc_4799
+  Scenario: Verification of Smoking Status Stage 2 AMC measure does not take into account non face-to-face patients
+    Then get "all" details of "Smoking Status" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and age 13"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+    When the exam is updated as "MU unchecked"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Smoking Status" numerator report under "core set"
+
+  @tc_4800
+  Scenario: Verification of Smoking Status Stage 2 AMC measure does not take into account Inpatients
+    Then get "all" details of "Smoking Status" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and age 13"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+    When the exam is updated as "inpatient"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Smoking Status" numerator report under "core set"
+
+  @tc_4801
+  Scenario: Verification of Smoking Status Stage 2 AMC measure does not take into account patients with inactive visits
+    Then get "all" details of "Smoking Status" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and age 13"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "1"
+    And "a record" should be in "Smoking Status" numerator report under "core set"
+    When the exam is updated as "inactive"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Smoking Status" numerator report under "core set"
+
+  @tc_4802
+  Scenario: Verification of Smoking status does not account for patients less than 13 years of age
+    Then get "all" details of "Smoking Status" under "core set" for "stage2 ep" as "within report range"
+    When a patient is created "with MU and age less than 13"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "smoking status" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Smoking Status" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Smoking Status" numerator report under "core set"

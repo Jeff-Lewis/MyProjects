@@ -1,0 +1,165 @@
+#Name             : Medication Allergy List
+#Description      : Covers scenarios under Medication Allergy List feature for stage1
+#Author           : Gomathi
+
+@all @s1_medication_allergy_list @stage1 @milestone4
+Feature: AMC - Verification of Numerator and Denominator changes - Medication Allergy List - Stage 1
+
+  Background:
+    Given login as "non ep"
+    
+  @tc_3590 @tc_help_text
+  Scenario: Verification of Help text and Requirement for Stage 1 Medication Allergy List AMC measure
+    And get "requirement" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    Then the "requirement" of "Medication Allergy List" under "core set" should be "equal" to "80"
+    When get help text of "Medication Allergy List" under "core set" from tooltip
+    Then help text for "Medication Allergy List" should be equal to the text
+    """
+    More than 80% of unique patient seen by the EP or admitted to the eligible hospital's or CAH's inpatient or emergency department (POS 21 or 23) have at least one entry (or an indication that the patient has no known medication allergies) recorded as structured data.
+    """
+
+  @tc_4749
+  Scenario: Verification of Medication Allergy Stage 1 AMC measure
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "2" "coded medication allergen" are created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "uncoded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "Gadolinium contrast material allergy" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "Iodine contrast material allergy" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "no known medication allergies" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "2" exams are created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "invalid" and "1 day" "after" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "MU unchecked" and "1 day" "before" the reporting period
+    And "1" "no known medication allergies" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "inpatient" and "1 day" "before" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "inactive" and "1 day" "before" the reporting period
+    And "1" "no known medication allergies" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "0"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "outside report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded medication allergen" is created "outside reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+
+  @tc_4750
+  Scenario: Verification of Medication Allergy List Stage 1 AMC measure does not account patients with allergy type of 'Other'
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "other allergy" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "0 and 1"
+    And "invalid record" should not be in "Medication Allergy List" numerator report under "core set"
+
+  @tc_4638
+  Scenario: Verification of Medication Allergy Stage 1 AMC measure does not account patients seen outside EHR reporting period
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "invalid" and "1 day" "after" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Medication Allergy List" numerator report under "core set"
+
+  @tc_4639
+  Scenario: Verification of Medication Allergy Stage 1 AMC measure does not account for no Face -to-face patients
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+    When the exam is updated as "MU unchecked"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Medication Allergy List" numerator report under "core set"
+
+  @tc_4747
+  Scenario: verification of Medication Allergy Stage 1 AMC measure does not account for Inpatient
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+    When the exam is updated as "inpatient"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Medication Allergy List" numerator report under "core set"
+
+  @tc_4748
+  Scenario: Verification of Medication Allergy Stage 1 AMC measure does not account for patients with Inactive visit
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+    When the exam is updated as "inactive"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Medication Allergy List" numerator report under "core set"
+
+  @tc_3589
+  Scenario: Verification of Medication Allergy Stage 1 AMC measure does not take into account inactive allergies
+    And get "all" details of "Medication Allergy List" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU"
+    And "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "1" "coded medication allergen" is created "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "increased" by "1"
+    And "a record" should be in "Medication Allergy List" numerator report under "core set"
+    When the "medication allergy" is "inactivated"
+    Then the "numerator and denominator" of "Medication Allergy List" under "core set" should be "decreased" by "1 and 0"
+    And "invalid record" should not be in "Medication Allergy List" numerator report under "core set"
+
+

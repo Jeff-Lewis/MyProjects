@@ -1,0 +1,27 @@
+med_allergy_data1:
+  textfield_med_allergy: "Kemadrin"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data2:
+  textfield_med_allergy: "Librium"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data3:
+  textfield_med_allergy: "Quinora"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data4:
+  textfield_med_allergy: "Fluanxol"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data5:
+  textfield_med_allergy: "Fybogel"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data6:
+  textfield_med_allergy: "Forane"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data7:
+  textfield_med_allergy: "Biloptin"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data8:
+  textfield_med_allergy: "Alfenta"
+  select_adverse_reaction: "Hypotension"
+med_allergy_data9:
+  textfield_med_allergy: "Alfentanil"
+  select_adverse_reaction: "Hypotension"

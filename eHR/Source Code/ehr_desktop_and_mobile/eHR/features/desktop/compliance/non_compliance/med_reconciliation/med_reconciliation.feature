@@ -1,0 +1,110 @@
+#Name             : Medication Reconciliation
+#Description      : Covers scenarios under Non Compliance related to Medication Reconciliation
+#Author           : Jeyapratha
+
+@all @non_compliance_medication_reconciliation @non_compliance @milestone8
+Feature: Non Compliance - Verification of Non Compliance Scenarios - Medication Reconciliation
+
+  Background:
+    Given login as "non ep"
+    And set EP as "stage1 ep"
+    And "medication reconciliation" checkbox is "enabled"
+
+  @tc_6043
+  Scenario: Verification of Completing Med Reconciliation related Non Compliance by adding Medication
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "1" "coded medication list" is added for the exam in "non compliance report"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "1" "uncoded medication list" is added for the exam in "non compliance report"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+
+  @tc_6044
+  Scenario: Verification Completing Med Reconciliation related Non Compliance by clicking on None Known
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "1" "none known medication list" is added for the exam in "non compliance report"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+
+  @tc_6063
+  Scenario: Verification of Completing Med Reconciliation related Non Compliance by adding a CPOE order
+    Given login as "stage1 EP"
+    And a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "1" "hand written medication order" is placed "within reporting period" for the patient
+    And the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+
+  @tc_6064 @chrome
+  Scenario: Verification of Completing Med Reconciliation related Non Compliance through Reconcile dialog
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When TOC is uploaded and attached with "medication" for the recent exam
+    And "reconcile all" button is clicked for "medication" "within reporting period"
+    And the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+
+  @tc_6065 @chrome
+  Scenario: Verification of Med Reconciliation check box disabled when organization opts out of reconciliation
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "medication reconciliation" is "removed" from compliance check
+    Then "medication reconciliation" checkbox is "disabled"
+    When the Non Compliance report for "today" is generated for "all sections" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "demographics" is added for the exam in "non compliance report"
+    And "1" "coded problem list" is added for the exam in "non compliance report"
+    And "1" "coded medication allergen" is added for the exam in "non compliance report"
+    And "1" "coded medication list" is added for the exam in "non compliance report"
+    And "1" "coded family history" is added for the exam in "non compliance report"
+    And "height weight and BP" are added for the exam in "non compliance report"
+    And "smoking status" is added for the exam in "non compliance report"
+    And EOE is generated for the exam from "non compliance report"
+    Then "1" exam should "not be" "present" in "Non Compliance report"
+    When "medication reconciliation" is "added" to compliance check
+    Then "medication reconciliation" checkbox is "enabled"
+
+  @tc_6067 @chrome
+  Scenario: Verification of Completing Med Reconciliation related Non Compliance by adding medication for a visit with TOC
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    And TOC is uploaded and attached with "medication" for the recent exam
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "1" "coded medication list" is added for the exam in "non compliance report"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_6070 @chrome
+  Scenario: Verification of Completing Med Reconciliation related Non Compliance by clicking None Known for a visit with TOC
+    Given a patient is created "without MU"
+    And "1" exam is created for the patient as "active" and "1 minute" "before" the reporting period
+    And TOC is uploaded and attached with "medication" for the recent exam
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+    When "1" "none known medication list" is added for the exam in "non compliance report"
+    Then "1" exam should "be" "present" in "Non Compliance report"
+
+  @tc_7419
+  Scenario: Verification of Completing Med Reconciliation related Non Compliance for patient having multiple visits on single day
+    Given a patient is created "without MU"
+    And "2" exams are created for the patient as "active" and "2 minutes" "before" the reporting period
+    When the Non Compliance report for "today" is generated for "Medication Reconciliation" "related Non Compliance"
+    Then "2" exams should "be" "present" in "Non Compliance report"
+    When "1" "none known medication list" is added for the exam in "non compliance report"
+    Then "2" exams should "not be" "present" in "Non Compliance report"
+

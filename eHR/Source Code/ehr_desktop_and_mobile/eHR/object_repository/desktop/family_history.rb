@@ -1,0 +1,127 @@
+=begin
+  *Name               : FamilyHistory
+  *Description        : module to create / edit the family history details in the health status screen
+  *Author             : Gomathi
+  *Creation Date      : 08/27/2014
+  *Modification Date  :
+=end
+
+module EHR
+  module HealthStatusTab
+    module FamilyHistory
+
+      include PageObject
+      include DataMagic
+      include PageUtils
+
+      # Page Object details for create family
+      div(:div_create_family_form,                    :id     =>  "newhistoryDiv")
+      text_field(:textfield_family_problem,           :id     =>  "ProblemCode_TextBox")
+      select_list(:select_family_relationship,        :id     =>  "RelationCode")
+      text_field(:textfield_diagnosis_date,           :id     =>  "felix-widget-calendar-DiagnosedDate-input")
+      text_field(:textfield_diagnosis_age,            :id     =>  "AgeofDiagnosis")
+      select_list(:select_family_status,              :id     =>  "Status")
+      text_field(:textfield_family_user,              :id     =>  "EnteredUser")
+      text_field(:textfield_entered_date,             :id     =>  "EnteredOn")
+      textarea(:textarea_description,                 :id     =>  "Description")
+      div(:div_save_add_more_family,                  :xpath  =>  "//div[@id='create_patient']//button[text()='Save/Add More']")
+      div(:div_save_close_family,                     :xpath  =>  "//div[@id='create_patient']//button[text()='Save/Close']")
+      div(:div_cancel_family,                         :xpath  =>  "//div[@id='create_patient']//button[text()='Cancel']")
+      div(:div_ajax_content,                          :xpath  =>  "//div[@class='yui-ac-content']")
+
+      # Page Object details for Edit family
+      div(:div_family_form_edit,                      :id     =>  "diveditfamilyHistory")
+      text_field(:textfield_enter_problem,            :id     =>  "UnknownProblem")
+      text_field(:textfield_entered_organization,     :id     =>  "OrganizationName")
+      text_field(:textfield_last_active_by,           :id     =>  "ActiveUser")
+      text_field(:textfield_last_active_on,           :id     =>  "ActiveDate")
+      text_field(:textfield_last_inactive_by,         :id     =>  "InactivationUserName")
+      text_field(:textfield_last_inactive_on,         :id     =>  "InactivationDate")
+
+      #Error message in add / edit family screen
+      span(:span_family_problem_error,                :id     =>  "errorProblem")   # Please enter the problem
+      span(:span_family_relation_error,               :id     =>  "errorRelation")   # Please select the Relationship
+      span(:span_family_staus_error,                  :id     =>  "errorStatus")   # Please select the Relationship
+      span(:span_success_message,                     :id     =>  "ErrorMessage")  # The message in span is "Family history added successfully"
+
+      # Description               : Method to create family members problem details in health status screen
+      # Author                    : Gomathi
+      # Arguments
+      #   str_family_history      : string that denotes type of family history
+      #   str_family_history_node : root node of family history data
+      #
+      def create_family_history(str_family_history, str_family_history_node = "family_history_data")
+        begin
+          hash_family_history = set_scenario_based_datafile(FAMILY_HISTORY)
+
+          str_coded_problem_name = hash_family_history[str_family_history_node]["textfield_coded_family_problem"]
+          str_uncoded_problem_name = hash_family_history[str_family_history_node]["textfield_uncoded_family_problem"]
+          str_family_relationship = hash_family_history[str_family_history_node]["select_family_relationship"]
+
+          wait_for_object(div_create_family_form_element)
+          case str_family_history.downcase
+            when "coded family history"
+              if textfield_family_problem_element.visible?
+                self.textfield_family_problem = str_coded_problem_name
+                wait_for_object(div_ajax_content_element)
+                textfield_family_problem_element.focus
+                sleep 3
+                textfield_family_problem_element.send_keys(:arrow_down) rescue Exception
+                sleep 2
+                textfield_family_problem_element.send_keys(:tab)
+              end
+              select_family_relationship_element.when_visible.focus
+              raise "Invalid problem name : #{str_coded_problem_name}" if span_family_problem_error_element.visible?
+			  
+            when "uncoded family history"
+              if textfield_family_problem_element.visible?
+                self.textfield_family_problem = str_uncoded_problem_name
+                wait_for_object(div_ajax_content_element)
+                textfield_family_problem_element.focus
+                textfield_family_problem_element.send_keys(:tab)
+              end              
+            else
+              raise "Invalid family health history : #{str_family_history}"
+          end
+          select_family_relationship_element.select(str_family_relationship)
+
+          $world.puts("Test data : #{hash_family_history[str_family_history_node].to_s}")
+          $log.success("data population for create family history done successfully")
+        rescue Exception => ex
+          $log.error("Error while entering details of family history : #{ex}")
+          exit
+        end
+      end
+
+      # description           : function to create a family health history
+      # Author                : Gomathi
+      # Arguments:
+      #   str_family_history  : string that denotes family details
+      #
+      def save_close_create_family_history(str_family_history)
+        begin
+          create_family_history(str_family_history)
+          click_on(div_save_close_family_element)
+        rescue Exception => ex
+          $log.error("Error while creating a family history : #{ex}")
+          exit
+        end
+      end
+
+      # description          : function to create more family health history
+      # Author               : Gomathi
+      # Arguments:
+      #   str_family_history : string that denotes family details
+      #
+      def save_add_more_create_family_history(str_family_history)
+        begin
+          create_family_history(str_family_history)
+          click_on(div_save_add_more_family_element)
+        rescue Exception => ex
+          $log.error("Error while creating more family histories  : #{ex}")
+          exit
+        end
+      end
+    end
+  end
+end

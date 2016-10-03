@@ -1,0 +1,177 @@
+#Name             : Vital Signs - Alternate
+#Description      : Covers scenarios under Vital Signs - Alternate feature for stage1
+#Author           : Gomathi
+
+@all @s1_vital_signs_alternate @stage1 @milestone7
+Feature: AMC - Verification of Numerator and Denominator changes - Vital Signs - Alternate - Stage 1
+
+  Background:
+    Given login as "non EP"
+    
+  @tc_661
+  Scenario: Verification of Vital Signs - Alternate stage 1 AMC measure
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "outside report range"
+    And a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "outside reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age less than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age less than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height and weight" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "invalid" and "1 day" "after" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "MU unchecked" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "inpatient" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "inactive" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+
+  @tc_4822
+  Scenario: Verification of Vital Signs - Alternate Stage 1 AMC does not account for patients seen outside reporting period
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "invalid" and "1 day" "after" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age less than 3"
+    When "1" exam is created for the patient as "invalid" and "1 day" "after" the reporting period
+    And "" "height and weight" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+  @tc_4823
+  Scenario: Verification of Vital Signs - Alternate Stage 1 AMC does not account for non face-to-face patients
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+    When the exam is updated as "MU unchecked"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age less than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height and weight" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+    When the exam is updated as "MU unchecked"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+  @tc_4824
+  Scenario: Verification of Vital Signs - Alternate Stage 1 AMC does not account for Inpatients
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+    When the exam is updated as "inpatient"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age less than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height and weight" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+    When the exam is updated as "inpatient"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+  @tc_4825
+  Scenario: Verification of Vital Signs - Alternate Stage 1 AMC does not account for patients with inactive visits
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height weight and BP" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+    When the exam is updated as "inactive"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age less than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height and weight" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "1"
+    And "a record" should be in "Vital Signs- Alternate" numerator report under "core set"
+    When the exam is updated as "inactive"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "decreased" by "1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+  @tc_4826
+  Scenario: Verification of Vital Signs -Alternate Stage 1 does not account patient greater than 3 years older without Vitals
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height and weight" are added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0 and 1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age greater than 3"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height" is added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0 and 1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+  @tc_4827
+  Scenario: Verification of Vital Signs - Alternate Stage 1 does not account patient less than 3 years without Height and Weight
+    Given get "all" details of "Vital Signs- Alternate" under "core set" for "stage1 ep" as "within report range"
+    And a patient is created "with MU and age less than 2"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "weight" is added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0 and 1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"
+
+    Given a patient is created "with MU and age less than 2"
+    When "1" exam is created for the patient as "active" and "1 day" "before" the reporting period
+    And "" "height" is added "within reporting period" under "health status"
+    Then the "numerator and denominator" of "Vital Signs- Alternate" under "core set" should be "increased" by "0 and 1"
+    And "invalid record" should not be in "Vital Signs- Alternate" numerator report under "core set"

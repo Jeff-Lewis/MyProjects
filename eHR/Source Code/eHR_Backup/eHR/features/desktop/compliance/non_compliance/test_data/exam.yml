@@ -1,0 +1,8 @@
+exam_data:
+  check_count_mu: "true"
+  select_cpt_code: "99488"
+  select_modality_code: "AN - Anesthesiology"
+  textfield_procedure:
+  textarea_visit_note: "test visit note"
+  textarea_visit_coded: "401096005 - Sample analysis (procedure)"
+  textarea_chief_complaint: "test compliant"

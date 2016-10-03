@@ -1,0 +1,6 @@
+family_history_data:
+  textfield_coded_family_problem: "K562 Cell line killing assay (procedure)" #"4313003 - Acardiacus anceps (disorder)"
+  textfield_uncoded_family_problem: "Abdominal aortic aneurysm (disorder)"
+  select_relationship: "Sister"
+  textfield_diagnosed_date:
+  numberfield_age: 25
